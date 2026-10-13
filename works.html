@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Works &amp; Architecture — Muhammad Ardhie</title>
+  <meta name="description" content="Technical case studies and architectural breakdowns across Laravel, React, Android Kotlin, and Figma Design Systems.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Muhammad Ardhie Home">
+          <div class="brand-monogram">MA</div>
+          <span>Ardhie<span class="brand-dot">.</span>dev</span>
+        </a>
+
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="works.html" class="nav-link active">Selected Works</a></li>
+            <li><a href="about.html" class="nav-link">About &amp; Journey</a></li>
+            <li><a href="#contact" class="nav-link" data-copy-email="m.ardhie5325@gmail.com">Copy Email</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="status-pill" title="Currently open for engineering opportunities">
+            <span class="status-beacon" aria-hidden="true"></span>
+            <span>AVAILABLE FOR HIRE</span>
+          </div>
+
+          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1>Case Studies &amp; Architecture</h1>
+          <p class="section-desc">
+            Deep technical investigations into production systems. Each case study details real problems, architectural decisions, and tangible engineering outcomes.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" role="toolbar" aria-label="Project category filter">
+          <button class="filter-btn active" data-filter="all">All Systems (4)</button>
+          <button class="filter-btn" data-filter="laravel">Laravel / Backend</button>
+          <button class="filter-btn" data-filter="react">React / Frontend</button>
+          <button class="filter-btn" data-filter="android">Android / Kotlin</button>
+          <button class="filter-btn" data-filter="figma">Figma / Systems</button>
+        </div>
+
+        <div class="work-list">
+          <!-- Case Study 1: Laravel -->
+          <article class="work-card" id="laravel-system" data-category="laravel">
+            <div class="work-info">
+              <span class="work-discipline">Backend &amp; Distributed Architecture</span>
+              <h2 class="work-title">Enterprise Resource &amp; Telemetry API Engine</h2>
+              <p class="work-overview">
+                An industrial-grade backend service built to orchestrate operational contracts, resource tracking, and field logistics data. Engineered to replace manual spreadsheet workflows with an ACID-compliant relational backend.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <ul class="work-spec-list">
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Relational Normalization &amp; Indexing:</strong> PostgreSQL schema optimized with compound B-Tree indexes, dropping p99 response times from 340ms to 38.4ms.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Redis Cache-Aside Pattern:</strong> Frequently requested telemetry metrics cached with deterministic invalidation hooks on mutation events.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Granular Authorization Gates:</strong> Multi-tenant security isolation using Laravel Policy classes and scoped JWT claims.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="work-tags">
+                <span class="work-tag">Laravel 11 LTS</span>
+                <span class="work-tag">PHP 8.3 JIT</span>
+                <span class="work-tag">PostgreSQL 16</span>
+                <span class="work-tag">Redis 7</span>
+                <span class="work-tag">RESTful JSON API</span>
+              </div>
+            </div>
+            <div class="work-visual">
+              <img src="assets/mockup-laravel.svg" alt="Laravel Architecture and REST Schema" width="800" height="500" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Case Study 2: React -->
+          <article class="work-card" id="react-dashboard" data-category="react">
+            <div class="work-info">
+              <span class="work-discipline">Frontend Architecture &amp; Data Viz</span>
+              <h2 class="work-title">Operational Intelligence &amp; Analytics Workspace</h2>
+              <p class="work-overview">
+                An executive operations dashboard providing real-time oversight of ongoing project milestones, budget expenditures, and personnel status. Built with clean reactive state models and zero visual clutter.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <ul class="work-spec-list">
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>State Boundary Isolation:</strong> Segmented state stores preventing unnecessary re-renders of heavy data visualization panels.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Optimistic UI Mutations:</strong> Immediate client feedback upon data edits with background server synchronization and graceful rollback.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Accessibility &amp; Keyboard Ergonomics:</strong> Full keyboard navigability, custom focus indicators, and semantic HTML table structures.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="work-tags">
+                <span class="work-tag">React 19</span>
+                <span class="work-tag">TypeScript</span>
+                <span class="work-tag">Modern CSS Tokens</span>
+                <span class="work-tag">WebSockets</span>
+                <span class="work-tag">60 FPS Render</span>
+              </div>
+            </div>
+            <div class="work-visual">
+              <img src="assets/mockup-react.svg" alt="React Analytics Workspace Interface" width="800" height="500" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Case Study 3: Android Kotlin -->
+          <article class="work-card" id="android-client" data-category="android">
+            <div class="work-info">
+              <span class="work-discipline">Native Mobile Client</span>
+              <h2 class="work-title">Field Logistics &amp; Offline-First Client</h2>
+              <p class="work-overview">
+                A native Android application created for field engineers inspecting infrastructure sites. Designed around the reality of unpredictable cellular network dead-zones across remote field locations.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <ul class="work-spec-list">
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Offline-First Room SQLite Replication:</strong> All user actions write directly to encrypted local storage first, maintaining 100% data durability.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>WorkManager Job Queues:</strong> Exponential back-off synchronization daemon automatically flushing telemetry queues once cellular connectivity returns.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Modern Jetpack Compose UI:</strong> Declarative reactive UI bound to ViewModel StateFlow streams, eliminating UI desynchronization bugs.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="work-tags">
+                <span class="work-tag">Android Kotlin</span>
+                <span class="work-tag">Jetpack Compose</span>
+                <span class="work-tag">Coroutines / Flow</span>
+                <span class="work-tag">Room DB</span>
+                <span class="work-tag">WorkManager</span>
+              </div>
+            </div>
+            <div class="work-visual">
+              <img src="assets/mockup-android.svg" alt="Android Kotlin Field Logistics Client Bezel" width="800" height="500" loading="lazy">
+            </div>
+          </article>
+
+          <!-- Case Study 4: Figma Design System -->
+          <article class="work-card" id="figma-system" data-category="figma">
+            <div class="work-info">
+              <span class="work-discipline">Product Design &amp; Systems</span>
+              <h2 class="work-title">Atomic Design System &amp; Component Matrix</h2>
+              <p class="work-overview">
+                An end-to-end design system created in Figma to unify enterprise application surfaces. Connects primitive color and spacing tokens directly to production code variables across web and mobile.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <ul class="work-spec-list">
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Token Hierarchy:</strong> Strict 3-level tiering (Primitive Tokens → Semantic Roles → Component Overrides) ensuring rapid re-theming capability.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Zero-Friction Handoff:</strong> Component property names in Figma mirror exact prop types used in React and Jetpack Compose.</span>
+                  </li>
+                  <li class="work-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Exhaustive State Matrix:</strong> Every interactive primitive specifies Default, Hover, Focused, Pressed, Disabled, and Loading states.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="work-tags">
+                <span class="work-tag">Figma</span>
+                <span class="work-tag">Token Architecture</span>
+                <span class="work-tag">Auto-Layout 5.0</span>
+                <span class="work-tag">WCAG 2.1 AAA</span>
+                <span class="work-tag">Design Ops</span>
+              </div>
+            </div>
+            <div class="work-visual">
+              <img src="assets/mockup-figma.svg" alt="Figma Design Tokens Board Specimen" width="800" height="500" loading="lazy">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer & Colophon -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-statement">
+          <a href="index.html" class="brand">
+            <div class="brand-monogram">MA</div>
+            <span>Muhammad Ardhie</span>
+          </a>
+          <p>
+            Full-Stack Software Engineer &amp; Systems Builder. Focused on creating resilient digital products with zero decorative waste and uncompromising technical rigor.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="works.html" class="footer-link">Selected Works</a></li>
+            <li><a href="about.html" class="footer-link">About &amp; Journey</a></li>
+            <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Direct Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link" data-copy-email="m.ardhie5325@gmail.com">m.ardhie5325@gmail.com (Copy)</a></li>
+            <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/Ardhie1212</a></li>
+            <li><span class="footer-link" style="color: var(--text-tertiary);">Location: Indonesia (UTC+7)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Muhammad Ardhie. Designed to Impeccable Craft Standards.
+        </div>
+        <div class="colophon-meta">
+          <span><span class="colophon-dot">&#9679;</span> Zero-Dependency Static Build</span>
+          <span>Hosted on GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg class="btn-icon toast-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Email address copied to clipboard</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

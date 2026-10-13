@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Canvas Base -->
+  <rect width="800" height="500" rx="12" fill="#0b0f17" stroke="#1e293b" stroke-width="2"/>
+  <!-- Figma Style Toolbar Header -->
+  <rect width="800" height="42" rx="12" fill="#1e293b"/>
+  <rect y="30" width="800" height="12" fill="#1e293b"/>
+  <!-- Figma colored logo mark -->
+  <g transform="translate(20, 11)">
+    <rect x="0" y="0" width="10" height="10" rx="5" fill="#f24e1e"/>
+    <rect x="10" y="0" width="10" height="10" rx="5" fill="#ff7262"/>
+    <rect x="0" y="10" width="10" height="10" rx="5" fill="#a259ff"/>
+    <circle cx="15" cy="15" r="5" fill="#1abcfe"/>
+  </g>
+  <text x="50" y="26" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600">Ardhicon Design System v2.4 • Tokens &amp; Components</text>
+  <rect x="670" y="9" width="112" height="24" rx="4" fill="#0b0f17" stroke="#334155" stroke-width="1"/>
+  <text x="682" y="25" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">SCALE: 100%</text>
+
+  <!-- Left Column: Token Primitives (Colors & Scale) -->
+  <rect x="24" y="60" width="230" height="420" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="40" y="88" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">DESIGN TOKENS (PRIMITIVES)</text>
+
+  <!-- Color Swatch 1 -->
+  <rect x="40" y="106" width="32" height="32" rx="6" fill="#0b0f17" stroke="#334155" stroke-width="1"/>
+  <text x="82" y="122" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">canvas.base</text>
+  <text x="82" y="136" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">#0B0F17</text>
+
+  <!-- Color Swatch 2 -->
+  <rect x="40" y="150" width="32" height="32" rx="6" fill="#1e293b"/>
+  <text x="82" y="166" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">surface.lift</text>
+  <text x="82" y="180" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">#1E293B</text>
+
+  <!-- Color Swatch 3 -->
+  <rect x="40" y="194" width="32" height="32" rx="6" fill="#3b82f6"/>
+  <text x="82" y="210" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">action.primary</text>
+  <text x="82" y="224" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">#3B82F6</text>
+
+  <!-- Color Swatch 4 -->
+  <rect x="40" y="238" width="32" height="32" rx="6" fill="#10b981"/>
+  <text x="82" y="254" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">status.active</text>
+  <text x="82" y="268" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">#10B981</text>
+
+  <line x1="40" y1="288" x2="234" y2="288" stroke="#1e293b" stroke-width="1"/>
+  <text x="40" y="312" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">TYPOGRAPHY HIERARCHY</text>
+  <text x="40" y="338" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Display 48px / -0.03em</text>
+  <text x="40" y="364" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600">Heading 24px / -0.02em</text>
+  <text x="40" y="390" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Body 16px / 1.65 Line Height</text>
+  <text x="40" y="416" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11">Mono 14px / Tabular Numbers</text>
+
+  <!-- Right Column: Component Matrix & Auto-Layout -->
+  <rect x="270" y="60" width="506" height="420" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="290" y="88" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">ATOMIC COMPONENT VARIANTS (AUTO-LAYOUT)</text>
+
+  <!-- Component Card 1: Buttons Matrix -->
+  <rect x="290" y="106" width="466" height="100" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="306" y="130" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">BUTTON PRIMITIVES (DEFAULT / HOVER / DISABLED)</text>
+  <!-- Primary Button -->
+  <rect x="306" y="146" width="130" height="38" rx="6" fill="#3b82f6"/>
+  <text x="330" y="170" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600">Primary CTA</text>
+  <!-- Secondary Button -->
+  <rect x="450" y="146" width="130" height="38" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="470" y="170" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600">Secondary</text>
+  <!-- Ghost Button -->
+  <rect x="594" y="146" width="130" height="38" rx="6" fill="transparent" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="170" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600">Ghost</text>
+
+  <!-- Component Card 2: Interactive Card Specimen -->
+  <rect x="290" y="222" width="466" height="150" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="306" y="246" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">INTERACTIVE CARD ARTIFACT SPEC</text>
+  <rect x="306" y="260" width="434" height="96" rx="6" fill="#0b0f17" stroke="#334155" stroke-width="1"/>
+  <circle cx="330" cy="285" r="8" fill="#10b981" fill-opacity="0.2"/>
+  <circle cx="330" cy="285" r="4" fill="#10b981"/>
+  <text x="350" y="289" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600">Production Node: Synced</text>
+  <text x="350" y="309" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Auto-layout horizontal hug contents with 16px fluid padding.</text>
+  <rect x="350" y="322" width="60" height="18" rx="3" fill="#1e293b"/>
+  <text x="358" y="335" fill="#3b82f6" font-family="'JetBrains Mono', monospace" font-size="9">TOKENS</text>
+  <rect x="418" y="322" width="60" height="18" rx="3" fill="#1e293b"/>
+  <text x="428" y="335" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">GRID 8PT</text>
+
+  <!-- Auto layout specs tag -->
+  <rect x="290" y="390" width="466" height="70" rx="8" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+  <text x="306" y="416" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">DESIGN SYSTEM GOVERNANCE</text>
+  <text x="306" y="440" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">140+ Components • 100% WCAG AAA Compliant • Variable Mode Ready</text>
+</svg>

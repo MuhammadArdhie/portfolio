@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="react-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0b0f17"/>
+    </linearGradient>
+  </defs>
+  <!-- Window Base -->
+  <rect width="800" height="500" rx="12" fill="url(#react-bg)" stroke="#1e293b" stroke-width="2"/>
+  <!-- Titlebar -->
+  <rect width="800" height="42" rx="12" fill="#1e293b"/>
+  <rect y="30" width="800" height="12" fill="#1e293b"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <rect x="90" y="9" width="460" height="24" rx="4" fill="#0b0f17" stroke="#334155" stroke-width="1"/>
+  <text x="105" y="25" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">app.operations.workspace/dashboard/analytics</text>
+  <rect x="650" y="9" width="132" height="24" rx="4" fill="#0b0f17" stroke="#3b82f6" stroke-width="1"/>
+  <text x="662" y="25" fill="#3b82f6" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">REACT 19 • SPA READY</text>
+
+  <!-- Metric 1 -->
+  <rect x="24" y="60" width="236" height="88" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="40" y="86" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">THROUGHPUT VOLUME</text>
+  <text x="40" y="122" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700">1.84M <tspan font-size="12" fill="#10b981" font-family="'JetBrains Mono', monospace">+14.2%</tspan></text>
+
+  <!-- Metric 2 -->
+  <rect x="282" y="60" width="236" height="88" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="298" y="86" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">CLIENT RENDER BUDGET</text>
+  <text x="298" y="122" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700">11.8ms <tspan font-size="12" fill="#10b981" font-family="'JetBrains Mono', monospace">60 FPS</tspan></text>
+
+  <!-- Metric 3 -->
+  <rect x="540" y="60" width="236" height="88" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="556" y="86" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">ACTIVE CLIENT SESSIONS</text>
+  <text x="556" y="122" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700">8,420 <tspan font-size="12" fill="#3b82f6" font-family="'JetBrains Mono', monospace">STABLE</tspan></text>
+
+  <!-- Chart Panel -->
+  <rect x="24" y="166" width="752" height="190" rx="8" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+  <text x="44" y="196" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600">Real-time Telemetry &amp; State Flux</text>
+  <text x="630" y="196" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">POLLING: 1000ms</text>
+
+  <!-- Grid lines -->
+  <line x1="44" y1="220" x2="756" y2="220" stroke="#1e293b" stroke-dasharray="4,4"/>
+  <line x1="44" y1="260" x2="756" y2="260" stroke="#1e293b" stroke-dasharray="4,4"/>
+  <line x1="44" y1="300" x2="756" y2="300" stroke="#1e293b" stroke-dasharray="4,4"/>
+
+  <!-- Chart Line -->
+  <path d="M 44 290 Q 140 280, 220 240 T 380 250 T 520 210 T 660 220 T 756 190" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <path d="M 44 310 Q 140 300, 220 270 T 380 280 T 520 250 T 660 260 T 756 230" fill="none" stroke="#10b981" stroke-width="2" stroke-opacity="0.8"/>
+
+  <!-- Chart Nodes -->
+  <circle cx="520" cy="210" r="4.5" fill="#3b82f6" stroke="#f8fafc" stroke-width="2"/>
+  <circle cx="756" cy="190" r="4.5" fill="#3b82f6" stroke="#f8fafc" stroke-width="2"/>
+
+  <!-- Data Table Panel -->
+  <rect x="24" y="374" width="752" height="106" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <!-- Table row 1 -->
+  <text x="44" y="405" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">SVC_TELEMETRY_MAIN</text>
+  <text x="260" y="405" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">WebSocket / SSE Dual Sync</text>
+  <rect x="520" y="392" width="80" height="20" rx="4" fill="#10b981" fill-opacity="0.2"/>
+  <text x="532" y="406" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">SYNCHRONIZED</text>
+  <text x="670" y="405" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">LATENCY 4ms</text>
+  <line x1="24" y1="424" x2="776" y2="424" stroke="#1e293b" stroke-width="1"/>
+  <!-- Table row 2 -->
+  <text x="44" y="455" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">AUTH_SESSION_CLUSTER</text>
+  <text x="260" y="455" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">Multi-Tenant JWT Isolation</text>
+  <rect x="520" y="442" width="80" height="20" rx="4" fill="#3b82f6" fill-opacity="0.2"/>
+  <text x="546" y="456" fill="#3b82f6" font-family="'JetBrains Mono', monospace" font-size="10">ACTIVE</text>
+  <text x="670" y="455" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">UPTIME 99.98%</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lar-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <!-- Window Base -->
+  <rect width="800" height="500" rx="12" fill="url(#lar-bg)" stroke="#1e293b" stroke-width="2"/>
+  <!-- Titlebar -->
+  <rect width="800" height="42" rx="12" fill="#1e293b"/>
+  <rect y="30" width="800" height="12" fill="#1e293b"/>
+  <!-- Window controls -->
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <!-- Address bar -->
+  <rect x="90" y="9" width="460" height="24" rx="4" fill="#0b0f17" stroke="#334155" stroke-width="1"/>
+  <text x="105" y="25" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">api.internal.network/v1/telemetry/pipeline</text>
+  <!-- Status pill in titlebar -->
+  <rect x="670" y="9" width="112" height="24" rx="4" fill="#0b0f17" stroke="#10b981" stroke-width="1"/>
+  <circle cx="682" cy="21" r="3.5" fill="#10b981"/>
+  <text x="694" y="25" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">200 OK • 34ms</text>
+
+  <!-- Left Sidebar (Routes & Schema) -->
+  <rect x="20" y="60" width="220" height="420" rx="8" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+  <text x="36" y="88" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">LARAVEL ROUTE REGISTRY</text>
+
+  <!-- Endpoint 1 -->
+  <rect x="30" y="104" width="200" height="40" rx="6" fill="#1e293b"/>
+  <rect x="36" y="114" width="40" height="20" rx="3" fill="#3b82f6"/>
+  <text x="44" y="128" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">GET</text>
+  <text x="82" y="128" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">/projects/metrics</text>
+
+  <!-- Endpoint 2 -->
+  <rect x="30" y="152" width="200" height="40" rx="6" fill="transparent"/>
+  <rect x="36" y="162" width="48" height="20" rx="3" fill="#10b981"/>
+  <text x="42" y="176" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">POST</text>
+  <text x="90" y="176" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">/auth/multi-role</text>
+
+  <!-- Endpoint 3 -->
+  <rect x="30" y="200" width="200" height="40" rx="6" fill="transparent"/>
+  <rect x="36" y="210" width="42" height="20" rx="3" fill="#8b5cf6"/>
+  <text x="44" y="224" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">PUT</text>
+  <text x="84" y="224" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">/inventory/sync</text>
+
+  <!-- Schema Box -->
+  <text x="36" y="280" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">DATABASE SCHEMAS</text>
+  <rect x="30" y="295" width="200" height="85" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="42" y="318" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">→ users (id, role_uuid)</text>
+  <text x="42" y="338" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">→ contracts (val, date)</text>
+  <text x="42" y="358" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">→ telemetry (lat, stat)</text>
+
+  <!-- Right Pane: Telemetry & Payload -->
+  <rect x="256" y="60" width="524" height="420" rx="8" fill="#0b0f17" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Code header -->
+  <text x="276" y="88" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">RESPONSE JSON PAYLOAD (OPTIMIZED QUERY: 1.2ms)</text>
+  <line x1="256" y1="100" x2="780" y2="100" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Code Body -->
+  <text x="276" y="126" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">{</text>
+  <text x="296" y="148" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"status": <tspan fill="#10b981">"operational"</tspan>,</text>
+  <text x="296" y="170" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"service": <tspan fill="#38bdf8">"Enterprise Resource Engine"</tspan>,</text>
+  <text x="296" y="192" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"architecture": {</text>
+  <text x="316" y="214" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"framework": <tspan fill="#f43f5e">"Laravel 11 LTS"</tspan>,</text>
+  <text x="316" y="236" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"database": <tspan fill="#f59e0b">"PostgreSQL + Redis Cache"</tspan>,</text>
+  <text x="316" y="258" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"throughput": <tspan fill="#10b981">"4,200 req/sec"</tspan>,</text>
+  <text x="316" y="280" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"auth_strategy": <tspan fill="#38bdf8">"Sanctum JWT + Policy Gates"</tspan></text>
+  <text x="296" y="302" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">},</text>
+  <text x="296" y="324" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"metrics": {</text>
+  <text x="316" y="346" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"active_nodes": <tspan fill="#3b82f6">16</tspan>,</text>
+  <text x="316" y="368" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"p99_latency_ms": <tspan fill="#3b82f6">38.4</tspan>,</text>
+  <text x="316" y="390" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">"cache_hit_rate": <tspan fill="#10b981">"99.4%"</tspan></text>
+  <text x="296" y="412" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="12">}</text>
+  <text x="276" y="434" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">}</text>
+
+  <!-- Execution badge -->
+  <rect x="630" y="436" width="134" height="26" rx="4" fill="#1e293b"/>
+  <text x="642" y="453" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">PHP 8.3 • JIT ACTIVE</text>
+</svg>

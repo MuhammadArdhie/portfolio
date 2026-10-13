@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Container canvas -->
+  <rect width="800" height="500" rx="12" fill="#0b0f17" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Left context info -->
+  <text x="50" y="80" fill="#3b82f6" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">ANDROID KOTLIN NATIVE CLIENT</text>
+  <text x="50" y="115" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="700">Offline-First Field Logistics</text>
+  <text x="50" y="145" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="14">Engineered with Jetpack Compose, Kotlin Coroutines,</text>
+  <text x="50" y="168" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="14">StateFlow, and Room SQLite local replication.</text>
+
+  <rect x="50" y="200" width="300" height="70" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="66" y="226" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">SYNCHRONIZATION RESILIENCE</text>
+  <text x="66" y="254" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600">Zero-Data-Loss Guaranteed</text>
+
+  <rect x="50" y="290" width="300" height="150" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="66" y="316" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">ARCHITECTURE METRICS</text>
+  <text x="66" y="342" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">• Clean MVVM + Repository Pattern</text>
+  <text x="66" y="368" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">• WorkManager Background Polling</text>
+  <text x="66" y="394" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="12">• Retrofit2 + OkHttp Interceptors</text>
+  <text x="66" y="420" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="12">• Startup Cold Launch: 310ms</text>
+
+  <!-- Mobile Device Phone Frame on Right (x=450 to 730) -->
+  <g transform="translate(460, 20)">
+    <!-- Device Outer Body -->
+    <rect width="260" height="460" rx="36" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <!-- Device Screen Canvas -->
+    <rect x="10" y="10" width="240" height="440" rx="28" fill="#0b0f17"/>
+
+    <!-- Camera Hole -->
+    <circle cx="120" cy="24" r="5" fill="#1e293b"/>
+
+    <!-- Status Bar -->
+    <text x="26" y="27" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">20:54</text>
+    <text x="180" y="27" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">5G • 98%</text>
+
+    <!-- App Top Bar -->
+    <rect x="10" y="40" width="240" height="44" fill="#111827"/>
+    <text x="24" y="66" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700">Ardhicon Mobile</text>
+    <rect x="160" y="52" width="76" height="20" rx="10" fill="#10b981" fill-opacity="0.2"/>
+    <circle cx="170" cy="62" r="3" fill="#10b981"/>
+    <text x="178" y="66" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">ONLINE</text>
+
+    <!-- Mobile Card 1: Dispatch Item -->
+    <rect x="22" y="98" width="216" height="110" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+    <text x="34" y="120" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">ACTIVE TASK #LOG-409</text>
+    <text x="34" y="142" fill="#f8fafc" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600">Material Dispatch Check</text>
+    <text x="34" y="162" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">Site: Bandung Outer Ring</text>
+    <rect x="34" y="176" width="192" height="20" rx="4" fill="#3b82f6"/>
+    <text x="80" y="190" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600">Submit Verification</text>
+
+    <!-- Mobile Card 2: Local Cache Telemetry -->
+    <rect x="22" y="222" width="216" height="120" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="34" y="244" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">SQLITE QUEUE DISK</text>
+    <text x="34" y="268" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">Pending Batches: 0 (Synced)</text>
+    <text x="34" y="290" fill="#f8fafc" font-family="'JetBrains Mono', monospace" font-size="11">GPS Latency: 12ms</text>
+    <text x="34" y="312" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11">Network: LTE 85Mbps</text>
+    <text x="34" y="332" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">Biometric Auth: OK</text>
+
+    <!-- Bottom Navigation Bar -->
+    <rect x="10" y="396" width="240" height="54" fill="#111827"/>
+    <line x1="10" y1="396" x2="250" y2="396" stroke="#1e293b" stroke-width="1"/>
+    <!-- Icon 1: Active -->
+    <circle cx="50" cy="418" r="10" fill="#3b82f6" fill-opacity="0.2"/>
+    <rect x="46" y="414" width="8" height="8" rx="2" fill="#3b82f6"/>
+    <!-- Icon 2 -->
+    <circle cx="120" cy="418" r="4" fill="#64748b"/>
+    <!-- Icon 3 -->
+    <circle cx="190" cy="418" r="4" fill="#64748b"/>
+  </g>
+</svg>
