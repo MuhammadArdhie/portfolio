@@ -1,590 +1,604 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Ardhie — Meja Kerja &amp; Scrapbook Engineering</title>
-  <meta name="description" content="Portofolio rekayasa perangkat lunak Muhammad Ardhie. Spesialisasi Laravel, React JS, Android Kotlin, dan Figma Design Systems.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio Ardhie — Meja Kerja &amp; Rekayasa Sistem</title>
+  <meta name="description"
+    content="Portofolio software engineer Muhammad Ardhie. Spesialisasi Android Native, React JS, dan Laravel Systems.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Caveat:wght@500;700&family=Special+Elite&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: #F0F6F1;
+      font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #1E5B4D;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .07) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, .15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .15) 1px, transparent 1px);
+      background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #14211C;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #FFE45C;
+      outline-offset: 3px;
+    }
+
+    a.nav:hover {
+      background: #FFE45C;
+      color: #14211C;
+    }
+
+    a.btn-main:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #14211C;
+    }
+
+    a.btn-alt:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .pin {
+      transform: rotate(var(--r, 0deg));
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .pin:hover {
+      transform: rotate(0deg) scale(1.025);
+      z-index: 9;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .pin,
+      a.btn-main {
+        transition: none;
+      }
+
+      .pin:hover {
+        transform: rotate(var(--r, 0deg));
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Meja potong (cutting mat) hijau, kertas dan foto ditempel di atasnya -->
+  <div
+    style="width:100%; box-sizing:border-box; min-height:100vh; padding:0 clamp(16px,4vw,56px) 56px; background-color:#1E5B4D; background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px); background-size:24px 24px,24px 24px,120px 120px,120px 120px; color:#F0F6F1; font-family:'Bricolage Grotesque','Segoe UI',sans-serif; overflow-x:hidden"
+    data-canvas-width="1360" data-canvas-height="3350" data-document-role="page" data-label="Landing portfolio">
+    <div style="max-width:1200px; margin:0 auto; display:flex; flex-direction:column">
 
-  <!-- ========================================================================
-       NAVBAR (TAPE & DYMO LABEL HEADER)
-       ======================================================================== -->
-  <header class="site-header">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a href="index.html" class="brand-dymo" aria-label="Muhammad Ardhie Beranda">
-          <span>Ardhie · Portofolio</span>
-        </a>
+      <!-- NAV -->
+      <nav aria-label="Navigasi utama"
+        style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding-block:28px">
+        <div
+          style="background:#14211C; color:#FFFFFF; font-family:'Special Elite','Courier New',monospace; font-size:16px; letter-spacing:.14em; text-transform:uppercase; padding:8px 16px; transform:rotate(-1.5deg); box-shadow:0 4px 10px rgba(0,0,0,.35)">
+          Ardhie · Portofolio</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px">
+          <a class="nav" href="#android"
+            style="display:inline-flex; align-items:center; min-height:44px; padding:0 16px; box-sizing:border-box; font-family:'Special Elite','Courier New',monospace; font-size:15px; color:#F0F6F1; text-decoration:none; border:1.5px dashed #8FB8A6">Android</a>
+          <a class="nav" href="#react"
+            style="display:inline-flex; align-items:center; min-height:44px; padding:0 16px; box-sizing:border-box; font-family:'Special Elite','Courier New',monospace; font-size:15px; color:#F0F6F1; text-decoration:none; border:1.5px dashed #8FB8A6">React
+            &amp; Node</a>
+          <a class="nav" href="#laravel"
+            style="display:inline-flex; align-items:center; min-height:44px; padding:0 16px; box-sizing:border-box; font-family:'Special Elite','Courier New',monospace; font-size:15px; color:#F0F6F1; text-decoration:none; border:1.5px dashed #8FB8A6">Laravel</a>
+          <a class="nav" href="#kontak"
+            style="display:inline-flex; align-items:center; min-height:44px; padding:0 16px; box-sizing:border-box; font-family:'Special Elite','Courier New',monospace; font-size:15px; color:#F0F6F1; text-decoration:none; border:1.5px dashed #8FB8A6">Kontak</a>
+        </div>
+      </nav>
 
-        <nav aria-label="Navigasi Utama">
-          <ul class="nav-links">
-            <li><a href="#laravel" class="nav-link">Laravel</a></li>
-            <li><a href="#react" class="nav-link">React JS</a></li>
-            <li><a href="#android" class="nav-link">Android</a></li>
-            <li><a href="#figma" class="nav-link">Figma</a></li>
-            <li><a href="works.html" class="nav-link">Semua Arsip</a></li>
-            <li><a href="about.html" class="nav-link">Tentang</a></li>
-            <li><a href="#kontak" class="nav-link">Kontak</a></li>
-          </ul>
-        </nav>
-
-        <div class="nav-actions">
-          <div class="stamp-badge" title="Status ketersediaan aktif">
-            <span class="stamp-dot"></span>
-            <span>ACTIVE ON SITE</span>
+      <!-- HERO -->
+      <header style="display:flex; flex-wrap:wrap; align-items:center; gap:56px; padding-block:40px 80px">
+        <div style="flex:1 1 440px; min-width:0; display:flex; flex-direction:column; gap:24px">
+          <div
+            style="font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:#BFD8CC">
+            Fresh Graduate Sistem Informasi · ITENAS Bandung</div>
+          <h1
+            style="margin:0; font-size:clamp(42px,7vw,84px); line-height:.98; letter-spacing:-.025em; font-weight:800; color:#F0F6F1; text-wrap:balance">
+            Halo! Aku Ardhie, Aku seorang programmer <span
+              style="background:#FFE45C; color:#14211C; padding:0 .14em; box-decoration-break:clone; -webkit-box-decoration-break:clone">mobile
+              sampai web</span>.</h1>
+          <p style="margin:0; max-width:52ch; font-size:19px; line-height:1.6; color:#D5E6DC">Tiga hal yang paling
+            sering kukerjakan: Android, React JS &amp; Node JS, dan Laravel. Setiap proyek kutempel seperti halaman buku catatan.
+            Ambil satu dan lihat lebih dekat.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center">
+            <a class="btn-main" href="#android"
+              style="display:inline-flex; align-items:center; min-height:52px; padding:0 28px; box-sizing:border-box; background:#FFE45C; color:#14211C; font-weight:700; font-size:17px; text-decoration:none; border:2px solid #14211C; box-shadow:5px 5px 0 #14211C; transition:transform .15s ease,box-shadow .15s ease">Lihat
+              project</a>
+            <a class="btn-alt" href="#kontak"
+              style="display:inline-flex; align-items:center; min-height:52px; padding:0 28px; box-sizing:border-box; color:#F0F6F1; font-weight:700; font-size:17px; text-decoration:none; border:2px dashed #BFD8CC">Kontak</a>
           </div>
-
-          <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
-            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- ======================================================================
-         HERO WORKBENCH SPREAD
-         ====================================================================== -->
-    <section class="hero-spread">
-      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-        <div class="hero-text-col">
-          <div class="hero-subhead">Systems &amp; Product Engineer · Bandung, Indonesia</div>
-          <h1 class="hero-title">
-            Aku Ardhie. Aku merancang arsitektur, dari <span class="marker-highlight">backend hingga pixel antarmuka</span>.
-          </h1>
-          <p class="hero-desc">
-            Empat pilar yang kudalami dengan sungguh-sungguh: Laravel, React, Android Kotlin, dan Figma Design Systems. Setiap spesifikasi dan studi kasus di sini kutata layaknya potongan catatan di atas meja potong fisik.
-          </p>
-          <div class="hero-actions">
-            <a href="#laravel" class="btn-scrapbook">
-              <span>Buka Meja Potong</span>
-              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-            </a>
-            <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn-scrapbook-alt">
-              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              <span>GitHub Archive</span>
-            </a>
-          </div>
-          <div class="handwritten-note">
-            empat pilar rekayasa di bawah, scroll saja &darr;
-          </div>
+          <div
+            style="font-family:'Caveat','Comic Sans MS',cursive; font-size:30px; line-height:1; color:#FFE45C; transform:rotate(-2deg); transform-origin:left center">
+            tiga proyek menunggu di bawah, scroll saja</div>
         </div>
 
-        <!-- Scrapbook Hero Collage -->
-        <div class="hero-collage-col">
-          <div class="desk-collage-stack">
-            <!-- Polaroid 1: Laravel -->
-            <div class="pin-item polaroid-card" style="--r: -6deg; left: 2%; top: 4%; width: 44%;">
-              <div class="washi-tape-strip tape-pink" style="--tape-rot: -4deg;"></div>
-              <div class="polaroid-photo-box" style="background: #F0745E;">
-                <img src="assets/mockup-laravel.svg" alt="Laravel Backend Schematics" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="polaroid-caption-tag">laravel</div>
-            </div>
+        <div style="flex:1 1 440px; min-width:0; display:flex; justify-content:center">
+          <div style="container-type:inline-size; position:relative; width:100%; max-width:560px; aspect-ratio:1 / 1">
 
-            <!-- Polaroid 2: React JS -->
-            <div class="pin-item polaroid-card" style="--r: 5deg; left: 52%; top: 2%; width: 44%;">
-              <div class="washi-tape-strip tape-cyan" style="--tape-rot: 3deg;"></div>
-              <div class="polaroid-photo-box" style="background: #7FD0EA;">
-                <img src="assets/mockup-react.svg" alt="React Telemetry Schematics" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="polaroid-caption-tag">react js</div>
-            </div>
-
-            <!-- Kraft Card: Status -->
-            <div class="paper-card-kraft" style="transform: rotate(-8deg); position: absolute; left: 0%; top: 62%; padding: 10px 18px; white-space: nowrap; font-family: var(--font-typewriter); font-size: 0.82rem; text-transform: uppercase;">
-              Full-Stack Systems
-            </div>
-
-            <!-- Polaroid 3: Android Kotlin -->
-            <div class="pin-item polaroid-card" style="--r: -2deg; left: 26%; top: 44%; width: 46%;">
-              <div class="washi-tape-strip tape-amber" style="--tape-rot: -2deg;"></div>
-              <div class="polaroid-photo-box" style="background: #7BD389;">
-                <img src="assets/mockup-android.svg" alt="Android Kotlin Schematics" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div class="polaroid-caption-tag">android kotlin</div>
-            </div>
-
-            <!-- Sticky Note -->
-            <div class="pin-item sticky-note-card" style="--r: 7deg; position: absolute; left: 68%; top: 64%; width: 30%;">
-              4 pilar,<br>zero slop!
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         METRIC LEDGER (ENGINEER'S DESK RULER STRIP)
-         ====================================================================== -->
-    <div class="container">
-      <div class="desk-metric-strip">
-        <div class="metric-cell">
-          <span class="metric-val">4 Pilar</span>
-          <span class="metric-desc">Laravel · React · Kotlin · Figma</span>
-        </div>
-        <div class="metric-cell">
-          <span class="metric-val">&lt;40ms</span>
-          <span class="metric-desc">Target latensi kueri database &amp; Redis cache</span>
-        </div>
-        <div class="metric-cell">
-          <span class="metric-val">100%</span>
-          <span class="metric-desc">Murni statis zero-framework di GitHub Pages</span>
-        </div>
-        <div class="metric-cell">
-          <span class="metric-val">AAA</span>
-          <span class="metric-desc">Kontras warna &amp; aksesibilitas terverifikasi</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================================
-         PLATE 01: LARAVEL BACKEND SYSTEMS
-         ====================================================================== -->
-    <section id="laravel" class="project-scrap-section">
-      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-        <!-- Visual Column (Code Terminal & Notes) -->
-        <div class="scrap-col-visual">
-          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
-            <!-- Background Kraft Backing -->
-            <div aria-hidden="true" style="transform: rotate(2deg); position: absolute; inset: 4%; width: 92%; height: 92%; background-color: var(--paper-kraft); background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px); box-shadow: var(--shadow-paper);"></div>
-
-            <!-- Terminal Card: routes/api.php -->
-            <div class="pin-item code-terminal-card" style="--r: -2deg; position: absolute; left: 4%; top: 10%; width: 88%;">
-              <div class="terminal-header">
-                <div class="terminal-dot" style="background: #F6B7A8;"></div>
-                <div class="terminal-dot" style="background: #FFE45C;"></div>
-                <div class="terminal-dot" style="background: #BFE8C8;"></div>
-                <span class="terminal-title">routes/api.php</span>
-              </div>
-              <pre class="terminal-content"><span style="color: #FF9A86;">Route</span>::middleware([<span style="color: #FFE45C;">'cache.aside:60s'</span>])-&gt;group(<span style="color: #B3401A;">function</span> () {
-    <span style="color: #FF9A86;">Route</span>::get(<span style="color: #FFE45C;">'/telemetry/realtime'</span>,
-        [<span style="color: #9BE0AE;">TelemetryController</span>::class, <span style="color: #FFE45C;">'stream'</span>]);
-});</pre>
-            </div>
-
-            <!-- Tape on Terminal -->
-            <div class="washi-tape-strip tape-amber" style="top: 5%; left: 72%; --tape-rot: 18deg;"></div>
-
-            <!-- Controller Scrap Paper -->
-            <div class="pin-item paper-card-grid" style="--r: 2.5deg; position: absolute; left: 30%; top: 48%; width: 66%; padding: 18px 20px;">
-              <div style="background: var(--dymo-black); color: #FFFFFF; font-family: var(--font-typewriter); font-size: 0.8rem; letter-spacing: 0.04em; padding: 4px 10px; display: inline-block; margin-bottom: 8px;">
-                TelemetryController.php
-              </div>
-              <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.5; color: var(--text-dark); white-space: pre-wrap;"><span style="color: #B3401A;">public function</span> stream(<span style="color: #0369a1;">TelemetryService</span> $svc) {
-    <span style="color: #B3401A;">return</span> response()-&gt;json(
-        $svc-&gt;getOptimizedMetrics()
-    );
-}</pre>
-            </div>
-
-            <!-- Sticky Note -->
-            <div class="pin-item sticky-note-card" style="--r: -6deg; position: absolute; left: 2%; top: 62%; width: 34%;">
-              route &rarr; controller &rarr; redis &lt;40ms
-            </div>
-          </div>
-        </div>
-
-        <!-- Text Column -->
-        <div class="scrap-col-text">
-          <div class="pin-item paper-card-grid" style="--r: 0.6deg;">
-            <div class="washi-tape-strip tape-amber" style="--tape-rot: 2deg;"></div>
-            <div class="dymo-badge" style="--rot: -1.5deg; align-self: flex-start;">Laravel Engine</div>
-            <h2 class="section-title">
-              Sistem di <span class="marker-underline">balik layar</span>
-            </h2>
-            <div class="section-project-meta">
-              High-Throughput Relational API · [2026 Production Spec]
-            </div>
-            <p class="section-body-text">
-              Perancangan REST API terstruktur dengan optimasi database PostgreSQL/MySQL, compound index B-Tree, dan pola cache-aside Redis. Menghindari bottleneck N+1 query dan menjaga integritas relasional data agar siap menangani lonjakan beban produksi.
-            </p>
-            <div class="tag-cloud">
-              <span class="craft-tag" style="--rot: -1.5deg;">Laravel 11</span>
-              <span class="craft-tag" style="--rot: 1deg;">Redis Cache</span>
-              <span class="craft-tag dashed" style="--rot: -0.5deg;">PostgreSQL</span>
-              <span class="craft-tag" style="--rot: 1.5deg;">B-Tree Indexing</span>
-            </div>
-            <div style="margin-top: 8px;">
-              <a href="https://github.com/Ardhie1212/backendportfolio" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
-                <span>Periksa Kode Repo</span>
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         PLATE 02: REACT REACTIVE TELEMETRY
-         ====================================================================== -->
-    <section id="react" class="project-scrap-section">
-      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-        <!-- Text Column -->
-        <div class="scrap-col-text">
-          <div class="pin-item paper-card-grid" style="--r: -0.6deg;">
-            <div class="washi-tape-strip tape-cyan" style="--tape-rot: -2deg;"></div>
-            <div class="dymo-badge" style="--rot: 1.5deg; align-self: flex-start;">React JS</div>
-            <h2 class="section-title">
-              Web yang <span class="marker-underline">bergerak presisi</span>
-            </h2>
-            <div class="section-project-meta">
-              Reactive State Telemetry · [2026 Component Architecture]
-            </div>
-            <p class="section-body-text">
-              Antarmuka web yang dibangun dari komponen terisolasi dengan mutasi UI optimistik untuk dashboard telemetry bervolume tinggi. Membatasi re-render ke boundary spesifik sehingga rendering grafik data tetap responsif di 60 FPS tanpa jank.
-            </p>
-            <div class="tag-cloud">
-              <span class="craft-tag" style="--rot: 1.5deg;">React 18</span>
-              <span class="craft-tag" style="--rot: -1deg;">TypeScript</span>
-              <span class="craft-tag dashed" style="--rot: 0.5deg;">Optimistic UI</span>
-              <span class="craft-tag" style="--rot: -1.5deg;">State Boundary</span>
-            </div>
-            <div style="margin-top: 8px;">
-              <a href="https://github.com/Ardhie1212/belajar-reactjs-dasar-main" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
-                <span>Periksa Kode Repo</span>
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Visual Column (Browser Window & React Component) -->
-        <div class="scrap-col-visual">
-          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
-            <!-- Blueprint Paper Base -->
-            <div aria-hidden="true" style="transform: rotate(-2deg); position: absolute; inset: 5%; background-color: #DDEAF3; background-image: linear-gradient(rgba(40,100,150,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(40,100,150,0.2) 1px, transparent 1px); background-size: 20px 20px; box-shadow: var(--shadow-paper);"></div>
-
-            <!-- Browser Window Card -->
-            <div style="transform: rotate(1.5deg); position: absolute; left: 8%; top: 12%; width: 84%; background: #FFFFFF; border: 2px solid var(--dymo-black); box-shadow: var(--shadow-paper);">
-              <div style="height: 34px; background: var(--dymo-black); display: flex; align-items: center; gap: 8px; padding-inline: 12px;">
-                <div style="width: 9px; height: 9px; border-radius: 50%; background: #F6B7A8;"></div>
-                <div style="width: 9px; height: 9px; border-radius: 50%; background: #FFE45C;"></div>
-                <div style="width: 9px; height: 9px; border-radius: 50%; background: #BFE8C8;"></div>
-                <div style="margin-left: 12px; height: 16px; flex: 1; background: #2C3B35; border-radius: 8px;"></div>
-              </div>
-              <div style="padding: 18px; display: flex; gap: 14px;">
-                <div style="width: 22%; display: flex; flex-direction: column; gap: 8px;">
-                  <div style="height: 12px; background: var(--dymo-black);"></div>
-                  <div style="height: 10px; background: #9AA8A1;"></div>
-                  <div style="height: 10px; background: #9AA8A1;"></div>
+            <!-- polaroid: android -->
+            <div class="pin"
+              style="--r:-6deg; position:absolute; left:2%; top:4%; width:42%; box-sizing:border-box; padding:3cqw 3cqw 0; background:#FBFBF7; box-shadow:0 1px 1px rgba(0,0,0,.25),0 10px 22px rgba(0,0,0,.32)">
+              <div style="position:relative; aspect-ratio:1 / 1; background:#7BD389; overflow:hidden">
+                <div
+                  style="position:absolute; left:28%; top:10%; width:44%; height:92%; box-sizing:border-box; padding:.8cqw; background:#14211C; border-radius:2.4cqw">
+                  <div
+                    style="width:100%; height:100%; box-sizing:border-box; padding:1.4cqw; background:#F2F4EE; border-radius:1.8cqw; display:flex; flex-direction:column; gap:.9cqw">
+                    <div style="height:1.4cqw; width:60%; background:#14211C; border-radius:1cqw"></div>
+                    <div style="height:3.6cqw; background:#BFE8C8; border-radius:.6cqw"></div>
+                    <div style="height:3.6cqw; background:#FFE45C; border-radius:.6cqw"></div>
+                    <div style="height:3.6cqw; background:#F6B7A8; border-radius:.6cqw"></div>
+                  </div>
                 </div>
-                <div style="flex: 1; display: flex; flex-direction: column; gap: 12px;">
-                  <div style="height: 16px; width: 50%; background: var(--dymo-black);"></div>
-                  <div style="display: flex; gap: 10px; height: 48px;">
-                    <div style="flex: 1; background: var(--marker-yellow);"></div>
-                    <div style="flex: 1; background: #7FD0EA;"></div>
-                    <div style="flex: 1; background: #F6B7A8;"></div>
+              </div>
+              <div
+                style="height:9.5cqw; display:flex; align-items:center; justify-content:center; font-family:'Caveat','Comic Sans MS',cursive; font-size:5.4cqw; color:#14211C">
+                android</div>
+              <div
+                style="position:absolute; top:-2cqw; left:50%; margin-left:-6cqw; width:12cqw; height:4.4cqw; transform:rotate(-4deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,139,168,.9); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+              </div>
+            </div>
+
+            <!-- polaroid: react -->
+            <div class="pin"
+              style="--r:5deg; position:absolute; left:52%; top:2%; width:44%; box-sizing:border-box; padding:3cqw 3cqw 0; background:#FBFBF7; box-shadow:0 1px 1px rgba(0,0,0,.25),0 10px 22px rgba(0,0,0,.32)">
+              <div style="position:relative; aspect-ratio:1 / 1; background:#7FD0EA; overflow:hidden">
+                <div
+                  style="position:absolute; left:8%; top:16%; width:84%; height:70%; box-sizing:border-box; background:#FFFFFF; border:.5cqw solid #14211C; display:flex; flex-direction:column">
+                  <div
+                    style="height:3.2cqw; background:#14211C; display:flex; align-items:center; gap:.8cqw; padding-left:1.2cqw">
+                    <div style="width:.9cqw; height:.9cqw; border-radius:50%; background:#F6B7A8"></div>
+                    <div style="width:.9cqw; height:.9cqw; border-radius:50%; background:#FFE45C"></div>
+                    <div style="width:.9cqw; height:.9cqw; border-radius:50%; background:#BFE8C8"></div>
+                  </div>
+                  <div style="flex:1; display:flex; gap:1cqw; padding:1.4cqw">
+                    <div style="width:22%; display:flex; flex-direction:column; gap:.8cqw">
+                      <div style="height:1.1cqw; background:#14211C"></div>
+                      <div style="height:1.1cqw; background:#9AA8A1"></div>
+                      <div style="height:1.1cqw; background:#9AA8A1"></div>
+                    </div>
+                    <div style="flex:1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1cqw">
+                      <div style="background:#FFE45C"></div>
+                      <div style="background:#7FD0EA"></div>
+                      <div style="background:#F6B7A8"></div>
+                      <div style="background:#BFE8C8"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="height:9.5cqw; display:flex; align-items:center; justify-content:center; font-family:'Caveat','Comic Sans MS',cursive; font-size:5.4cqw; color:#14211C">
+                react &amp; node</div>
+              <div
+                style="position:absolute; top:-2cqw; left:50%; margin-left:-6cqw; width:12cqw; height:4.4cqw; transform:rotate(3deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(124,195,232,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+              </div>
+            </div>
+
+            <!-- kertas kraft: jurusan -->
+            <div class="pin"
+              style="--r:-8deg; position:absolute; left:1%; top:63%; width:21%; box-sizing:border-box; padding:2.4cqw; background:#C9A06B; background-image:repeating-linear-gradient(0deg,rgba(120,80,30,.09) 0 1px,transparent 1px 3px); color:#14211C; font-family:'Special Elite','Courier New',monospace; font-size:2.7cqw; line-height:1.3; letter-spacing:.06em; text-transform:uppercase; box-shadow:0 1px 1px rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.3); clip-path:polygon(0 0,100% 0,100% 92%,92% 100%,80% 94%,66% 100%,50% 95%,36% 100%,20% 94%,8% 100%,0 93%)">
+              Sistem Informasi</div>
+
+            <!-- polaroid: laravel -->
+            <div class="pin"
+              style="--r:-2deg; position:absolute; left:24%; top:44%; width:46%; box-sizing:border-box; padding:3cqw 3cqw 0; background:#FBFBF7; box-shadow:0 1px 1px rgba(0,0,0,.25),0 10px 22px rgba(0,0,0,.32)">
+              <div style="position:relative; aspect-ratio:1 / 1; background:#F0745E; overflow:hidden">
+                <div
+                  style="position:absolute; left:8%; top:16%; width:84%; height:70%; box-sizing:border-box; background:#14211C; display:flex; flex-direction:column">
+                  <div
+                    style="height:3.2cqw; background:#2C3B35; display:flex; align-items:center; gap:.8cqw; padding-left:1.2cqw">
+                    <div style="width:.9cqw; height:.9cqw; border-radius:50%; background:#F6B7A8"></div>
+                    <div style="width:.9cqw; height:.9cqw; border-radius:50%; background:#FFE45C"></div>
+                    <div style="width:.9cqw; height:.9cqw; border-radius:50%; background:#BFE8C8"></div>
+                  </div>
+                  <div style="flex:1; display:flex; flex-direction:column; gap:1cqw; padding:1.6cqw">
+                    <div style="height:1.1cqw; width:70%; background:#F0745E"></div>
+                    <div style="height:1.1cqw; width:46%; background:#BFE8C8; margin-left:2cqw"></div>
+                    <div style="height:1.1cqw; width:58%; background:#FFE45C; margin-left:2cqw"></div>
+                    <div style="height:1.1cqw; width:24%; background:#9AA8A1"></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="height:9.5cqw; display:flex; align-items:center; justify-content:center; font-family:'Caveat','Comic Sans MS',cursive; font-size:5.4cqw; color:#14211C">
+                laravel</div>
+              <div
+                style="position:absolute; top:-2cqw; left:50%; margin-left:-6cqw; width:12cqw; height:4.4cqw; transform:rotate(-2deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(244,211,94,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+              </div>
+            </div>
+
+            <!-- sticky note -->
+            <div class="pin"
+              style="--r:7deg; position:absolute; left:68%; top:66%; width:27%; aspect-ratio:1 / 1; box-sizing:border-box; padding:2.6cqw; background:#FFE066; box-shadow:0 1px 1px rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.3); font-family:'Caveat','Comic Sans MS',cursive; font-size:6cqw; line-height:1.05; color:#14211C; font-weight:700">
+              3 stack,<br>3 cerita</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ANDROID: gambar kiri, teks kanan -->
+      <section id="android"
+        style="display:flex; flex-wrap:wrap; align-items:center; gap:56px; padding-block:56px; scroll-margin-top:16px">
+        <div style="flex:1 1 440px; min-width:0; display:flex; justify-content:center">
+          <div style="container-type:inline-size; position:relative; width:100%; max-width:560px; aspect-ratio:1 / 1">
+            <div
+              style="position:absolute; left:4%; top:4%; width:92%; height:92%; transform:rotate(3deg); background:#C9A06B; background-image:repeating-linear-gradient(0deg,rgba(120,80,30,.09) 0 1px,transparent 1px 3px); box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35)">
+            </div>
+            <div
+              style="position:absolute; top:1%; left:12%; width:14cqw; height:5cqw; transform:rotate(-30deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(244,211,94,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+            </div>
+
+            <!-- sketsa wireframe -->
+            <div class="pin"
+              style="--r:-6deg; position:absolute; left:8%; top:15%; width:32%; height:42%; box-sizing:border-box; padding:2.4cqw; background-color:#F2F4EE; background-image:linear-gradient(rgba(60,110,150,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(60,110,150,.16) 1px,transparent 1px); background-size:3.4cqw 3.4cqw; box-shadow:0 1px 1px rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.28)">
+              <div
+                style="width:100%; height:78%; box-sizing:border-box; border:.5cqw dashed #14211C; border-radius:2cqw; padding:2cqw; display:flex; flex-direction:column; gap:1.6cqw">
+                <div style="height:2cqw; width:50%; border:.4cqw dashed #14211C"></div>
+                <div style="height:4cqw; border:.4cqw dashed #14211C"></div>
+                <div style="height:4cqw; border:.4cqw dashed #14211C"></div>
+              </div>
+              <div
+                style="font-family:'Caveat','Comic Sans MS',cursive; font-size:5cqw; color:#14211C; text-align:center; padding-top:1cqw">
+                sketsa</div>
+            </div>
+
+            <!-- ponsel -->
+            <div class="pin"
+              style="--r:2deg; position:absolute; left:38%; top:7%; width:38%; height:85%; box-sizing:border-box; padding:1.2cqw; background:#14211C; border-radius:5cqw; box-shadow:0 14px 30px rgba(0,0,0,.4)">
+              <div
+                style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:3cqw 2.6cqw 2.4cqw; background:#F2F4EE; border-radius:3.9cqw; display:flex; flex-direction:column; gap:2cqw; overflow:hidden">
+                <div style="align-self:center; width:8cqw; height:1.5cqw; border-radius:1cqw; background:#14211C"></div>
+                <div style="font-size:3.6cqw; font-weight:800; color:#14211C; line-height:1">Beranda</div>
+                <div
+                  style="display:flex; align-items:center; gap:1.6cqw; padding:1.8cqw; background:#D8F0DD; border-radius:1.2cqw">
+                  <div style="width:6cqw; height:6cqw; background:#3FA66B; border-radius:1cqw"></div>
+                  <div style="flex:1; display:flex; flex-direction:column; gap:1cqw">
+                    <div style="height:1.3cqw; width:80%; background:#14211C"></div>
+                    <div style="height:1.1cqw; width:55%; background:#7C8A83"></div>
+                  </div>
+                </div>
+                <div
+                  style="display:flex; align-items:center; gap:1.6cqw; padding:1.8cqw; background:#FFF1A8; border-radius:1.2cqw">
+                  <div style="width:6cqw; height:6cqw; background:#E0B400; border-radius:1cqw"></div>
+                  <div style="flex:1; display:flex; flex-direction:column; gap:1cqw">
+                    <div style="height:1.3cqw; width:70%; background:#14211C"></div>
+                    <div style="height:1.1cqw; width:60%; background:#7C8A83"></div>
+                  </div>
+                </div>
+                <div
+                  style="display:flex; align-items:center; gap:1.6cqw; padding:1.8cqw; background:#FAD3C8; border-radius:1.2cqw">
+                  <div style="width:6cqw; height:6cqw; background:#E4452F; border-radius:1cqw"></div>
+                  <div style="flex:1; display:flex; flex-direction:column; gap:1cqw">
+                    <div style="height:1.3cqw; width:76%; background:#14211C"></div>
+                    <div style="height:1.1cqw; width:48%; background:#7C8A83"></div>
+                  </div>
+                </div>
+                <div style="flex:1"></div>
+                <div
+                  style="position:absolute; right:2.6cqw; bottom:9cqw; width:8cqw; height:8cqw; border-radius:50%; background:#14211C; box-shadow:0 3px 6px rgba(0,0,0,.3)">
+                  <div
+                    style="position:absolute; left:50%; top:50%; width:3.4cqw; height:.7cqw; margin:-.35cqw 0 0 -1.7cqw; background:#FFE45C">
+                  </div>
+                  <div
+                    style="position:absolute; left:50%; top:50%; width:.7cqw; height:3.4cqw; margin:-1.7cqw 0 0 -.35cqw; background:#FFE45C">
+                  </div>
+                </div>
+                <div
+                  style="display:flex; justify-content:space-around; padding-top:1.6cqw; border-top:.3cqw solid #C9D1CC">
+                  <div style="width:3.2cqw; height:3.2cqw; border-radius:50%; background:#14211C"></div>
+                  <div style="width:3.2cqw; height:3.2cqw; border-radius:50%; background:#B7C2BC"></div>
+                  <div style="width:3.2cqw; height:3.2cqw; border-radius:50%; background:#B7C2BC"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pin"
+              style="--r:6deg; position:absolute; left:68%; top:64%; width:26%; aspect-ratio:1 / 1; box-sizing:border-box; padding:2.4cqw; background:#FFE066; box-shadow:0 1px 1px rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.3); font-family:'Caveat','Comic Sans MS',cursive; font-size:5.2cqw; line-height:1.05; color:#14211C; font-weight:700">
+              sketsa dulu, kode kemudian</div>
+          </div>
+        </div>
+
+        <div class="pin"
+          style="--r:.6deg; position:relative; flex:1 1 420px; min-width:0; box-sizing:border-box; padding:clamp(24px,4vw,44px); background-color:#F2F4EE; background-image:linear-gradient(rgba(60,110,150,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(60,110,150,.14) 1px,transparent 1px); background-size:22px 22px; color:#14211C; box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35); display:flex; flex-direction:column; gap:18px">
+          <div
+            style="position:absolute; top:-14px; left:50%; margin-left:-52px; width:104px; height:28px; transform:rotate(2deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,139,168,.9); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+          </div>
+          <div
+            style="align-self:flex-start; background:#14211C; color:#FFFFFF; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.16em; text-transform:uppercase; padding:6px 14px; transform:rotate(-1.5deg)">
+            Android</div>
+          <h2
+            style="margin:0; font-size:clamp(34px,5vw,54px); line-height:1; letter-spacing:-.02em; font-weight:800; text-wrap:balance">
+            Aplikasi di <span style="background:linear-gradient(transparent 60%,#FFE45C 60%)">genggaman</span></h2>
+          <div style="font-family:'Special Elite','Courier New',monospace; font-size:16px; color:#3E4E47">NourishPath ·
+            2024</div>
+          <p style="margin:0; max-width:52ch; font-size:18px; line-height:1.6">Aplikasi mobile native Android untuk
+            pemantauan nutrisi dan pola makan sehat harian. Dirancang dengan pola arsitektur MVVM dari sketsa alur
+            hingga antarmuka yang responsif.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px">
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px solid #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(-1.5deg)">Android</span>
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px solid #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(1deg)">Kotlin</span>
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px dashed #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(-.5deg)">MVVM
+              · Room</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:8px">
+            <a class="btn-main" href="android.html"
+              style="display:inline-flex; align-items:center; min-height:46px; padding:0 22px; box-sizing:border-box; background:#FFE45C; color:#14211C; font-weight:700; font-size:15px; text-decoration:none; border:2px solid #14211C; box-shadow:4px 4px 0 #14211C; transition:transform .15s ease,box-shadow .15s ease">Buka
+              Detail Proyek →</a>
+            <a class="btn-alt" href="https://github.com/Nourish-Path" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; min-height:46px; padding:0 16px; box-sizing:border-box; color:#14211C; font-family:'Special Elite','Courier New',monospace; font-size:14px; text-decoration:none; border:1.5px dashed #14211C">GitHub
+              (Nourish-Path) ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- REACT JS: teks kiri, gambar kanan -->
+      <section id="react"
+        style="display:flex; flex-wrap:wrap; align-items:center; gap:56px; padding-block:56px; scroll-margin-top:16px">
+        <div class="pin"
+          style="--r:-.6deg; position:relative; flex:1 1 420px; min-width:0; box-sizing:border-box; padding:clamp(24px,4vw,44px); background-color:#F2F4EE; background-image:linear-gradient(rgba(60,110,150,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(60,110,150,.14) 1px,transparent 1px); background-size:22px 22px; color:#14211C; box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35); display:flex; flex-direction:column; gap:18px">
+          <div
+            style="position:absolute; top:-14px; left:50%; margin-left:-52px; width:104px; height:28px; transform:rotate(-2deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(124,195,232,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+          </div>
+          <div
+            style="align-self:flex-start; background:#14211C; color:#FFFFFF; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.16em; text-transform:uppercase; padding:6px 14px; transform:rotate(1.5deg)">
+            React JS &amp; Node JS</div>
+          <h2
+            style="margin:0; font-size:clamp(34px,5vw,54px); line-height:1; letter-spacing:-.02em; font-weight:800; text-wrap:balance">
+            Arsitektur Web &amp; <span style="background:linear-gradient(transparent 60%,#FFE45C 60%)">Arsip Digital</span></h2>
+          <div style="font-family:'Special Elite','Courier New',monospace; font-size:16px; color:#3E4E47">Reload Brand
+            Portal &amp; Digital Archive · 2024</div>
+          <p style="margin:0; max-width:52ch; font-size:18px; line-height:1.6">Platform web interaktif berbasis React
+            JS dan backend Node.js untuk pengarsipan digital brand, memadukan eksplorasi katalog dinamis dan panel administrasi
+            terpadu.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px">
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px solid #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(1.5deg)">React
+              JS</span>
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px solid #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(-1deg)">Node.js</span>
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px dashed #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(.5deg)">REST API</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:8px">
+            <a class="btn-main" href="react.html"
+              style="display:inline-flex; align-items:center; min-height:46px; padding:0 22px; box-sizing:border-box; background:#FFE45C; color:#14211C; font-weight:700; font-size:15px; text-decoration:none; border:2px solid #14211C; box-shadow:4px 4px 0 #14211C; transition:transform .15s ease,box-shadow .15s ease">Buka
+              Detail Proyek →</a>
+            <a class="btn-alt" href="https://github.com/Reload-Brand-Portal-Digital-Archive" target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; min-height:46px; padding:0 16px; box-sizing:border-box; color:#14211C; font-family:'Special Elite','Courier New',monospace; font-size:14px; text-decoration:none; border:1.5px dashed #14211C">GitHub
+              (Reload-Brand) ↗</a>
+          </div>
+        </div>
+
+        <div style="flex:1 1 440px; min-width:0; display:flex; justify-content:center">
+          <div style="container-type:inline-size; position:relative; width:100%; max-width:560px; aspect-ratio:1 / 1">
+            <div
+              style="position:absolute; left:2%; top:6%; width:94%; height:88%; transform:rotate(-2deg); background-color:#DDEAF3; background-image:linear-gradient(rgba(40,100,150,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(40,100,150,.2) 1px,transparent 1px); background-size:4cqw 4cqw; box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35)">
+            </div>
+
+            <!-- jendela browser -->
+            <div class="pin"
+              style="--r:1.5deg; position:absolute; left:8%; top:13%; width:80%; height:58%; box-sizing:border-box; background:#FFFFFF; border:.5cqw solid #14211C; display:flex; flex-direction:column; box-shadow:0 12px 26px rgba(0,0,0,.32)">
+              <div
+                style="height:5.2cqw; background:#14211C; display:flex; align-items:center; gap:1cqw; padding-inline:2cqw">
+                <div style="width:1.4cqw; height:1.4cqw; border-radius:50%; background:#F6B7A8"></div>
+                <div style="width:1.4cqw; height:1.4cqw; border-radius:50%; background:#FFE45C"></div>
+                <div style="width:1.4cqw; height:1.4cqw; border-radius:50%; background:#BFE8C8"></div>
+                <div style="flex:1; height:2.6cqw; margin-left:2cqw; background:#2C3B35; border-radius:1.3cqw"></div>
+              </div>
+              <div style="flex:1; display:flex; gap:2.4cqw; padding:2.6cqw; min-height:0">
+                <div style="width:18%; display:flex; flex-direction:column; gap:1.6cqw">
+                  <div style="height:1.8cqw; background:#14211C"></div>
+                  <div style="height:1.8cqw; background:#9AA8A1"></div>
+                  <div style="height:1.8cqw; background:#9AA8A1"></div>
+                  <div style="height:1.8cqw; background:#9AA8A1"></div>
+                </div>
+                <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:2cqw">
+                  <div style="height:3cqw; width:46%; background:#14211C"></div>
+                  <div style="display:flex; gap:2cqw; height:9cqw">
+                    <div style="flex:1; background:#FFE45C"></div>
+                    <div style="flex:1; background:#7FD0EA"></div>
+                    <div style="flex:1; background:#F6B7A8"></div>
+                  </div>
+                  <div
+                    style="flex:1; display:flex; align-items:flex-end; gap:1.6cqw; padding:1.6cqw 1.6cqw 0; background:#EEF3F0; min-height:0">
+                    <div style="flex:1; height:38%; background:#14211C"></div>
+                    <div style="flex:1; height:62%; background:#14211C"></div>
+                    <div style="flex:1; height:48%; background:#14211C"></div>
+                    <div style="flex:1; height:80%; background:#E4452F"></div>
+                    <div style="flex:1; height:58%; background:#14211C"></div>
+                    <div style="flex:1; height:70%; background:#14211C"></div>
                   </div>
                 </div>
               </div>
             </div>
+            <div
+              style="position:absolute; top:10%; left:6%; width:14cqw; height:5cqw; transform:rotate(-24deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(124,195,232,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+            </div>
 
-            <!-- Tape -->
-            <div class="washi-tape-strip tape-cyan" style="top: 8%; left: 8%; --tape-rot: -24deg;"></div>
-
-            <!-- Code Scrap -->
-            <div class="pin-item paper-card-grid" style="--r: -2.5deg; position: absolute; left: 24%; top: 58%; width: 72%; padding: 14px 18px;">
-              <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.5; color: var(--text-dark); white-space: pre-wrap;"><span style="color: #B3401A;">function</span> TelemetryFeed({ streamId }) {
-  <span style="color: #B3401A;">const</span> { data } = useTelemetry(streamId);
-  <span style="color: #B3401A;">return</span> &lt;<span style="color: #0369a1;">DataGauge</span> latency={data.ms} /&gt;;
+            <!-- potongan kode -->
+            <div class="pin"
+              style="--r:-2.5deg; position:absolute; left:36%; top:65%; width:56%; box-sizing:border-box; padding:2.6cqw 2.6cqw 3.4cqw; background:#FBFBF7; box-shadow:0 1px 1px rgba(0,0,0,.25),0 10px 22px rgba(0,0,0,.32); clip-path:polygon(0 0,100% 0,100% 94%,94% 100%,82% 95%,68% 100%,52% 95%,36% 100%,20% 95%,8% 100%,0 94%)">
+              <pre
+                style="margin:0; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:2.9cqw; line-height:1.55; color:#14211C; white-space:pre"><span style="color:#B3401A">function</span> Kartu({ judul }) {
+  <span style="color:#B3401A">return</span> &lt;h2&gt;{judul}&lt;/h2&gt;;
 }</pre>
             </div>
 
-            <!-- Sticky Note -->
-            <div class="pin-item sticky-note-card" style="--r: 5deg; position: absolute; left: 68%; top: 2%; width: 28%; font-size: 1.35rem;">
-              komponen kecil, halaman besar
-            </div>
+            <div class="pin"
+              style="--r:5deg; position:absolute; left:70%; top:1%; width:25%; aspect-ratio:1 / 1; box-sizing:border-box; padding:2.4cqw; background:#F7A8C4; box-shadow:0 1px 1px rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.3); font-family:'Caveat','Comic Sans MS',cursive; font-size:5cqw; line-height:1.05; color:#14211C; font-weight:700">
+              komponen kecil, halaman besar</div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ======================================================================
-         PLATE 03: ANDROID KOTLIN CLIENT
-         ====================================================================== -->
-    <section id="android" class="project-scrap-section">
-      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-        <!-- Visual Column (Mobile Phone Wireframe & SQLite Dao) -->
-        <div class="scrap-col-visual">
-          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
-            <!-- Kraft Base -->
-            <div aria-hidden="true" style="transform: rotate(3deg); position: absolute; inset: 4%; width: 92%; height: 92%; background-color: var(--paper-kraft); background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px); box-shadow: var(--shadow-paper);"></div>
-            <div class="washi-tape-strip tape-amber" style="top: 2%; left: 16%; --tape-rot: -30deg;"></div>
+      <!-- LARAVEL: gambar kiri, teks kanan -->
+      <section id="laravel"
+        style="display:flex; flex-wrap:wrap; align-items:center; gap:56px; padding-block:56px; scroll-margin-top:16px">
+        <div style="flex:1 1 440px; min-width:0; display:flex; justify-content:center">
+          <div style="container-type:inline-size; position:relative; width:100%; max-width:560px; aspect-ratio:1 / 1">
+            <div
+              style="position:absolute; left:3%; top:5%; width:94%; height:90%; transform:rotate(2deg); background:#F3CFC4; background-image:repeating-linear-gradient(90deg,rgba(150,70,50,.07) 0 1px,transparent 1px 4px); box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35)">
+            </div>
 
-            <!-- Wireframe Sketch Card -->
-            <div class="pin-item paper-card-grid" style="--r: -6deg; position: absolute; left: 6%; top: 14%; width: 34%; height: 44%; padding: 14px;">
-              <div style="width: 100%; height: 75%; border: 1.5px dashed var(--dymo-black); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
-                <div style="height: 8px; width: 60%; border: 1px dashed var(--dymo-black);"></div>
-                <div style="height: 18px; border: 1px dashed var(--dymo-black);"></div>
-                <div style="height: 18px; border: 1px dashed var(--dymo-black);"></div>
+            <!-- terminal: routes/web.php -->
+            <div class="pin"
+              style="--r:-2deg; position:absolute; left:6%; top:11%; width:76%; box-sizing:border-box; background:#14211C; box-shadow:0 14px 30px rgba(0,0,0,.4)">
+              <div
+                style="height:5.6cqw; background:#2C3B35; display:flex; align-items:center; gap:1cqw; padding-inline:2cqw">
+                <div style="width:1.4cqw; height:1.4cqw; border-radius:50%; background:#F6B7A8"></div>
+                <div style="width:1.4cqw; height:1.4cqw; border-radius:50%; background:#FFE45C"></div>
+                <div style="width:1.4cqw; height:1.4cqw; border-radius:50%; background:#BFE8C8"></div>
+                <div
+                  style="margin-left:2cqw; font-family:'Special Elite','Courier New',monospace; font-size:2.7cqw; color:#BFD8CC">
+                  routes/web.php</div>
               </div>
-              <div style="font-family: var(--font-handwriting); font-size: 1.4rem; color: var(--text-dark); text-align: center; margin-top: 4px;">sketsa</div>
+              <pre
+                style="margin:0; padding:3.4cqw 3cqw 4cqw; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:2.7cqw; line-height:1.65; color:#E8F3EA; white-space:pre"><span style="color:#FF9A86">Route</span>::get(<span style="color:#FFE45C">'/proyek'</span>,
+    [<span style="color:#9BE0AE">ProyekController</span>::class, <span style="color:#FFE45C">'index'</span>]);</pre>
+            </div>
+            <div
+              style="position:absolute; top:6%; left:70%; width:14cqw; height:5cqw; transform:rotate(18deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(244,211,94,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
             </div>
 
-            <!-- Phone Mockup Card -->
-            <div style="transform: rotate(2deg); position: absolute; left: 38%; top: 6%; width: 44%; height: 86%; background: var(--dymo-black); border-radius: 28px; padding: 12px; box-shadow: var(--shadow-lift);">
-              <div style="width: 100%; height: 100%; background: #F2F4EE; border-radius: 20px; padding: 16px 12px; display: flex; flex-direction: column; gap: 10px; overflow: hidden;">
-                <div style="align-self: center; width: 44px; height: 6px; border-radius: 4px; background: var(--dymo-black);"></div>
-                <div style="font-size: 1rem; font-weight: 800; color: var(--dymo-black);">Beranda Log</div>
-                <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #D8F0DD; border-radius: 6px;">
-                  <div style="width: 22px; height: 22px; background: var(--accent-soft-green); border-radius: 4px;"></div>
-                  <div style="flex: 1; height: 8px; background: var(--dymo-black);"></div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #FFF1A8; border-radius: 6px;">
-                  <div style="width: 22px; height: 22px; background: #E0B400; border-radius: 4px;"></div>
-                  <div style="flex: 1; height: 8px; background: var(--dymo-black);"></div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #FAD3C8; border-radius: 6px;">
-                  <div style="width: 22px; height: 22px; background: #E4452F; border-radius: 4px;"></div>
-                  <div style="flex: 1; height: 8px; background: var(--dymo-black);"></div>
-                </div>
-              </div>
+            <!-- kertas controller -->
+            <div class="pin"
+              style="--r:2.5deg; position:absolute; left:34%; top:52%; width:60%; box-sizing:border-box; padding:2.8cqw 2.8cqw 3.6cqw; background-color:#FBFBF7; background-image:linear-gradient(rgba(60,110,150,.14) 1px,transparent 1px); background-size:100% 4.4cqw; box-shadow:0 1px 1px rgba(0,0,0,.25),0 10px 22px rgba(0,0,0,.32); clip-path:polygon(0 0,100% 0,100% 94%,94% 100%,82% 95%,68% 100%,52% 95%,36% 100%,20% 95%,8% 100%,0 94%)">
+              <div
+                style="display:inline-block; background:#14211C; color:#FFFFFF; font-family:'Special Elite','Courier New',monospace; font-size:2.5cqw; letter-spacing:.06em; padding:.7cqw 1.8cqw; margin-bottom:2cqw">
+                ProyekController.php</div>
+              <pre
+                style="margin:0; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:2.6cqw; line-height:1.69; color:#14211C; white-space:pre"><span style="color:#B3401A">public function</span> index()
+{
+    <span style="color:#B3401A">return</span> view(<span style="color:#2B6E4B">'proyek.index'</span>);
+}</pre>
             </div>
 
-            <!-- Sticky Note -->
-            <div class="pin-item sticky-note-card" style="--r: 6deg; position: absolute; left: 66%; top: 64%; width: 30%; font-size: 1.35rem;">
-              sketsa dulu, kode kemudian
-            </div>
+            <div class="pin"
+              style="--r:-6deg; position:absolute; left:3%; top:62%; width:28%; aspect-ratio:1 / 1; box-sizing:border-box; padding:2.4cqw; background:#A8E6A1; box-shadow:0 1px 1px rgba(0,0,0,.25),0 8px 16px rgba(0,0,0,.3); font-family:'Caveat','Comic Sans MS',cursive; font-size:5.2cqw; line-height:1.05; color:#14211C; font-weight:700">
+              route → controller → view</div>
           </div>
         </div>
 
-        <!-- Text Column -->
-        <div class="scrap-col-text">
-          <div class="pin-item paper-card-grid" style="--r: 0.6deg;">
-            <div class="washi-tape-strip tape-pink" style="--tape-rot: 2deg;"></div>
-            <div class="dymo-badge" style="--rot: -1.5deg; align-self: flex-start;">Android Kotlin</div>
-            <h2 class="section-title">
-              Aplikasi di <span class="marker-underline">genggaman</span>
-            </h2>
-            <div class="section-project-meta">
-              Native Mobile Architecture · [2026 Android Spec]
+        <div class="pin"
+          style="--r:.6deg; position:relative; flex:1 1 420px; min-width:0; box-sizing:border-box; padding:clamp(24px,4vw,44px); background-color:#F2F4EE; background-image:linear-gradient(rgba(60,110,150,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(60,110,150,.14) 1px,transparent 1px); background-size:22px 22px; color:#14211C; box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35); display:flex; flex-direction:column; gap:18px">
+          <div
+            style="position:absolute; top:-14px; left:50%; margin-left:-52px; width:104px; height:28px; transform:rotate(2deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(244,211,94,.92); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+          </div>
+          <div
+            style="align-self:flex-start; background:#14211C; color:#FFFFFF; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.16em; text-transform:uppercase; padding:6px 14px; transform:rotate(-1.5deg)">
+            Laravel</div>
+          <h2
+            style="margin:0; font-size:clamp(34px,5vw,54px); line-height:1; letter-spacing:-.02em; font-weight:800; text-wrap:balance">
+            Sistem di <span style="background:linear-gradient(transparent 60%,#FFE45C 60%)">balik layar</span></h2>
+          <div style="font-family:'Special Elite','Courier New',monospace; font-size:16px; color:#3E4E47">Sistem
+            Informasi Manajemen FTSP ITENAS · 2024</div>
+          <p style="margin:0; max-width:52ch; font-size:18px; line-height:1.6">Platform web operasional dan portal
+            manajerial internal Fakultas Teknik Sipil dan Perencanaan (FTSP) ITENAS Bandung dengan arsitektur MVC
+            terstruktur, otentikasi peran, dan integritas data terpusat.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px">
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px solid #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(-1.5deg)">Laravel</span>
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px solid #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(1deg)">PHP
+              &amp; MySQL</span>
+            <span
+              style="padding:6px 14px; background:#FFFFFF; border:1.5px dashed #14211C; font-family:'Special Elite','Courier New',monospace; font-size:15px; transform:rotate(-.5deg)">FTSP
+              ITENAS</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:8px">
+            <a class="btn-main" href="laravel.html"
+              style="display:inline-flex; align-items:center; min-height:46px; padding:0 22px; box-sizing:border-box; background:#FFE45C; color:#14211C; font-weight:700; font-size:15px; text-decoration:none; border:2px solid #14211C; box-shadow:4px 4px 0 #14211C; transition:transform .15s ease,box-shadow .15s ease">Buka
+              Detail Proyek →</a>
+            <span
+              style="display:inline-flex; align-items:center; min-height:46px; padding:0 16px; box-sizing:border-box; color:#3E4E47; font-family:'Special Elite','Courier New',monospace; font-size:14px; border:1.5px dashed #14211C">Repositori
+              Privat / Internal FTSP</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAK -->
+      <section id="kontak"
+        style="display:flex; flex-wrap:wrap; align-items:center; gap:56px; padding-block:72px 40px; scroll-margin-top:16px">
+        <div style="flex:1 1 380px; min-width:0; display:flex; flex-direction:column; gap:20px">
+          <h2
+            style="margin:0; font-size:clamp(36px,5.4vw,64px); line-height:1; letter-spacing:-.02em; font-weight:800; color:#F0F6F1; text-wrap:balance">
+            Mau lihat proyeknya lebih dekat?</h2>
+          <p style="margin:0; max-width:46ch; font-size:19px; line-height:1.6; color:#D5E6DC">Kirim pesan, ajak diskusi,
+            atau minta tautan kode dan demo dari setiap proyek di atas.</p>
+          <div
+            style="font-family:'Caveat','Comic Sans MS',cursive; font-size:30px; line-height:1; color:#FFE45C; transform:rotate(-2deg); transform-origin:left center">
+            terima kasih sudah mampir</div>
+        </div>
+
+        <div class="pin"
+          style="--r:-1.5deg; position:relative; flex:1 1 380px; min-width:0; box-sizing:border-box; padding:14px; background:#C9A06B; background-image:repeating-linear-gradient(0deg,rgba(120,80,30,.09) 0 1px,transparent 1px 3px); color:#14211C; box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 26px rgba(0,0,0,.35)">
+          <div
+            style="position:absolute; top:-14px; left:24px; width:104px; height:28px; transform:rotate(-4deg); background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,139,168,.9); clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0)">
+          </div>
+          <div
+            style="box-sizing:border-box; border:2px dashed #14211C; padding:clamp(20px,3.4vw,36px); display:flex; flex-direction:column; gap:20px">
+            <div
+              style="align-self:flex-start; background:#14211C; color:#FFFFFF; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.16em; text-transform:uppercase; padding:6px 14px">
+              Kontak</div>
+            <div
+              style="display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; padding-bottom:12px; border-bottom:1.5px solid rgba(20,33,28,.45)">
+              <span
+                style="width:92px; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.08em; text-transform:uppercase">Email</span>
+              <a href="mailto:m.ardhie5325@gmail.com"
+                style="font-family:'Caveat','Comic Sans MS',cursive; font-size:32px; line-height:1.1; font-weight:700; overflow-wrap:anywhere; color:inherit; text-decoration:none">m.ardhie5325@gmail.com</a>
             </div>
-            <p class="section-body-text">
-              Aplikasi Android native menggunakan Clean Architecture (MVVM/MVI) dengan persistensi disk terenkripsi Room SQLite dan WorkManager background sync. Bekerja tanpa kendala saat jaringan offline dan melakukan auto-reconnect saat sinyal kembali pulih.
-            </p>
-            <div class="tag-cloud">
-              <span class="craft-tag" style="--rot: -1.5deg;">Kotlin</span>
-              <span class="craft-tag" style="--rot: 1deg;">Jetpack Compose</span>
-              <span class="craft-tag dashed" style="--rot: -0.5deg;">Room SQLite</span>
-              <span class="craft-tag" style="--rot: 1.5deg;">WorkManager</span>
+            <div
+              style="display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; padding-bottom:12px; border-bottom:1.5px solid rgba(20,33,28,.45)">
+              <span
+                style="width:92px; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.08em; text-transform:uppercase">GitHub</span>
+              <a href="https://github.com/MuhammadArdhie" target="_blank" rel="noopener noreferrer"
+                style="font-family:'Caveat','Comic Sans MS',cursive; font-size:32px; line-height:1.1; font-weight:700; overflow-wrap:anywhere; color:inherit; text-decoration:none">github.com/MuhammadArdhie</a>
             </div>
-            <div style="margin-top: 8px;">
-              <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
-                <span>Arsip Profil GitHub</span>
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-              </a>
+            <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px">
+              <span
+                style="width:92px; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.08em; text-transform:uppercase">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/muhammad-ardhie-abdul-ghani/" target="_blank" rel="noopener noreferrer"
+                style="font-family:'Caveat','Comic Sans MS',cursive; font-size:32px; line-height:1.1; font-weight:700; overflow-wrap:anywhere; color:inherit; text-decoration:none">Muhammad Ardhie Abdul Ghani</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ======================================================================
-         PLATE 04: FIGMA DESIGN SYSTEMS
-         ====================================================================== -->
-    <section id="figma" class="project-scrap-section">
-      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-        <!-- Text Column -->
-        <div class="scrap-col-text">
-          <div class="pin-item paper-card-grid" style="--r: -0.6deg;">
-            <div class="washi-tape-strip tape-amber" style="--tape-rot: -2deg;"></div>
-            <div class="dymo-badge" style="--rot: 1.5deg; align-self: flex-start;">Figma Systems</div>
-            <h2 class="section-title">
-              Fondasi visual yang <span class="marker-underline">terkalibrasi</span>
-            </h2>
-            <div class="section-project-meta">
-              Design Tokens &amp; Component Matrix · [2026 Design Ops]
-            </div>
-            <p class="section-body-text">
-              Design token terstruktur 3-tier (primitive &rarr; semantic &rarr; component) yang sinkron langsung dengan variabel CSS dan Jetpack Compose. Menghilangkan friksi handoff dan menjaga konsistensi state komponen (Default, Hover, Focus, Active, Disabled).
-            </p>
-            <div class="tag-cloud">
-              <span class="craft-tag" style="--rot: 1deg;">Figma Auto-Layout</span>
-              <span class="craft-tag" style="--rot: -1.5deg;">3-Tier Tokens</span>
-              <span class="craft-tag dashed" style="--rot: 1deg;">State Matrix</span>
-              <span class="craft-tag" style="--rot: -0.5deg;">WCAG AAA</span>
-            </div>
-            <div style="margin-top: 8px;">
-              <a href="works.html#figma-system" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
-                <span>Periksa Dossier Figma</span>
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+      <footer
+        style="padding-block:32px 0; font-family:'Special Elite','Courier New',monospace; font-size:15px; letter-spacing:.06em; color:#BFD8CC">
+        Ardhie · Sistem Informasi, ITENAS Bandung</footer>
 
-        <!-- Visual Column (Token Swatches & Component Blueprint) -->
-        <div class="scrap-col-visual">
-          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
-            <!-- Kraft Sheet -->
-            <div aria-hidden="true" style="transform: rotate(-2deg); position: absolute; inset: 4%; width: 92%; height: 92%; background-color: var(--paper-kraft); background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px); box-shadow: var(--shadow-paper);"></div>
-
-            <!-- Color Palette Swatch Strip Card -->
-            <div class="pin-item paper-card-grid" style="--r: 2deg; position: absolute; left: 8%; top: 12%; width: 84%; padding: 20px;">
-              <div style="font-family: var(--font-typewriter); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px; font-weight: 700;">
-                Design Tokens // Palette Sample
-              </div>
-              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-                <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <div style="height: 44px; background: #1E5B4D; border: 1.5px solid var(--dymo-black);"></div>
-                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#1E5B4D</span>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <div style="height: 44px; background: #FFE45C; border: 1.5px solid var(--dymo-black);"></div>
-                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#FFE45C</span>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <div style="height: 44px; background: #C9A06B; border: 1.5px solid var(--dymo-black);"></div>
-                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#C9A06B</span>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 4px;">
-                  <div style="height: 44px; background: #14211C; border: 1.5px solid var(--dymo-black);"></div>
-                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#14211C</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tape -->
-            <div class="washi-tape-strip tape-pink" style="top: 8%; left: 50%; --tape-rot: 3deg;"></div>
-
-            <!-- Component Spec Card -->
-            <div class="pin-item paper-card-grid" style="--r: -3deg; position: absolute; left: 16%; top: 56%; width: 74%; padding: 16px 20px;">
-              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed var(--dymo-black); padding-bottom: 6px; margin-bottom: 8px;">
-                <span style="font-family: var(--font-typewriter); font-size: 0.8rem; font-weight: 700;">SPEC_TOKENS</span>
-                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-code-red);">STATUS: 100% SYNC</span>
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.45;">
-                <div>--btn-primary-bg: var(--color-brand);</div>
-                <div>--btn-primary-radius: 4px;</div>
-                <div>--elevation-card: 0 10px 24px rgba(0,0,0,0.3);</div>
-              </div>
-            </div>
-
-            <!-- Sticky Note -->
-            <div class="pin-item sticky-note-card" style="--r: 6deg; position: absolute; left: 66%; top: 66%; width: 28%; font-size: 1.35rem;">
-              token satu, dipakai semua platform
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         PHILOSOPHY & PRINCIPLES SPREAD
-         ====================================================================== -->
-    <section class="philosophy-spread">
-      <div class="container">
-        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
-          <div class="dymo-badge" style="--rot: -1.5deg; margin-bottom: 16px;">Prinsip Rekayasa</div>
-          <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.1; color: var(--text-light);">
-            Tiga keyakinan yang memandu setiap baris kode
-          </h2>
-          <div class="handwritten-note" style="margin-top: 12px;">
-            kejujuran arsitektur di atas tren sesaat
-          </div>
-        </div>
-
-        <div class="philosophy-grid">
-          <div class="pin-item philosophy-card" style="--r: -1.2deg;">
-            <span class="philosophy-num">01.</span>
-            <h3 class="philosophy-heading">Kejujuran Teknis</h3>
-            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-dark);">
-              Menolak kompleksitas palsu. Jika sistem cukup diselesaikan dengan static HTML dan modern vanilla CSS, jangan paksa menggunakan puluhan dependensi berat.
-            </p>
-          </div>
-
-          <div class="pin-item philosophy-card" style="--r: 1deg;">
-            <span class="philosophy-num">02.</span>
-            <h3 class="philosophy-heading">Kecepatan &amp; Ketahanan</h3>
-            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-dark);">
-              Kecepatan adalah rasa hormat kepada waktu manusia. B-Tree indexing, caching deterministik, dan arsitektur offline-first memastikan aplikasi tidak mudah runtuh.
-            </p>
-          </div>
-
-          <div class="pin-item philosophy-card" style="--r: -0.8deg;">
-            <span class="philosophy-num">03.</span>
-            <h3 class="philosophy-heading">Presisi Manusiawi</h3>
-            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-dark);">
-              Sistem backend yang tangguh tidak berarti antarmuka boleh membosankan. Desain yang baik memiliki sentuhan, jiwa, komposisi, dan empati pengguna yang nyata.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         CONTACT SECTION (KRAFT ENVELOPE SPREAD)
-         ====================================================================== -->
-    <section id="kontak" class="contact-spread">
-      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
-        <div class="contact-text-col">
-          <h2 style="font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 1.05; font-weight: 800; color: var(--text-light);">
-            Mau lihat proyeknya lebih dekat?
-          </h2>
-          <p style="font-size: 1.15rem; line-height: 1.6; color: var(--text-muted-light);">
-            Kirim pesan, ajak diskusi teknis, atau minta tautan kode dan demonstrasi dari pilar rekayasa di atas.
-          </p>
-          <div class="handwritten-note">
-            terima kasih sudah mampir ke meja kerja ini
-          </div>
-        </div>
-
-        <div class="contact-envelope-col">
-          <div class="pin-item paper-card-kraft" style="--r: -1.5deg; padding: 20px;">
-            <div class="washi-tape-strip tape-pink" style="top: -14px; left: 32px; --tape-rot: -4deg;"></div>
-            <div style="border: 2px dashed var(--dymo-black); padding: 24px; display: flex; flex-direction: column; gap: 20px;">
-              <div class="dymo-badge" style="--rot: 0deg; align-self: flex-start;">Kontak Langsung</div>
-              
-              <div class="contact-entry-row">
-                <span class="contact-entry-label">Email</span>
-                <span class="contact-entry-val" style="cursor: pointer;" data-copy-email="m.ardhie5325@gmail.com" title="Klik untuk salin email">
-                  m.ardhie5325@gmail.com
-                </span>
-              </div>
-
-              <div class="contact-entry-row">
-                <span class="contact-entry-label">GitHub</span>
-                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="contact-entry-val" style="color: var(--dymo-black);">
-                  github.com/Ardhie1212
-                </a>
-              </div>
-
-              <div class="contact-entry-row">
-                <span class="contact-entry-label">Lokasi</span>
-                <span class="contact-entry-val" style="font-size: 1.6rem;">
-                  Bandung, Indonesia (UTC+7)
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ========================================================================
-       FOOTER
-       ======================================================================== -->
-  <footer class="site-footer">
-    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
-      <div>Muhammad Ardhie · Systems &amp; Product Engineer · Bandung</div>
-      <div>100% Static HTML/CSS/JS · GitHub Pages Ready</div>
     </div>
-  </footer>
-
-  <!-- Toast Notification element -->
-  <div class="toast" id="toast" role="status" aria-live="polite">
-    <svg class="btn-icon toast-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-    <span id="toast-message">Email berhasil disalin ke clipboard</span>
   </div>
-
-  <script src="js/main.js"></script>
 </body>
+
 </html>

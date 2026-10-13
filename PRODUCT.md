@@ -36,15 +36,16 @@ A responsive static web experience served globally via GitHub Pages, visited by 
 ## Brand Commitments
 
 - **Name**: Muhammad Ardhie
-- **Handle / GitHub**: Ardhie1212
+- **Handle / GitHub**: MuhammadArdhie
 - **Direct Channel**: m.ardhie5325@gmail.com
+- **LinkedIn**: [muhammad-ardhie-abdul-ghani](https://www.linkedin.com/in/muhammad-ardhie-abdul-ghani/)
 - **Persona & Tone**: Technical Precision, Swiss Typographic Rigor, Confident Engineering Authority.
 
 ## Evidence on Hand
 
 - Core expertise verified across 4 engineering pillars:
   1. **Laravel**: Enterprise database schema, RESTful APIs, multi-role auth, query optimization.
-  2. **React**: Reactive operational dashboards, component systems, state management.
+  2. **React & Node.js**: Reactive operational dashboards, component systems, state management, REST API microservices.
   3. **Android Kotlin**: Native MVVM architecture, Coroutines/Flow, offline-first data sync.
   4. **Figma**: Multi-tier Design Systems, auto-layout tokens, interactive prototyping.
 

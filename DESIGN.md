@@ -94,7 +94,7 @@ components:
 # Tactile Studio Cutting Mat & Engineer's Physical Scrapbook
 
 ## Overview
-A tactile, human-crafted engineering portfolio for **Muhammad Ardhie** ([Ardhie1212](https://github.com/Ardhie1212)). Rather than merely framing images, the physical scrapbook concept permeates the **entire interface—especially typography, headings, labels, tags, and annotations**:
+A tactile, human-crafted engineering portfolio for **Muhammad Ardhie** ([MuhammadArdhie](https://github.com/MuhammadArdhie)). Rather than merely framing images, the physical scrapbook concept permeates the **entire interface—especially typography, headings, labels, tags, and annotations**:
 - **Studio Green Cutting Mat (`#1E5B4D`)**: Classic self-healing crafting workbench textured with measurement millimeter and centimeter grids.
 - **Dymo Embossed Labels**: Black label strips (`#14211C`) with punchy white typewriter letters (`Special Elite`) identifying sections and categories.
 - **Marker Highlighter Titles**: Vivid yellow highlighter strokes (`#FFE45C`) sweeping under and through hero and section titles.
@@ -103,9 +103,9 @@ A tactile, human-crafted engineering portfolio for **Muhammad Ardhie** ([Ardhie1
 - **Tactile Paper Tags**: Skill and stack badges formatted as individual cut paper slips with organic micro-rotations (`-1.5deg`, `+1deg`, `-0.5deg`).
 
 ## Real Technical Grounding
-- **Laravel Backend Engine**: Real architecture, B-tree indexing, Redis cache-aside invalidation, transactional consistency, sub-40ms response latency ([backendportfolio](https://github.com/Ardhie1212/backendportfolio)).
-- **React Telemetry Systems**: State boundary isolation, optimistic UI mutations, high-throughput telemetry panels ([belajar-reactjs-dasar-main](https://github.com/Ardhie1212/belajar-reactjs-dasar-main)).
-- **Android Kotlin Mobile**: MVVM/MVI Clean Architecture, Room SQLite disk persistence, offline-first WorkManager background daemon ([Ardhie1212](https://github.com/Ardhie1212)).
+- **Laravel Backend Engine**: Real architecture, B-tree indexing, Redis cache-aside invalidation, transactional consistency, sub-40ms response latency ([backendportfolio](https://github.com/MuhammadArdhie/backendportfolio)).
+- **React & Node.js Systems**: State boundary isolation, optimistic UI mutations, high-throughput telemetry panels ([Reload Brand Portal](https://github.com/Reload-Brand-Portal-Digital-Archive)).
+- **Android Kotlin Mobile**: MVVM/MVI Clean Architecture, Room SQLite disk persistence, offline-first WorkManager background daemon ([MuhammadArdhie](https://github.com/MuhammadArdhie)).
 - **Figma Design Systems**: 3-tier token taxonomies (primitive &rarr; semantic &rarr; component), exhaustive 140+ component state matrix.
 
 ## Typography Palette

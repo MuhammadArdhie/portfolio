@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NourishPath — Detail Proyek Mobile Native · Ardhie</title>
+<meta name="description" content="Studi kasus rekayasa aplikasi mobile native Android NourishPath oleh Muhammad Ardhie. Arsitektur MVVM, Room DB, dan Unidirectional Data Flow.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mat:#1E5B4D; --paper:#F2F4EE; --photo:#FBFBF7; --ink:#14211C; --ink-soft:#3E4E47;
+  --kraft:#C9A06B; --hl:#FFE45C; --red:#B3401A; --muted:#BFD8CC; --text-on-mat:#F0F6F1;
+  --f-head:'Bricolage Grotesque','Segoe UI',sans-serif;
+  --f-type:'Special Elite','Courier New',monospace;
+  --f-hand:'Caveat','Comic Sans MS',cursive;
+  --shadow:0 1px 1px rgba(0,0,0,.25),0 10px 22px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text-on-mat); font-family:var(--f-head); line-height:1.6;
+  background-color:var(--mat);
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);
+  background-size:24px 24px,24px 24px,120px 120px,120px 120px;
+  overflow-x:hidden;
+}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible,.shot img:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,56px) 64px}
+h1,h2,h3,p{margin:0}
+.type{font-family:var(--f-type)}
+.hand{font-family:var(--f-hand)}
+.mark{background:linear-gradient(transparent 60%,var(--hl) 60%)}
+
+/* ---------- komponen scrapbook ---------- */
+.pin{transform:rotate(var(--r,0deg));transition:transform .25s ease}
+.pin:hover{transform:rotate(0deg) scale(1.02);position:relative;z-index:5}
+.paper{
+  position:relative; color:var(--ink); padding:clamp(22px,3.6vw,40px);
+  background-color:var(--paper);
+  background-image:linear-gradient(rgba(60,110,150,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(60,110,150,.14) 1px,transparent 1px);
+  background-size:22px 22px; box-shadow:var(--shadow);
+}
+.tape{
+  position:absolute; top:-13px; left:50%; width:104px; height:27px; margin-left:-52px; transform:rotate(-3deg);
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(242,139,168,.9);
+  clip-path:polygon(0 0,5% 20%,0 40%,5% 60%,0 80%,5% 100%,95% 100%,100% 80%,95% 60%,100% 40%,95% 20%,100% 0);
+  pointer-events:none;
+}
+.tape.blue{background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(124,195,232,.92)}
+.tape.yellow{background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 5px,rgba(255,255,255,0) 5px 10px),rgba(244,211,94,.92)}
+.dymo{display:inline-block;background:var(--ink);color:#fff;font-family:var(--f-type);font-size:15px;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;transform:rotate(-1.5deg)}
+.chip{display:inline-block;padding:6px 14px;background:#fff;border:1.5px solid var(--ink);font-family:var(--f-type);font-size:15px;color:var(--ink)}
+.chip.todo{border-style:dashed}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font-weight:700;font-size:16px;text-decoration:none;background:var(--hl);color:var(--ink);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+
+/* ---------- foto polaroid + placeholder ---------- */
+.polaroid{position:relative;margin:0;background:var(--photo);padding:12px 12px 0;box-shadow:var(--shadow)}
+.polaroid figcaption{padding:10px 4px 14px;font-family:var(--f-hand);font-size:27px;line-height:1.1;color:var(--ink);text-align:center}
+.shot{
+  position:relative; aspect-ratio:4 / 3; overflow:hidden;
+  background:repeating-linear-gradient(45deg,#DCE6E0 0 12px,#E8EFEA 12px 24px);
+  display:grid; place-items:center;
+}
+.shot::before{content:attr(data-label);padding:16px;text-align:center;font-family:var(--f-type);font-size:15px;line-height:1.4;color:var(--ink-soft)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in;background:#fff}
+.shot img:not([src]),.shot img[src=""]{display:none}
+.shot.wide{aspect-ratio:16 / 10}
+.shot.tall{aspect-ratio:3 / 4}
+
+/* ---------- navigasi atas ---------- */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-block:28px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;font-family:var(--f-type);font-size:15px;text-decoration:none;color:var(--text-on-mat);border:1.5px dashed #8FB8A6}
+.back:hover{background:var(--hl);color:var(--ink)}
+
+/* ---------- hero: ringkasan + video ---------- */
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-block:32px 72px}
+.hero > *{flex:1 1 440px;min-width:0}
+.hero h1{font-size:clamp(38px,6vw,72px);line-height:1;letter-spacing:-.025em;font-weight:800;text-wrap:balance;margin-block:18px 20px}
+.hero .lead{font-size:18px;max-width:52ch}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:22px 0 0;padding-top:18px;border-top:1.5px dashed rgba(20,33,28,.4);font-size:16px}
+.meta dt{font-family:var(--f-type);font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.meta dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.tv{position:relative;background:#14211C;padding:clamp(10px,1.6vw,16px);box-shadow:var(--shadow)}
+.tv .screen{position:relative;aspect-ratio:16 / 9;background:#0B1511;display:grid;place-items:center;overflow:hidden}
+.tv video{position:absolute;inset:0;width:100%;height:100%;background:#000;object-fit:contain}
+.tv video:not([src]),.tv video[src=""]{display:none}
+.tv-note{margin-top:14px;text-align:center;font-family:var(--f-hand);font-size:28px;line-height:1;color:var(--hl);transform:rotate(-1.5deg)}
+
+/* ---------- judul bagian ---------- */
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(32px,4.6vw,52px);line-height:1;letter-spacing:-.02em;font-weight:800;color:var(--text-on-mat);text-wrap:balance}
+.sec-head .hand{font-size:28px;color:var(--hl);transform:rotate(-2deg)}
+
+/* ---------- album: satu tahap = satu halaman ---------- */
+.album{display:flex;flex-direction:column;gap:72px;padding-block:24px 80px}
+.chapter{display:flex;flex-wrap:wrap;align-items:center;gap:48px}
+.chapter > *{flex:1 1 400px;min-width:0}
+@media (min-width:900px){.chapter:nth-child(even) .photos{order:2}}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding:14px}
+.photos .polaroid:nth-child(odd){--r:-3deg}
+.photos .polaroid:nth-child(even){--r:2.6deg}
+.chapter:nth-child(odd) .note{--r:.6deg}
+.chapter:nth-child(even) .note{--r:-.6deg}
+.stage{display:inline-block;margin-bottom:14px}
+.note h3{font-size:clamp(26px,3.4vw,38px);line-height:1.05;letter-spacing:-.015em;font-weight:800;margin-bottom:12px;text-wrap:balance}
+.note p{font-size:17px;max-width:54ch}
+details{margin-top:18px}
+summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--f-type);font-size:15px;color:var(--red);border:2px dashed var(--red);padding:0 14px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";margin-right:8px;font-weight:700}
+details[open] summary::before{content:"–"}
+details .more{margin-top:16px;padding-top:16px;border-top:1.5px dashed rgba(20,33,28,.35);display:flex;flex-direction:column;gap:12px}
+
+/* ---------- galeri hasil ---------- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:36px 28px;padding:10px 6px 72px}
+.gallery .polaroid:nth-child(4n+1){--r:-3deg}
+.gallery .polaroid:nth-child(4n+2){--r:2deg}
+.gallery .polaroid:nth-child(4n+3){--r:-1.5deg}
+.gallery .polaroid:nth-child(4n){--r:3deg}
+.gallery .shot{aspect-ratio:3 / 4}
+.gallery .shot.wide{aspect-ratio:16 / 10}
+
+/* ---------- catatan pelajaran ---------- */
+.stickies{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding:10px 6px 72px}
+.sticky{position:relative;min-height:190px;padding:22px;color:var(--ink);font-family:var(--f-hand);font-size:27px;line-height:1.12;font-weight:700;box-shadow:var(--shadow)}
+.sticky:nth-child(3n+1){background:#FFE066;--r:-3deg}
+.sticky:nth-child(3n+2){background:#F7A8C4;--r:2deg}
+.sticky:nth-child(3n){background:#A8E6A1;--r:-1.5deg}
+
+/* ---------- penutup ---------- */
+.end{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:32px;border-top:2px dashed rgba(191,216,204,.5)}
+.end .type{font-size:15px;color:var(--muted)}
+.end-links{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- lightbox ---------- */
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);max-height:92vh;overflow:visible}
+dialog::backdrop{background:rgba(10,20,16,.82)}
+dialog img{display:block;max-width:100%;max-height:84vh;margin:0 auto;border:10px solid var(--photo);box-shadow:var(--shadow)}
+dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;font-family:var(--f-type);font-size:15px;background:var(--hl);color:var(--ink);border:2px solid var(--ink);cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .pin,.btn{transition:none}
+  .pin:hover{transform:rotate(var(--r,0deg))}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- ====== ATAS ====== -->
+  <nav class="top" aria-label="Navigasi">
+    <span class="dymo">Ardhie · Detail Proyek</span>
+    <a class="back" href="index.html">← Kembali ke portofolio</a>
+  </nav>
+
+  <!-- ====== RINGKASAN + VIDEO ====== -->
+  <header class="hero">
+    <div class="paper pin" style="--r:-.6deg">
+      <span class="tape blue"></span>
+      <span class="dymo">Android Native</span>
+      <h1>Nourish<span class="mark">Path</span></h1>
+      <p class="lead">Aplikasi mobile native Android untuk pemantauan nutrisi dan pelacakan asupan gizi harian pengguna. Dirancang dengan pola arsitektur modern MVVM dari sketsa alur hingga antarmuka yang responsif.</p>
+      <dl class="meta">
+        <dt>Peran</dt><dd>Android Developer</dd>
+        <dt>Tahun</dt><dd>2024</dd>
+        <dt>Durasi</dt><dd>3 Bulan</dd>
+        <dt>Tim</dt><dd>Mandiri / Kolaborasi Akademik</dd>
+      </dl>
+      <div class="tags">
+        <span class="chip">Kotlin</span>
+        <span class="chip">Android SDK</span>
+        <span class="chip">MVVM</span>
+        <span class="chip">Room DB</span>
+        <span class="chip">Flow &amp; Coroutines</span>
+      </div>
+      <div class="tags">
+        <a class="btn" href="https://github.com/Nourish-Path" target="_blank" rel="noopener noreferrer">Buka GitHub (Nourish-Path) ↗</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="tv pin" style="--r:1.5deg">
+        <span class="tape yellow"></span>
+        <div class="screen">
+          <video controls preload="metadata" playsinline poster="" src="assets/Android%20Dev/Android%20Project.mp4"></video>
+        </div>
+      </div>
+      <p class="tv-note">demo aplikasi NourishPath, putar video di atas</p>
+    </div>
+  </header>
+
+  <!-- ====== ALBUM PROSES ====== -->
+  <section aria-labelledby="album-judul">
+    <div class="sec-head">
+      <h2 id="album-judul">Album <span class="mark" style="color:var(--ink)">proses</span></h2>
+      <span class="hand">satu halaman, satu tahap</span>
+    </div>
+
+    <div class="album">
+
+      <!-- TAHAP 1 -->
+      <article class="chapter">
+        <div class="photos">
+          <figure class="polaroid pin">
+            <span class="tape"></span>
+            <div class="shot">
+              <img alt="Sesi wawancara dan pengumpulan kebutuhan NourishPath" src="assets/Android%20Dev/Pengumpulan%20Kebutuhan.jpg">
+            </div>
+            <figcaption>Wawancara &amp; Kebutuhan Pengguna</figcaption>
+          </figure>
+        </div>
+        <div class="paper note pin">
+          <span class="tape yellow"></span>
+          <span class="dymo stage">Tahap 1</span>
+          <h3>Pengumpulan Requirement</h3>
+          <p>Menggali kendala utama pengguna dalam mencatat asupan nutrisi harian dan merumuskan alur aplikasi yang praktis tanpa friksi berlebih.</p>
+          <details>
+            <summary>Baca selengkapnya</summary>
+            <div class="more">
+              <p>Wawancara mendalam dilakukan bersama calon pengguna aktif untuk memahami pain-point dalam pencatatan pola makan. Ditemukan bahwa mayoritas pengguna berhenti mencatat setelah beberapa hari karena formulir input makanan yang terlalu rumit dan kaku.</p>
+              <p>Dari temuan tersebut, dirumuskan kebutuhan sistem inti: alur pencatatan instan dengan katalog makanan terstruktur, kalkulasi otomatis makronutrisi (karbohidrat, protein, lemak), serta mekanisme penyimpanan lokal agar aplikasi dapat digunakan saat offline.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- TAHAP 2 -->
+      <article class="chapter">
+        <div class="photos">
+          <figure class="polaroid pin">
+            <span class="tape blue"></span>
+            <div class="shot">
+              <img alt="Tabel spesifikasi FR dan NFR NourishPath" src="assets/Android%20Dev/FR_NFR.png">
+            </div>
+            <figcaption>Matriks FR &amp; NFR</figcaption>
+          </figure>
+        </div>
+        <div class="paper note pin">
+          <span class="tape"></span>
+          <span class="dymo stage">Tahap 2</span>
+          <h3>Penyusunan FR &amp; NFR</h3>
+          <p>Memetakan kebutuhan fungsional (FR) seperti modul log nutrisi dan kalkulator target harian, serta kebutuhan non-fungsional (NFR) untuk latensi rendah dan efisiensi memori.</p>
+          <details>
+            <summary>Baca selengkapnya</summary>
+            <div class="more">
+              <p>Kebutuhan Fungsional (FR) diprioritaskan menjadi 4 pilar utama: manajemen profil dan target kalori, pencarian katalog nutrisi makanan, pencatatan log harian (sarapan, makan siang, makan malam, cemilan), dan laporan ringkasan visual berkala.</p>
+              <p>Kebutuhan Non-Fungsional (NFR) menekankan performa UI responsif (60 FPS rendering tanpa dropped frames), waktu startup aplikasi di bawah 1.5 detik, serta keamanan penyimpanan data lokal pengguna menggunakan Room ORM terenkripsi.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- TAHAP 3 -->
+      <article class="chapter">
+        <div class="photos">
+          <figure class="polaroid pin">
+            <span class="tape yellow"></span>
+            <div class="shot">
+              <img alt="Sketsa Wireframe Antarmuka Aplikasi NourishPath" src="assets/Android%20Dev/Wireframe.png">
+            </div>
+            <figcaption>Sketsa Wireframe UI</figcaption>
+          </figure>
+        </div>
+        <div class="paper note pin">
+          <span class="tape blue"></span>
+          <span class="dymo stage">Tahap 3</span>
+          <h3>Perancangan Wireframe &amp; Alur UI</h3>
+          <p>Merancang kerangka tata letak antarmuka sebelum tahap implementasi visual, memastikan alur navigasi intuitif dan mudah diakses satu tangan.</p>
+          <details>
+            <summary>Baca selengkapnya</summary>
+            <div class="more">
+              <p>Wireframe awal berfokus pada hierarki visual: penempatan kuota kalori di bagian atas, tombol aksi cepat pencatatan makanan yang ergonomis, serta tata letak navigasi tab bawah.</p>
+              <p>Pendekatan wireframing ini mempercepat validasi konsep tanpa terdistraksi elemen estetika prematur, sehingga mempermudah penerjemahan layout ke XML Layout dan ViewBinding.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- TAHAP 4 -->
+      <article class="chapter">
+        <div class="photos">
+          <figure class="polaroid pin">
+            <span class="tape"></span>
+            <div class="shot">
+              <img alt="Diagram Arsitektur MVVM NourishPath" src="assets/Android%20Dev/Arsitektur.png">
+            </div>
+            <figcaption>Arsitektur MVVM</figcaption>
+          </figure>
+          <figure class="polaroid pin">
+            <span class="tape blue"></span>
+            <div class="shot">
+              <img alt="Diagram Use Case Alur Pengguna NourishPath" src="assets/Android%20Dev/Use%20Case.png">
+            </div>
+            <figcaption>Diagram Use Case</figcaption>
+          </figure>
+        </div>
+        <div class="paper note pin">
+          <span class="tape yellow"></span>
+          <span class="dymo stage">Tahap 4</span>
+          <h3>Arsitektur Sistem &amp; Use Case</h3>
+          <p>Penerapan arsitektur MVVM (Model-View-ViewModel) dengan Unidirectional Data Flow untuk memisahkan logika data dari lifecycle antarmuka Android.</p>
+          <details>
+            <summary>Baca selengkapnya</summary>
+            <div class="more">
+              <p>Lapisan UI (Activity &amp; Fragment) hanya bertanggung jawab merender StateFlow yang dipancarkan oleh ViewModel, menjamin antarmuka tahan terhadap perubahan orientasi layar dan event lifecycle Android.</p>
+              <p>Lapisan Repository menjadi perantara tunggal (single source of truth) yang mengelola entitas database Room, menjamin integritas data offline-first secara konsisten.</p>
+            </div>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ====== GALERI HASIL ====== -->
+  <section aria-labelledby="galeri-judul">
+    <div class="sec-head">
+      <h2 id="galeri-judul">Hasil <span class="mark" style="color:var(--ink)">akhir</span></h2>
+      <span class="hand">klik foto untuk memperbesar</span>
+    </div>
+    <div class="gallery">
+      <figure class="polaroid pin">
+        <span class="tape"></span>
+        <div class="shot tall"><img alt="Layar Ringkasan & Dashboard Harian" src="assets/Android%20Dev/1.png"></div>
+        <figcaption>Dashboard Ringkasan Nutrisi</figcaption>
+      </figure>
+      <figure class="polaroid pin">
+        <span class="tape blue"></span>
+        <div class="shot tall"><img alt="Katalog Makanan & Detail Gizi" src="assets/Android%20Dev/2.png"></div>
+        <figcaption>Pencarian &amp; Detail Makanan</figcaption>
+      </figure>
+      <figure class="polaroid pin">
+        <span class="tape yellow"></span>
+        <div class="shot tall"><img alt="Formulir Pencatatan Asupan Nutrisi" src="assets/Android%20Dev/3.png"></div>
+        <figcaption>Pencatatan Log Harian</figcaption>
+      </figure>
+      <figure class="polaroid pin">
+        <span class="tape"></span>
+        <div class="shot tall"><img alt="Statistik & Grafik Progres Mingguan" src="assets/Android%20Dev/4.png"></div>
+        <figcaption>Analisis &amp; Grafik Progres</figcaption>
+      </figure>
+      <figure class="polaroid pin">
+        <span class="tape blue"></span>
+        <div class="shot tall"><img alt="Pengaturan Profil & Target Kalori" src="assets/Android%20Dev/5.png"></div>
+        <figcaption>Profil &amp; Target Gizi</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ====== CATATAN PELAJARAN ====== -->
+  <section aria-labelledby="belajar-judul">
+    <div class="sec-head">
+      <h2 id="belajar-judul">Yang kupelajari</h2>
+      <span class="hand">catatan tempel, singkat saja</span>
+    </div>
+    <div class="stickies">
+      <div class="sticky pin">Pemisahan pola MVVM mempermudah refactoring dan debugging saat data layer bertambah kompleks.</div>
+      <div class="sticky pin">Pendekatan offline-first dengan Room DB memberikan UX mulus tanpa ketergantungan sinyal internet.</div>
+      <div class="sticky pin">Elisitasi requirement yang matang di awal menghemat banyak waktu saat implementasi kode antarmuka.</div>
+    </div>
+  </section>
+  <!-- ====== PENUTUP ====== -->
+  <footer class="end">
+    <span class="type">Ardhie · Sistem Informasi, ITENAS Bandung</span>
+    <div class="end-links">
+      <a class="back" href="index.html">← Semua proyek</a>
+      <a class="back" href="react.html">Proyek berikutnya: React &amp; Node →</a>
+    </div>
+  </footer>
+</div>
+
+<!-- Lightbox: klik foto untuk memperbesar -->
+<dialog id="lightbox" aria-label="Foto diperbesar">
+  <img alt="" src="">
+  <button type="button" id="lightbox-close">Tutup</button>
+</dialog>
+
+<script>
+(function () {
+  var box = document.getElementById('lightbox');
+  var big = box.querySelector('img');
+  function open(img) {
+    if (!img.getAttribute('src')) return;
+    big.src = img.src;
+    big.alt = img.alt;
+    box.showModal();
+  }
+  document.querySelectorAll('.shot img').forEach(function (img) {
+    img.tabIndex = 0;
+    img.addEventListener('click', function () { open(img); });
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+    });
+  });
+  document.getElementById('lightbox-close').addEventListener('click', function () { box.close(); });
+  box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+})();
+</script>
+</body>
+</html>
