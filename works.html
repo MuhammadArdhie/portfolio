@@ -3,36 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selected Works &amp; Architecture — Muhammad Ardhie</title>
+  <title>Selected Plates &amp; Architecture — Muhammad Ardhie</title>
   <meta name="description" content="Technical case studies and architectural breakdowns across Laravel, React, Android Kotlin, and Figma Design Systems.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Sticky Top Navigation -->
+  <!-- Sticky Top Dossier Navigation -->
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="index.html" class="brand" aria-label="Muhammad Ardhie Home">
+        <a href="index.html" class="brand" aria-label="Muhammad Ardhie Dossier">
           <div class="brand-monogram">MA</div>
-          <span>Ardhie<span class="brand-dot">.</span>dev</span>
+          <div>
+            <span>Ardhie<span style="color: var(--accent-crimson);">.</span>dev</span>
+            <span class="brand-dossier-tag">// FIELD LOG 2026</span>
+          </div>
         </a>
 
         <nav aria-label="Main Navigation">
           <ul class="nav-links">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="works.html" class="nav-link active">Selected Works</a></li>
+            <li><a href="index.html" class="nav-link">Home Journal</a></li>
+            <li><a href="works.html" class="nav-link active">Selected Plates</a></li>
             <li><a href="about.html" class="nav-link">About &amp; Journey</a></li>
-            <li><a href="#contact" class="nav-link" data-copy-email="m.ardhie5325@gmail.com">Copy Email</a></li>
           </ul>
         </nav>
 
         <div class="nav-actions">
-          <div class="status-pill" title="Currently open for engineering opportunities">
-            <span class="status-beacon" aria-hidden="true"></span>
-            <span>AVAILABLE FOR HIRE</span>
+          <div class="stamp-badge" title="Verified active availability status">
+            <span class="stamp-dot"></span>
+            <span>ACTIVE ON SITE</span>
           </div>
+
+          <button class="btn btn-secondary" data-copy-email="m.ardhie5325@gmail.com" title="Copy email address to clipboard" style="padding: 0.45rem 0.85rem; font-size: 0.88rem;">
+            <svg class="btn-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy Email</span>
+          </button>
 
           <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -46,33 +53,34 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h1>Case Studies &amp; Architecture</h1>
+          <span class="dossier-label">// ARCHIVAL REPOSITORY &bull; VERIFIED PLATES</span>
+          <h1>Case Studies &amp; Architecture Repository</h1>
           <p class="section-desc">
-            Deep technical investigations into production systems. Each case study details real problems, architectural decisions, and tangible engineering outcomes.
+            Deep technical investigations into production systems. Each dossier plate details real problems, architectural decisions, and tangible engineering outcomes.
           </p>
         </div>
 
         <!-- Filter Bar -->
-        <div class="filter-bar" role="toolbar" aria-label="Project category filter">
-          <button class="filter-btn active" data-filter="all">All Systems (4)</button>
-          <button class="filter-btn" data-filter="laravel">Laravel / Backend</button>
-          <button class="filter-btn" data-filter="react">React / Frontend</button>
-          <button class="filter-btn" data-filter="android">Android / Kotlin</button>
-          <button class="filter-btn" data-filter="figma">Figma / Systems</button>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3.5rem;" role="toolbar" aria-label="Project category filter">
+          <button class="btn btn-primary" data-filter="all" style="font-size: 0.9rem; padding: 0.45rem 1rem;">All Plates (4)</button>
+          <button class="btn btn-secondary" data-filter="laravel" style="font-size: 0.9rem; padding: 0.45rem 1rem;">Laravel / Backend</button>
+          <button class="btn btn-secondary" data-filter="react" style="font-size: 0.9rem; padding: 0.45rem 1rem;">React / Frontend</button>
+          <button class="btn btn-secondary" data-filter="android" style="font-size: 0.9rem; padding: 0.45rem 1rem;">Android / Kotlin</button>
+          <button class="btn btn-secondary" data-filter="figma" style="font-size: 0.9rem; padding: 0.45rem 1rem;">Figma / Systems</button>
         </div>
 
         <div class="work-list">
           <!-- Case Study 1: Laravel -->
-          <article class="work-card" id="laravel-system" data-category="laravel">
-            <div class="work-info">
-              <span class="work-discipline">Backend &amp; Distributed Architecture</span>
+          <article class="work-scrap-item" id="laravel-system" data-category="laravel">
+            <div class="work-info-col">
+              <span class="work-plate-number">[PLATE 01 // DISTRIBUTED ARCHITECTURE]</span>
               <h2 class="work-title">Enterprise Resource &amp; Telemetry API Engine</h2>
               <p class="work-overview">
                 An industrial-grade backend service built to orchestrate operational contracts, resource tracking, and field logistics data. Engineered to replace manual spreadsheet workflows with an ACID-compliant relational backend.
               </p>
 
               <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
                 <ul class="work-spec-list">
                   <li class="work-spec-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -94,25 +102,45 @@
                 <span class="work-tag">PHP 8.3 JIT</span>
                 <span class="work-tag">PostgreSQL 16</span>
                 <span class="work-tag">Redis 7</span>
-                <span class="work-tag">RESTful JSON API</span>
+                <span class="work-tag">RESTful API</span>
+              </div>
+
+              <div style="margin-top: 0.5rem;">
+                <a href="https://github.com/Ardhie1212/backendportfolio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>View Repository on GitHub</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
-            <div class="work-visual">
-              <img src="assets/mockup-laravel.svg" alt="Laravel Architecture and REST Schema" width="800" height="500" loading="lazy">
+
+            <div class="work-visual-col">
+              <div class="polaroid-frame">
+                <div class="washi-tape washi-tape-top"></div>
+                <img src="assets/mockup-laravel.svg" alt="Laravel Architecture and REST Schema Plate" width="800" height="500" loading="lazy">
+                <div class="polaroid-caption">
+                  <span>FIG 1.1 &bull; REST API ROUTE MAP</span>
+                  <span>LATENCY: 34ms</span>
+                </div>
+              </div>
+              <div class="sticky-memo field-memo-badge">
+                <div class="washi-tape washi-tape-right washi-tape-blue"></div>
+                <strong>Lab Note:</strong><br>
+                PostgreSQL compound indexes reduced query load by 89%.
+              </div>
             </div>
           </article>
 
           <!-- Case Study 2: React -->
-          <article class="work-card" id="react-dashboard" data-category="react">
-            <div class="work-info">
-              <span class="work-discipline">Frontend Architecture &amp; Data Viz</span>
+          <article class="work-scrap-item reverse" id="react-dashboard" data-category="react">
+            <div class="work-info-col">
+              <span class="work-plate-number">[PLATE 02 // REACTIVE CLIENT]</span>
               <h2 class="work-title">Operational Intelligence &amp; Analytics Workspace</h2>
               <p class="work-overview">
                 An executive operations dashboard providing real-time oversight of ongoing project milestones, budget expenditures, and personnel status. Built with clean reactive state models and zero visual clutter.
               </p>
 
               <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
                 <ul class="work-spec-list">
                   <li class="work-spec-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -136,23 +164,43 @@
                 <span class="work-tag">WebSockets</span>
                 <span class="work-tag">60 FPS Render</span>
               </div>
+
+              <div style="margin-top: 0.5rem;">
+                <a href="https://github.com/Ardhie1212/belajar-reactjs-dasar-main" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>View Repository on GitHub</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
-            <div class="work-visual">
-              <img src="assets/mockup-react.svg" alt="React Analytics Workspace Interface" width="800" height="500" loading="lazy">
+
+            <div class="work-visual-col">
+              <div class="polaroid-frame">
+                <div class="washi-tape washi-tape-top washi-tape-blue"></div>
+                <img src="assets/mockup-react.svg" alt="React Analytics Workspace Interface Plate" width="800" height="500" loading="lazy">
+                <div class="polaroid-caption">
+                  <span>FIG 2.1 &bull; REACTIVE TELEMETRY</span>
+                  <span>CLIENT: 60 FPS</span>
+                </div>
+              </div>
+              <div class="sticky-memo field-memo-badge" style="left: -16px; right: auto; transform: rotate(-3deg);">
+                <div class="washi-tape washi-tape-left"></div>
+                <strong>Lab Note:</strong><br>
+                Optimistic mutation with rollback ensures zero UI desync during connectivity dips.
+              </div>
             </div>
           </article>
 
           <!-- Case Study 3: Android Kotlin -->
-          <article class="work-card" id="android-client" data-category="android">
-            <div class="work-info">
-              <span class="work-discipline">Native Mobile Client</span>
+          <article class="work-scrap-item" id="android-client" data-category="android">
+            <div class="work-info-col">
+              <span class="work-plate-number">[PLATE 03 // NATIVE MOBILE CLIENT]</span>
               <h2 class="work-title">Field Logistics &amp; Offline-First Client</h2>
               <p class="work-overview">
                 A native Android application created for field engineers inspecting infrastructure sites. Designed around the reality of unpredictable cellular network dead-zones across remote field locations.
               </p>
 
               <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
                 <ul class="work-spec-list">
                   <li class="work-spec-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -176,27 +224,47 @@
                 <span class="work-tag">Room DB</span>
                 <span class="work-tag">WorkManager</span>
               </div>
+
+              <div style="margin-top: 0.5rem;">
+                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>View Repository on GitHub</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
-            <div class="work-visual">
-              <img src="assets/mockup-android.svg" alt="Android Kotlin Field Logistics Client Bezel" width="800" height="500" loading="lazy">
+
+            <div class="work-visual-col">
+              <div class="polaroid-frame">
+                <div class="washi-tape washi-tape-top"></div>
+                <img src="assets/mockup-android.svg" alt="Android Kotlin Field Logistics Client Bezel Plate" width="800" height="500" loading="lazy">
+                <div class="polaroid-caption">
+                  <span>FIG 3.1 &bull; NATIVE BEZEL SPECIMEN</span>
+                  <span>STARTUP: 310ms</span>
+                </div>
+              </div>
+              <div class="sticky-memo field-memo-badge">
+                <div class="washi-tape washi-tape-right washi-tape-blue"></div>
+                <strong>Lab Note:</strong><br>
+                Clean MVVM repository pattern decoupled Android lifecycle from business logic completely.
+              </div>
             </div>
           </article>
 
           <!-- Case Study 4: Figma Design System -->
-          <article class="work-card" id="figma-system" data-category="figma">
-            <div class="work-info">
-              <span class="work-discipline">Product Design &amp; Systems</span>
+          <article class="work-scrap-item reverse" id="figma-system" data-category="figma">
+            <div class="work-info-col">
+              <span class="work-plate-number">[PLATE 04 // PRODUCT DESIGN]</span>
               <h2 class="work-title">Atomic Design System &amp; Component Matrix</h2>
               <p class="work-overview">
                 An end-to-end design system created in Figma to unify enterprise application surfaces. Connects primitive color and spacing tokens directly to production code variables across web and mobile.
               </p>
 
               <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.05rem; color: var(--text-primary); font-weight: 600;">Architectural Decisions &amp; Trade-offs:</h3>
+                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
                 <ul class="work-spec-list">
                   <li class="work-spec-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Token Hierarchy:</strong> Strict 3-level tiering (Primitive Tokens → Semantic Roles → Component Overrides) ensuring rapid re-theming capability.</span>
+                    <span><strong>Token Hierarchy:</strong> Strict 3-level tiering (Primitive Tokens &rarr; Semantic Roles &rarr; Component Overrides) ensuring rapid re-theming capability.</span>
                   </li>
                   <li class="work-spec-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -216,9 +284,29 @@
                 <span class="work-tag">WCAG 2.1 AAA</span>
                 <span class="work-tag">Design Ops</span>
               </div>
+
+              <div style="margin-top: 0.5rem;">
+                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>View Repository on GitHub</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
-            <div class="work-visual">
-              <img src="assets/mockup-figma.svg" alt="Figma Design Tokens Board Specimen" width="800" height="500" loading="lazy">
+
+            <div class="work-visual-col">
+              <div class="polaroid-frame">
+                <div class="washi-tape washi-tape-top washi-tape-blue"></div>
+                <img src="assets/mockup-figma.svg" alt="Figma Design Tokens Board Specimen Plate" width="800" height="500" loading="lazy">
+                <div class="polaroid-caption">
+                  <span>FIG 4.1 &bull; TOKEN REPOSITORY</span>
+                  <span>100% WCAG AAA</span>
+                </div>
+              </div>
+              <div class="sticky-memo field-memo-badge" style="left: -16px; right: auto; transform: rotate(-2.5deg);">
+                <div class="washi-tape washi-tape-left"></div>
+                <strong>Lab Note:</strong><br>
+                Token names align with CSS variables, preventing drift during production sprints.
+              </div>
             </div>
           </article>
         </div>
@@ -226,7 +314,7 @@
     </section>
   </main>
 
-  <!-- Footer & Colophon -->
+  <!-- Footer / Postcard Colophon -->
   <footer class="site-footer" id="contact">
     <div class="container">
       <div class="footer-top">
@@ -241,10 +329,10 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Navigation</h4>
+          <h4 class="footer-col-title">Navigation Index</h4>
           <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="works.html" class="footer-link">Selected Works</a></li>
+            <li><a href="index.html" class="footer-link">Home Journal</a></li>
+            <li><a href="works.html" class="footer-link">Selected Plates</a></li>
             <li><a href="about.html" class="footer-link">About &amp; Journey</a></li>
             <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a></li>
           </ul>
@@ -262,10 +350,10 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 Muhammad Ardhie. Designed to Impeccable Craft Standards.
+          &copy; 2026 Muhammad Ardhie. Handcrafted to Impeccable Standards.
         </div>
-        <div class="colophon-meta">
-          <span><span class="colophon-dot">&#9679;</span> Zero-Dependency Static Build</span>
+        <div>
+          <span>&bull; Zero-Dependency Static Build</span> &bull; 
           <span>Hosted on GitHub Pages</span>
         </div>
       </div>
