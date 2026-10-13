@@ -1,47 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selected Plates &amp; Architecture — Muhammad Ardhie</title>
-  <meta name="description" content="Technical case studies and architectural breakdowns across Laravel, React, Android Kotlin, and Figma Design Systems.">
+  <title>Dossier Rekayasa &amp; Spesifikasi — Muhammad Ardhie</title>
+  <meta name="description" content="Studi kasus teknis dan arsitektur sistem produksi Muhammad Ardhie: Laravel, React JS, Android Kotlin, dan Figma Design Systems.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Sticky Top Dossier Navigation -->
+  <!-- ========================================================================
+       NAVBAR (TAPE & DYMO LABEL HEADER)
+       ======================================================================== -->
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="index.html" class="brand" aria-label="Muhammad Ardhie Dossier">
-          <div class="brand-monogram">MA</div>
-          <div>
-            <span>Ardhie<span style="color: var(--accent-crimson);">.</span>dev</span>
-            <span class="brand-dossier-tag">// FIELD LOG 2026</span>
-          </div>
+        <a href="index.html" class="brand-dymo" aria-label="Muhammad Ardhie Beranda">
+          <span>Ardhie · Portofolio</span>
         </a>
 
-        <nav aria-label="Main Navigation">
+        <nav aria-label="Navigasi Utama">
           <ul class="nav-links">
-            <li><a href="index.html" class="nav-link">Home Journal</a></li>
-            <li><a href="works.html" class="nav-link active">Selected Plates</a></li>
-            <li><a href="about.html" class="nav-link">About &amp; Journey</a></li>
+            <li><a href="index.html" class="nav-link">Beranda</a></li>
+            <li><a href="works.html" class="nav-link active">Semua Arsip</a></li>
+            <li><a href="about.html" class="nav-link">Tentang</a></li>
+            <li><a href="index.html#kontak" class="nav-link">Kontak</a></li>
           </ul>
         </nav>
 
         <div class="nav-actions">
-          <div class="stamp-badge" title="Verified active availability status">
+          <div class="stamp-badge" title="Status ketersediaan aktif">
             <span class="stamp-dot"></span>
             <span>ACTIVE ON SITE</span>
           </div>
 
-          <button class="btn btn-secondary" data-copy-email="m.ardhie5325@gmail.com" title="Copy email address to clipboard" style="padding: 0.45rem 0.85rem; font-size: 0.88rem;">
-            <svg class="btn-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span>Copy Email</span>
-          </button>
-
-          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
@@ -50,320 +44,253 @@
   </header>
 
   <main>
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="dossier-label">// ARCHIVAL REPOSITORY &bull; VERIFIED PLATES</span>
-          <h1>Case Studies &amp; Architecture Repository</h1>
-          <p class="section-desc">
-            Deep technical investigations into production systems. Each dossier plate details real problems, architectural decisions, and tangible engineering outcomes.
-          </p>
-        </div>
-
-        <!-- Filter Bar -->
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3.5rem;" role="toolbar" aria-label="Project category filter">
-          <button class="btn btn-primary" data-filter="all" style="font-size: 0.9rem; padding: 0.45rem 1rem;">All Plates (4)</button>
-          <button class="btn btn-secondary" data-filter="laravel" style="font-size: 0.9rem; padding: 0.45rem 1rem;">Laravel / Backend</button>
-          <button class="btn btn-secondary" data-filter="react" style="font-size: 0.9rem; padding: 0.45rem 1rem;">React / Frontend</button>
-          <button class="btn btn-secondary" data-filter="android" style="font-size: 0.9rem; padding: 0.45rem 1rem;">Android / Kotlin</button>
-          <button class="btn btn-secondary" data-filter="figma" style="font-size: 0.9rem; padding: 0.45rem 1rem;">Figma / Systems</button>
-        </div>
-
-        <div class="work-list">
-          <!-- Case Study 1: Laravel -->
-          <article class="work-scrap-item" id="laravel-system" data-category="laravel">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 01 // DISTRIBUTED ARCHITECTURE]</span>
-              <h2 class="work-title">Enterprise Resource &amp; Telemetry API Engine</h2>
-              <p class="work-overview">
-                An industrial-grade backend service built to orchestrate operational contracts, resource tracking, and field logistics data. Engineered to replace manual spreadsheet workflows with an ACID-compliant relational backend.
-              </p>
-
-              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
-                <ul class="work-spec-list">
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Relational Normalization &amp; Indexing:</strong> PostgreSQL schema optimized with compound B-Tree indexes, dropping p99 response times from 340ms to 38.4ms.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Redis Cache-Aside Pattern:</strong> Frequently requested telemetry metrics cached with deterministic invalidation hooks on mutation events.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Granular Authorization Gates:</strong> Multi-tenant security isolation using Laravel Policy classes and scoped JWT claims.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="work-tags">
-                <span class="work-tag">Laravel 11 LTS</span>
-                <span class="work-tag">PHP 8.3 JIT</span>
-                <span class="work-tag">PostgreSQL 16</span>
-                <span class="work-tag">Redis 7</span>
-                <span class="work-tag">RESTful API</span>
-              </div>
-
-              <div style="margin-top: 0.5rem;">
-                <a href="https://github.com/Ardhie1212/backendportfolio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                  <span>View Repository on GitHub</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top"></div>
-                <img src="assets/mockup-laravel.svg" alt="Laravel Architecture and REST Schema Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 1.1 &bull; REST API ROUTE MAP</span>
-                  <span>LATENCY: 34ms</span>
-                </div>
-              </div>
-              <div class="sticky-memo field-memo-badge">
-                <div class="washi-tape washi-tape-right washi-tape-blue"></div>
-                <strong>Lab Note:</strong><br>
-                PostgreSQL compound indexes reduced query load by 89%.
-              </div>
-            </div>
-          </article>
-
-          <!-- Case Study 2: React -->
-          <article class="work-scrap-item reverse" id="react-dashboard" data-category="react">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 02 // REACTIVE CLIENT]</span>
-              <h2 class="work-title">Operational Intelligence &amp; Analytics Workspace</h2>
-              <p class="work-overview">
-                An executive operations dashboard providing real-time oversight of ongoing project milestones, budget expenditures, and personnel status. Built with clean reactive state models and zero visual clutter.
-              </p>
-
-              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
-                <ul class="work-spec-list">
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>State Boundary Isolation:</strong> Segmented state stores preventing unnecessary re-renders of heavy data visualization panels.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Optimistic UI Mutations:</strong> Immediate client feedback upon data edits with background server synchronization and graceful rollback.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Accessibility &amp; Keyboard Ergonomics:</strong> Full keyboard navigability, custom focus indicators, and semantic HTML table structures.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="work-tags">
-                <span class="work-tag">React 19</span>
-                <span class="work-tag">TypeScript</span>
-                <span class="work-tag">Modern CSS Tokens</span>
-                <span class="work-tag">WebSockets</span>
-                <span class="work-tag">60 FPS Render</span>
-              </div>
-
-              <div style="margin-top: 0.5rem;">
-                <a href="https://github.com/Ardhie1212/belajar-reactjs-dasar-main" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                  <span>View Repository on GitHub</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top washi-tape-blue"></div>
-                <img src="assets/mockup-react.svg" alt="React Analytics Workspace Interface Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 2.1 &bull; REACTIVE TELEMETRY</span>
-                  <span>CLIENT: 60 FPS</span>
-                </div>
-              </div>
-              <div class="sticky-memo field-memo-badge" style="left: -16px; right: auto; transform: rotate(-3deg);">
-                <div class="washi-tape washi-tape-left"></div>
-                <strong>Lab Note:</strong><br>
-                Optimistic mutation with rollback ensures zero UI desync during connectivity dips.
-              </div>
-            </div>
-          </article>
-
-          <!-- Case Study 3: Android Kotlin -->
-          <article class="work-scrap-item" id="android-client" data-category="android">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 03 // NATIVE MOBILE CLIENT]</span>
-              <h2 class="work-title">Field Logistics &amp; Offline-First Client</h2>
-              <p class="work-overview">
-                A native Android application created for field engineers inspecting infrastructure sites. Designed around the reality of unpredictable cellular network dead-zones across remote field locations.
-              </p>
-
-              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
-                <ul class="work-spec-list">
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Offline-First Room SQLite Replication:</strong> All user actions write directly to encrypted local storage first, maintaining 100% data durability.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>WorkManager Job Queues:</strong> Exponential back-off synchronization daemon automatically flushing telemetry queues once cellular connectivity returns.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Modern Jetpack Compose UI:</strong> Declarative reactive UI bound to ViewModel StateFlow streams, eliminating UI desynchronization bugs.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="work-tags">
-                <span class="work-tag">Android Kotlin</span>
-                <span class="work-tag">Jetpack Compose</span>
-                <span class="work-tag">Coroutines / Flow</span>
-                <span class="work-tag">Room DB</span>
-                <span class="work-tag">WorkManager</span>
-              </div>
-
-              <div style="margin-top: 0.5rem;">
-                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                  <span>View Repository on GitHub</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top"></div>
-                <img src="assets/mockup-android.svg" alt="Android Kotlin Field Logistics Client Bezel Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 3.1 &bull; NATIVE BEZEL SPECIMEN</span>
-                  <span>STARTUP: 310ms</span>
-                </div>
-              </div>
-              <div class="sticky-memo field-memo-badge">
-                <div class="washi-tape washi-tape-right washi-tape-blue"></div>
-                <strong>Lab Note:</strong><br>
-                Clean MVVM repository pattern decoupled Android lifecycle from business logic completely.
-              </div>
-            </div>
-          </article>
-
-          <!-- Case Study 4: Figma Design System -->
-          <article class="work-scrap-item reverse" id="figma-system" data-category="figma">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 04 // PRODUCT DESIGN]</span>
-              <h2 class="work-title">Atomic Design System &amp; Component Matrix</h2>
-              <p class="work-overview">
-                An end-to-end design system created in Figma to unify enterprise application surfaces. Connects primitive color and spacing tokens directly to production code variables across web and mobile.
-              </p>
-
-              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <h3 style="font-size: 1.15rem; color: var(--text-primary); font-weight: 700;">Architectural Decisions &amp; Trade-offs:</h3>
-                <ul class="work-spec-list">
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Token Hierarchy:</strong> Strict 3-level tiering (Primitive Tokens &rarr; Semantic Roles &rarr; Component Overrides) ensuring rapid re-theming capability.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Zero-Friction Handoff:</strong> Component property names in Figma mirror exact prop types used in React and Jetpack Compose.</span>
-                  </li>
-                  <li class="work-spec-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <span><strong>Exhaustive State Matrix:</strong> Every interactive primitive specifies Default, Hover, Focused, Pressed, Disabled, and Loading states.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="work-tags">
-                <span class="work-tag">Figma</span>
-                <span class="work-tag">Token Architecture</span>
-                <span class="work-tag">Auto-Layout 5.0</span>
-                <span class="work-tag">WCAG 2.1 AAA</span>
-                <span class="work-tag">Design Ops</span>
-              </div>
-
-              <div style="margin-top: 0.5rem;">
-                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                  <span>View Repository on GitHub</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top washi-tape-blue"></div>
-                <img src="assets/mockup-figma.svg" alt="Figma Design Tokens Board Specimen Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 4.1 &bull; TOKEN REPOSITORY</span>
-                  <span>100% WCAG AAA</span>
-                </div>
-              </div>
-              <div class="sticky-memo field-memo-badge" style="left: -16px; right: auto; transform: rotate(-2.5deg);">
-                <div class="washi-tape washi-tape-left"></div>
-                <strong>Lab Note:</strong><br>
-                Token names align with CSS variables, preventing drift during production sprints.
-              </div>
-            </div>
-          </article>
+    <div class="container" style="padding-top: 32px; padding-bottom: 72px;">
+      <!-- Page Header -->
+      <div style="margin-bottom: 40px;">
+        <div class="dymo-badge" style="--rot: -1.5deg; margin-bottom: 16px;">Arsip Proyek // Studi Kasus</div>
+        <h1 style="font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.05; color: var(--text-light); letter-spacing: -0.02em;">
+          Spesifikasi Rekayasa &amp; <span class="marker-highlight">Dossier Arsitektur</span>
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-muted-light); max-width: 64ch; margin-top: 14px; line-height: 1.6;">
+          Investigasi mendalam pada sistem nyata. Setiap lembar dokumen menguraikan permasalahan konkret, keputusan arsitektur, dan hasil rekayasa yang terukur.
+        </p>
+        <div class="handwritten-note" style="margin-top: 8px;">
+          filter berdasarkan pilar di bawah ini &darr;
         </div>
       </div>
-    </section>
+
+      <!-- Filter Buttons Toolbar -->
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 48px;" role="toolbar" aria-label="Filter kategori proyek">
+        <button class="craft-tag" data-filter="all" style="--rot: 0deg; cursor: pointer; background: var(--marker-yellow); font-weight: 700;">Semua Plate (4)</button>
+        <button class="craft-tag dashed" data-filter="laravel" style="--rot: -1deg; cursor: pointer;">Laravel / Backend</button>
+        <button class="craft-tag dashed" data-filter="react" style="--rot: 1.5deg; cursor: pointer;">React / Frontend</button>
+        <button class="craft-tag dashed" data-filter="android" style="--rot: -0.5deg; cursor: pointer;">Android / Kotlin</button>
+        <button class="craft-tag dashed" data-filter="figma" style="--rot: 1deg; cursor: pointer;">Figma / Systems</button>
+      </div>
+
+      <!-- Projects Grid/List -->
+      <div style="display: flex; flex-direction: column; gap: 56px;">
+
+        <!-- PLATE 01: Laravel -->
+        <article class="pin-item paper-card-grid" id="laravel-system" data-category="laravel" style="--r: -0.5deg;">
+          <div class="washi-tape-strip tape-amber" style="--tape-rot: -2deg;"></div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+            <div class="dymo-badge" style="--rot: -1deg;">Plate 01 // Laravel API Engine</div>
+            <span style="font-family: var(--font-typewriter); font-size: 0.9rem; color: var(--accent-code-red); font-weight: 700;">LATENCY &lt;40MS</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: center; margin-top: 12px;">
+            <div>
+              <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; line-height: 1.1; color: var(--text-dark); margin-bottom: 12px;">
+                Enterprise Resource &amp; Telemetry API Engine
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 20px;">
+                Backend berskala produksi untuk orkestrasi kontrak operasional, tracking sumber daya, dan kueri data logistik. Dioptimalkan dengan B-Tree index PostgreSQL dan cache-aside Redis deterministik.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+                <div style="font-family: var(--font-typewriter); font-size: 0.9rem; font-weight: 700; color: var(--dymo-black);">Keputusan Arsitektur:</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Compound B-Tree Index memangkas p99 response time dari 340ms ke 38.4ms.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Pola Redis cache-aside dengan hook invalidasi deterministik pada event mutasi.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Policy authorization bertingkat dan JWT token scoping untuk proteksi data.</div>
+              </div>
+
+              <div class="tag-cloud" style="margin-bottom: 20px;">
+                <span class="craft-tag" style="--rot: -1deg;">Laravel 11 LTS</span>
+                <span class="craft-tag" style="--rot: 1deg;">PostgreSQL 16</span>
+                <span class="craft-tag dashed" style="--rot: -0.5deg;">Redis 7</span>
+                <span class="craft-tag" style="--rot: 1.5deg;">RESTful API</span>
+              </div>
+
+              <a href="https://github.com/Ardhie1212/backendportfolio" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 20px; font-size: 0.95rem;">
+                <span>Lihat Kode di GitHub</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+            <!-- Polaroid Illustration Side -->
+            <div style="position: relative; max-width: 440px; margin: 0 auto;">
+              <div class="pin-item polaroid-card" style="--r: 2deg; position: relative;">
+                <div class="polaroid-photo-box" style="background: #F0745E;">
+                  <img src="assets/mockup-laravel.svg" alt="Laravel Architecture Schema" style="width: 100%; height: auto;">
+                </div>
+                <div class="polaroid-caption-tag" style="font-size: 1.4rem;">
+                  fig 1.1 · route &amp; schema map
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PLATE 02: React JS -->
+        <article class="pin-item paper-card-grid" id="react-dashboard" data-category="react" style="--r: 0.5deg;">
+          <div class="washi-tape-strip tape-cyan" style="--tape-rot: 2deg;"></div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+            <div class="dymo-badge" style="--rot: 1deg;">Plate 02 // React Telemetry</div>
+            <span style="font-family: var(--font-typewriter); font-size: 0.9rem; color: var(--accent-code-red); font-weight: 700;">60 FPS RESPONSIVE</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: center; margin-top: 12px;">
+            <div>
+              <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; line-height: 1.1; color: var(--text-dark); margin-bottom: 12px;">
+                Operational Intelligence &amp; Analytics Workspace
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 20px;">
+                Dashboard monitoring realtime dengan isolasi batas render komponen. Menampilkan grafik data bervolume tinggi tanpa membebani browser thread utama.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+                <div style="font-family: var(--font-typewriter); font-size: 0.9rem; font-weight: 700; color: var(--dymo-black);">Keputusan Arsitektur:</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Segmentasi store atomik mencegah re-render pada seluruh widget dashboard.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Mutasi UI optimistik memberikan umpan balik instan sebelum server sync selesai.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Navigasi keyboard penuh dan indikator fokus aksesibel WCAG AAA.</div>
+              </div>
+
+              <div class="tag-cloud" style="margin-bottom: 20px;">
+                <span class="craft-tag" style="--rot: 1deg;">React 18</span>
+                <span class="craft-tag" style="--rot: -1deg;">TypeScript</span>
+                <span class="craft-tag dashed" style="--rot: 0.5deg;">Optimistic UI</span>
+                <span class="craft-tag" style="--rot: -1.5deg;">State Boundary</span>
+              </div>
+
+              <a href="https://github.com/Ardhie1212/belajar-reactjs-dasar-main" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 20px; font-size: 0.95rem;">
+                <span>Lihat Kode di GitHub</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+            <!-- Polaroid Illustration Side -->
+            <div style="position: relative; max-width: 440px; margin: 0 auto;">
+              <div class="pin-item polaroid-card" style="--r: -2.5deg; position: relative;">
+                <div class="polaroid-photo-box" style="background: #7FD0EA;">
+                  <img src="assets/mockup-react.svg" alt="React Telemetry UI Interface" style="width: 100%; height: auto;">
+                </div>
+                <div class="polaroid-caption-tag" style="font-size: 1.4rem;">
+                  fig 2.1 · reactive telemetry panel
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PLATE 03: Android Kotlin -->
+        <article class="pin-item paper-card-grid" id="android-client" data-category="android" style="--r: -0.8deg;">
+          <div class="washi-tape-strip tape-pink" style="--tape-rot: -1.5deg;"></div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+            <div class="dymo-badge" style="--rot: -1.5deg;">Plate 03 // Android Native</div>
+            <span style="font-family: var(--font-typewriter); font-size: 0.9rem; color: var(--accent-code-red); font-weight: 700;">OFFLINE-FIRST SYNC</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: center; margin-top: 12px;">
+            <div>
+              <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; line-height: 1.1; color: var(--text-dark); margin-bottom: 12px;">
+                Field Logistics &amp; Offline-First Client
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 20px;">
+                Aplikasi mobile native yang didesain untuk lingkungan tanpa sinyal seluler stabil. Data inspeksi dicatat aman ke database lokal terlebih dahulu dan otomatis disinkronkan saat online.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+                <div style="font-family: var(--font-typewriter); font-size: 0.9rem; font-weight: 700; color: var(--dymo-black);">Keputusan Arsitektur:</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Replikasi Room SQLite terenkripsi menjamin 100% ketahanan data offline.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; WorkManager daemon dengan exponential backoff mencegah flood antrian jaringan.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Arsitektur MVVM bersih yang memisahkan logic repository dari lifecycle Android.</div>
+              </div>
+
+              <div class="tag-cloud" style="margin-bottom: 20px;">
+                <span class="craft-tag" style="--rot: -1.5deg;">Kotlin</span>
+                <span class="craft-tag" style="--rot: 1deg;">Jetpack Compose</span>
+                <span class="craft-tag dashed" style="--rot: -0.5deg;">Room DB</span>
+                <span class="craft-tag" style="--rot: 1.5deg;">WorkManager</span>
+              </div>
+
+              <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 20px; font-size: 0.95rem;">
+                <span>Lihat Profil GitHub</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+            <!-- Polaroid Illustration Side -->
+            <div style="position: relative; max-width: 440px; margin: 0 auto;">
+              <div class="pin-item polaroid-card" style="--r: 3deg; position: relative;">
+                <div class="polaroid-photo-box" style="background: #7BD389;">
+                  <img src="assets/mockup-android.svg" alt="Android Bezel Specimen" style="width: 100%; height: auto;">
+                </div>
+                <div class="polaroid-caption-tag" style="font-size: 1.4rem;">
+                  fig 3.1 · mobile native bezel
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PLATE 04: Figma Design System -->
+        <article class="pin-item paper-card-grid" id="figma-system" data-category="figma" style="--r: 0.6deg;">
+          <div class="washi-tape-strip tape-amber" style="--tape-rot: 1.5deg;"></div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+            <div class="dymo-badge" style="--rot: 1.5deg;">Plate 04 // Figma System</div>
+            <span style="font-family: var(--font-typewriter); font-size: 0.9rem; color: var(--accent-code-red); font-weight: 700;">140+ COMPONENT MATRIX</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: center; margin-top: 12px;">
+            <div>
+              <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; line-height: 1.1; color: var(--text-dark); margin-bottom: 12px;">
+                Atomic Design System &amp; Component Matrix
+              </h2>
+              <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-dark); margin-bottom: 20px;">
+                Design system menyeluruh yang menghubungkan token warna, tipografi, dan spasi langsung ke variabel kode produksi di web (CSS) dan mobile (Jetpack Compose).
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+                <div style="font-family: var(--font-typewriter); font-size: 0.9rem; font-weight: 700; color: var(--dymo-black);">Keputusan Arsitektur:</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Taksonomi token 3 lapis: Primitive &rarr; Semantic &rarr; Component.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Nama properti komponen di Figma identik 100% dengan prop types React/Compose.</div>
+                <div style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted-dark);">&#10003; Matrix state komprehensif: Default, Hover, Focus, Active, Disabled, Loading.</div>
+              </div>
+
+              <div class="tag-cloud" style="margin-bottom: 20px;">
+                <span class="craft-tag" style="--rot: 1deg;">Figma Auto-Layout</span>
+                <span class="craft-tag" style="--rot: -1.5deg;">3-Tier Tokens</span>
+                <span class="craft-tag dashed" style="--rot: 1deg;">WCAG 2.1 AAA</span>
+                <span class="craft-tag" style="--rot: -0.5deg;">Design Ops</span>
+              </div>
+
+              <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 20px; font-size: 0.95rem;">
+                <span>Lihat Profil GitHub</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+            <!-- Polaroid Illustration Side -->
+            <div style="position: relative; max-width: 440px; margin: 0 auto;">
+              <div class="pin-item polaroid-card" style="--r: -1.8deg; position: relative;">
+                <div class="polaroid-photo-box" style="background: #FFFFFF;">
+                  <img src="assets/mockup-figma.svg" alt="Figma Tokens Matrix Specimen" style="width: 100%; height: auto;">
+                </div>
+                <div class="polaroid-caption-tag" style="font-size: 1.4rem;">
+                  fig 4.1 · token repository
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
   </main>
 
-  <!-- Footer / Postcard Colophon -->
-  <footer class="site-footer" id="contact">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand-statement">
-          <a href="index.html" class="brand">
-            <div class="brand-monogram">MA</div>
-            <span>Muhammad Ardhie</span>
-          </a>
-          <p>
-            Full-Stack Software Engineer &amp; Systems Builder. Focused on creating resilient digital products with zero decorative waste and uncompromising technical rigor.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Navigation Index</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home Journal</a></li>
-            <li><a href="works.html" class="footer-link">Selected Plates</a></li>
-            <li><a href="about.html" class="footer-link">About &amp; Journey</a></li>
-            <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Direct Contact</h4>
-          <ul class="footer-links">
-            <li><a href="#" class="footer-link" data-copy-email="m.ardhie5325@gmail.com">m.ardhie5325@gmail.com (Copy)</a></li>
-            <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/Ardhie1212</a></li>
-            <li><span class="footer-link" style="color: var(--text-tertiary);">Location: Indonesia (UTC+7)</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 Muhammad Ardhie. Handcrafted to Impeccable Standards.
-        </div>
-        <div>
-          <span>&bull; Zero-Dependency Static Build</span> &bull; 
-          <span>Hosted on GitHub Pages</span>
-        </div>
-      </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <div>Muhammad Ardhie · Systems &amp; Product Engineer · Bandung</div>
+      <div>100% Static HTML/CSS/JS · GitHub Pages Ready</div>
     </div>
   </footer>
 
   <!-- Toast Notification element -->
   <div class="toast" id="toast" role="status" aria-live="polite">
     <svg class="btn-icon toast-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-    <span id="toast-message">Email address copied to clipboard</span>
+    <span id="toast-message">Email berhasil disalin ke clipboard</span>
   </div>
 
   <script src="js/main.js"></script>

@@ -1,60 +1,64 @@
 ---
-name: "Drafting Mat Scrapbook & Engineering Field Dossier"
-description: "Tactile, collage-driven engineer's field desk with polaroid cutouts, washi tape, and typewriter notes"
+name: "Tactile Studio Cutting Mat & Engineer's Physical Scrapbook"
+description: "Vibrant physical scrapbook workbench on a green cutting mat with Dymo labels, highlighter titles, handwritten margin notes, and taped paper sheets"
 colors:
-  canvas: "#0b0f17"
-  surface-polaroid: "#ffffff"
-  surface-mat: "#111827"
-  surface-blueprint: "#1e3a5f"
-  surface-hover: "#172236"
-  border: "#1e293b"
-  border-hover: "#334155"
-  text-primary: "#f8fafc"
-  text-secondary: "#cbd5e1"
-  text-tertiary: "#94a3b8"
-  accent-crimson: "#ef4444"
-  accent-blueprint: "#38bdf8"
-  tape-amber: "rgba(251, 191, 36, 0.7)"
-  tape-cyan: "rgba(56, 189, 248, 0.6)"
-  sticky-yellow: "#fef08a"
-  sticky-text: "#713f12"
-  white: "#ffffff"
+  canvas: "#1E5B4D"
+  surface-grid-paper: "#F2F4EE"
+  surface-kraft: "#C9A06B"
+  surface-polaroid: "#FBFBF7"
+  surface-sticky: "#FFE066"
+  dymo-black: "#14211C"
+  highlight-yellow: "#FFE45C"
+  text-light: "#F0F6F1"
+  text-dark: "#14211C"
+  text-muted: "#3E4E47"
+  accent-crimson: "#EF4444"
+  tape-pink: "rgba(242, 139, 168, 0.9)"
+  tape-amber: "rgba(244, 211, 94, 0.9)"
+  tape-cyan: "rgba(124, 195, 232, 0.9)"
 typography:
   display:
-    fontFamily: "'Besley', Georgia, serif"
+    fontFamily: "'Bricolage Grotesque', sans-serif"
     fontSize: "3.5rem"
-    fontWeight: 700
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.025em"
+  heading:
+    fontFamily: "'Bricolage Grotesque', sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 800
     lineHeight: 1.15
     letterSpacing: "-0.02em"
-  heading:
-    fontFamily: "'Besley', Georgia, serif"
-    fontSize: "2rem"
-    fontWeight: 700
-    lineHeight: 1.25
-    letterSpacing: "-0.01em"
   body:
-    fontFamily: "'Besley', Georgia, serif"
-    fontSize: "1.05rem"
+    fontFamily: "'Bricolage Grotesque', 'Segoe UI', sans-serif"
+    fontSize: "1.125rem"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.6
     letterSpacing: "normal"
   typewriter:
-    fontFamily: "'Courier Prime', 'Courier New', monospace"
-    fontSize: "0.9rem"
+    fontFamily: "'Special Elite', 'Courier New', monospace"
+    fontSize: "0.95rem"
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: "-0.01em"
+    letterSpacing: "0.04em"
+  handwriting:
+    fontFamily: "'Caveat', cursive"
+    fontSize: "1.75rem"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "normal"
   mono:
-    fontFamily: "'JetBrains Mono', ui-monospace, SFMono-Regular, monospace"
-    fontSize: "0.85rem"
+    fontFamily: "'JetBrains Mono', ui-monospace, monospace"
+    fontSize: "0.88rem"
     fontWeight: 500
-    lineHeight: 1.5
+    lineHeight: 1.55
     letterSpacing: "-0.01em"
 rounded:
+  none: "0px"
   xs: "2px"
   sm: "4px"
   md: "8px"
-  lg: "12px"
+  lg: "16px"
   pill: "9999px"
 spacing:
   xs: "4px"
@@ -64,63 +68,54 @@ spacing:
   xl: "32px"
   2xl: "48px"
   3xl: "64px"
-  4xl: "96px"
+  4xl: "80px"
 components:
-  button-primary:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.canvas}"
-    rounded: "{rounded.xs}"
-    padding: "10px 22px"
-  button-secondary:
-    backgroundColor: "{colors.surface-mat}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.xs}"
-    padding: "10px 22px"
-  stamp:
-    backgroundColor: "transparent"
-    textColor: "{colors.accent-crimson}"
-    rounded: "{rounded.xs}"
-    padding: "4px 8px"
+  dymo-label:
+    backgroundColor: "{colors.dymo-black}"
+    textColor: "{colors.surface-polaroid}"
+    fontFamily: "{typography.typewriter.fontFamily}"
+    rounded: "{rounded.none}"
+    padding: "6px 14px"
+  button-scrapbook:
+    backgroundColor: "{colors.highlight-yellow}"
+    textColor: "{colors.dymo-black}"
+    fontFamily: "{typography.body.fontFamily}"
+    rounded: "{rounded.none}"
+    padding: "12px 28px"
+    border: "2px solid {colors.dymo-black}"
+  sticky-note:
+    backgroundColor: "{colors.surface-sticky}"
+    textColor: "{colors.dymo-black}"
+    fontFamily: "{typography.handwriting.fontFamily}"
+    rounded: "{rounded.none}"
+    padding: "16px"
 ---
 
-# Drafting Mat Scrapbook & Engineering Field Dossier
+# Tactile Studio Cutting Mat & Engineer's Physical Scrapbook
 
 ## Overview
-A tactile, collage-driven engineering portfolio that models an engineer's physical drafting desk. The canvas is a deep obsidian workbench (`#0b0f17`) upon which authentic physical ephemera are laid out: polaroid-framed architectural specimens, frosted washi tape strips, yellow typewriter sticky notes, and red ink verification stamps.
+A tactile, human-crafted engineering portfolio for **Muhammad Ardhie** ([Ardhie1212](https://github.com/Ardhie1212)). Rather than merely framing images, the physical scrapbook concept permeates the **entire interface—especially typography, headings, labels, tags, and annotations**:
+- **Studio Green Cutting Mat (`#1E5B4D`)**: Classic self-healing crafting workbench textured with measurement millimeter and centimeter grids.
+- **Dymo Embossed Labels**: Black label strips (`#14211C`) with punchy white typewriter letters (`Special Elite`) identifying sections and categories.
+- **Marker Highlighter Titles**: Vivid yellow highlighter strokes (`#FFE45C`) sweeping under and through hero and section titles.
+- **Handwritten Marginalia (`Caveat`)**: Engineer's casual margin scribbles, arrows, and observations pinned across the layout.
+- **Paper Sheet Dossiers**: Content modules formatted as physical graph paper sheets (`#F2F4EE`) and kraft cardstock (`#C9A06B`) taped to the workbench with translucent washi tape.
+- **Tactile Paper Tags**: Skill and stack badges formatted as individual cut paper slips with organic micro-rotations (`-1.5deg`, `+1deg`, `-0.5deg`).
 
-## Colors
-- **Canvas Base (`#0b0f17`)**: Deep industrial drafting desk mat with subtle grid lines.
-- **Polaroid Photo Surface (`#ffffff`)**: Pure white photo paper for mounted architectural mockups.
-- **Surface Mat (`#111827`)**: Subtly lifted slate panel for technical dossiers and indices.
-- **Blueprint Fragment (`#1e3a5f`)**: Deep cyanotype architectural scrap with cyan text (`#38bdf8`).
-- **Sticky Note (`#fef08a`)**: Goldenrod memo paper with dark brown typewriter ink (`#713f12`, 10:1 contrast).
-- **Text Hierarchy on Canvas**:
-  - `text-primary`: `#f8fafc` (16.5:1 ratio)
-  - `text-secondary`: `#cbd5e1` (11:1 ratio)
-  - `text-tertiary`: `#94a3b8` (8.5:1 ratio)
-- **Accents**:
-  - `accent-crimson` (`#ef4444`): Rubber ink verification stamps and seal badges.
-  - `accent-blueprint` (`#38bdf8`): Drafting guidelines.
-  - `tape-amber` (`rgba(251, 191, 36, 0.7)`): Frosted drafting tape.
-  - `tape-cyan` (`rgba(56, 189, 248, 0.6)`): Frosted electrical / blueprint tape.
+## Real Technical Grounding
+- **Laravel Backend Engine**: Real architecture, B-tree indexing, Redis cache-aside invalidation, transactional consistency, sub-40ms response latency ([backendportfolio](https://github.com/Ardhie1212/backendportfolio)).
+- **React Telemetry Systems**: State boundary isolation, optimistic UI mutations, high-throughput telemetry panels ([belajar-reactjs-dasar-main](https://github.com/Ardhie1212/belajar-reactjs-dasar-main)).
+- **Android Kotlin Mobile**: MVVM/MVI Clean Architecture, Room SQLite disk persistence, offline-first WorkManager background daemon ([Ardhie1212](https://github.com/Ardhie1212)).
+- **Figma Design Systems**: 3-tier token taxonomies (primitive &rarr; semantic &rarr; component), exhaustive 140+ component state matrix.
 
-## Typography
-- **Display & Headings**: `Besley` — robust antique slab serif (1845 Clarendon revival) offering rich editorial craftsmanship.
-- **Typewriter Field Notes**: `Courier Prime` — authentic mechanical typewriter typography for margin annotations and lab notes.
-- **Technical & Metrics**: `JetBrains Mono` — mathematical monospaced typeface for code schemas, routes, and tabular numbers.
+## Typography Palette
+- **Headings & Display**: `Bricolage Grotesque` (bold, quirky, high personality).
+- **Typewriter & Dymo Labels**: `Special Elite` (authentic ink-bleed mechanical typewriter).
+- **Marginalia & Scribbles**: `Caveat` (warm, natural felt-pen handwriting).
+- **Code & Latency Telemetry**: `JetBrains Mono` (precise monospaced code).
 
-## Layout & Composition
-- **Open Drafting Canvas**: No generic nested cards! Project plates sit directly in flow on the drafting surface.
-- Asymmetrical Z-pattern layout with slight physical tilts (`-1.5deg` to `+2deg`) on polaroids and sticky notes.
-- Layered collage: Drafting mat &rarr; Tilted polaroid specimen &rarr; Translucent washi tape &rarr; Overlapping pinned sticky note.
-
-## Elevation & Depth
-- Diffuse paper drop shadows simulating physical paper layers resting on a desk surface.
-- Crisp 1px drafting borders.
-
-## Do's and Don'ts
-- **DO**: Treat the page as a physical collage desk spread.
-- **DO**: Ensure all text passes WCAG AAA contrast requirements.
-- **DON'T**: Do not nest cards inside cards.
-- **DON'T**: Do not use thick colored border-left as an AI cliché.
-- **DON'T**: Do not use warm cream/beige backgrounds that trigger generic AI defaults.
+## Mechanical Detector Discipline
+- WCAG AAA contrast ratios verified across both cutting mat and paper sheets.
+- No faux multi-vertex organic clip-paths (strictly geometric and paper borders).
+- No wide tracking on body text.
+- 100% static zero-framework delivery.

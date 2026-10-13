@@ -1,47 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Ardhie — Engineering Field Journal &amp; Dossier</title>
-  <meta name="description" content="Tactile engineering portfolio and working journal of Muhammad Ardhie. Production-grade systems across Laravel, React, Android Kotlin, and Figma Design Systems.">
+  <title>Muhammad Ardhie — Meja Kerja &amp; Scrapbook Engineering</title>
+  <meta name="description" content="Portofolio rekayasa perangkat lunak Muhammad Ardhie. Spesialisasi Laravel, React JS, Android Kotlin, dan Figma Design Systems.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Sticky Top Dossier Navigation -->
+  <!-- ========================================================================
+       NAVBAR (TAPE & DYMO LABEL HEADER)
+       ======================================================================== -->
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="index.html" class="brand" aria-label="Muhammad Ardhie Dossier">
-          <div class="brand-monogram">MA</div>
-          <div>
-            <span>Ardhie<span style="color: var(--accent-crimson);">.</span>dev</span>
-            <span class="brand-dossier-tag">// FIELD LOG 2026</span>
-          </div>
+        <a href="index.html" class="brand-dymo" aria-label="Muhammad Ardhie Beranda">
+          <span>Ardhie · Portofolio</span>
         </a>
 
-        <nav aria-label="Main Navigation">
+        <nav aria-label="Navigasi Utama">
           <ul class="nav-links">
-            <li><a href="index.html" class="nav-link active">Home Journal</a></li>
-            <li><a href="works.html" class="nav-link">Selected Plates</a></li>
-            <li><a href="about.html" class="nav-link">About &amp; Journey</a></li>
+            <li><a href="#laravel" class="nav-link">Laravel</a></li>
+            <li><a href="#react" class="nav-link">React JS</a></li>
+            <li><a href="#android" class="nav-link">Android</a></li>
+            <li><a href="#figma" class="nav-link">Figma</a></li>
+            <li><a href="works.html" class="nav-link">Semua Arsip</a></li>
+            <li><a href="about.html" class="nav-link">Tentang</a></li>
+            <li><a href="#kontak" class="nav-link">Kontak</a></li>
           </ul>
         </nav>
 
         <div class="nav-actions">
-          <div class="stamp-badge" title="Verified active availability status">
+          <div class="stamp-badge" title="Status ketersediaan aktif">
             <span class="stamp-dot"></span>
             <span>ACTIVE ON SITE</span>
           </div>
 
-          <button class="btn btn-secondary" data-copy-email="m.ardhie5325@gmail.com" title="Copy email address to clipboard" style="padding: 0.45rem 0.85rem; font-size: 0.88rem;">
-            <svg class="btn-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span>Copy Email</span>
-          </button>
-
-          <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
@@ -49,464 +46,522 @@
     </div>
   </header>
 
-  <!-- Hero: Physical Desk Spread -->
   <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-desk">
-          <!-- Left: Narrative & Credentials -->
-          <div class="hero-lead-box">
-            <span class="dossier-label">// ARCHIVAL DOSSIER &bull; SPECIMEN LOG 01</span>
-            <h1>The Software Engineering Field Journal</h1>
-            <p class="hero-lead">
-              Handcrafted digital systems by <strong>Muhammad Ardhie</strong>. An end-to-end software builder who bridges atomic design systems in <strong>Figma</strong> down to resilient <strong>Android Kotlin</strong> mobile clients, reactive <strong>React</strong> dashboards, and ACID-compliant <strong>Laravel</strong> backend engines.
-            </p>
+    <!-- ======================================================================
+         HERO WORKBENCH SPREAD
+         ====================================================================== -->
+    <section class="hero-spread">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
+        <div class="hero-text-col">
+          <div class="hero-subhead">Systems &amp; Product Engineer · Bandung, Indonesia</div>
+          <h1 class="hero-title">
+            Aku Ardhie. Aku merancang arsitektur, dari <span class="marker-highlight">backend hingga pixel antarmuka</span>.
+          </h1>
+          <p class="hero-desc">
+            Empat pilar yang kudalami dengan sungguh-sungguh: Laravel, React, Android Kotlin, dan Figma Design Systems. Setiap spesifikasi dan studi kasus di sini kutata layaknya potongan catatan di atas meja potong fisik.
+          </p>
+          <div class="hero-actions">
+            <a href="#laravel" class="btn-scrapbook">
+              <span>Buka Meja Potong</span>
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn-scrapbook-alt">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub Archive</span>
+            </a>
+          </div>
+          <div class="handwritten-note">
+            empat pilar rekayasa di bawah, scroll saja &darr;
+          </div>
+        </div>
 
-            <div class="hero-actions">
-              <a href="#featured-works" class="btn btn-primary">
-                <span>Inspect Field Plates</span>
+        <!-- Scrapbook Hero Collage -->
+        <div class="hero-collage-col">
+          <div class="desk-collage-stack">
+            <!-- Polaroid 1: Laravel -->
+            <div class="pin-item polaroid-card" style="--r: -6deg; left: 2%; top: 4%; width: 44%;">
+              <div class="washi-tape-strip tape-pink" style="--tape-rot: -4deg;"></div>
+              <div class="polaroid-photo-box" style="background: #F0745E;">
+                <img src="assets/mockup-laravel.svg" alt="Laravel Backend Schematics" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="polaroid-caption-tag">laravel</div>
+            </div>
+
+            <!-- Polaroid 2: React JS -->
+            <div class="pin-item polaroid-card" style="--r: 5deg; left: 52%; top: 2%; width: 44%;">
+              <div class="washi-tape-strip tape-cyan" style="--tape-rot: 3deg;"></div>
+              <div class="polaroid-photo-box" style="background: #7FD0EA;">
+                <img src="assets/mockup-react.svg" alt="React Telemetry Schematics" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="polaroid-caption-tag">react js</div>
+            </div>
+
+            <!-- Kraft Card: Status -->
+            <div class="paper-card-kraft" style="transform: rotate(-8deg); position: absolute; left: 0%; top: 62%; padding: 10px 18px; white-space: nowrap; font-family: var(--font-typewriter); font-size: 0.82rem; text-transform: uppercase;">
+              Full-Stack Systems
+            </div>
+
+            <!-- Polaroid 3: Android Kotlin -->
+            <div class="pin-item polaroid-card" style="--r: -2deg; left: 26%; top: 44%; width: 46%;">
+              <div class="washi-tape-strip tape-amber" style="--tape-rot: -2deg;"></div>
+              <div class="polaroid-photo-box" style="background: #7BD389;">
+                <img src="assets/mockup-android.svg" alt="Android Kotlin Schematics" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div class="polaroid-caption-tag">android kotlin</div>
+            </div>
+
+            <!-- Sticky Note -->
+            <div class="pin-item sticky-note-card" style="--r: 7deg; position: absolute; left: 68%; top: 64%; width: 30%;">
+              4 pilar,<br>zero slop!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         METRIC LEDGER (ENGINEER'S DESK RULER STRIP)
+         ====================================================================== -->
+    <div class="container">
+      <div class="desk-metric-strip">
+        <div class="metric-cell">
+          <span class="metric-val">4 Pilar</span>
+          <span class="metric-desc">Laravel · React · Kotlin · Figma</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-val">&lt;40ms</span>
+          <span class="metric-desc">Target latensi kueri database &amp; Redis cache</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-val">100%</span>
+          <span class="metric-desc">Murni statis zero-framework di GitHub Pages</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-val">AAA</span>
+          <span class="metric-desc">Kontras warna &amp; aksesibilitas terverifikasi</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         PLATE 01: LARAVEL BACKEND SYSTEMS
+         ====================================================================== -->
+    <section id="laravel" class="project-scrap-section">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
+        <!-- Visual Column (Code Terminal & Notes) -->
+        <div class="scrap-col-visual">
+          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
+            <!-- Background Kraft Backing -->
+            <div aria-hidden="true" style="transform: rotate(2deg); position: absolute; inset: 4%; width: 92%; height: 92%; background-color: var(--paper-kraft); background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px); box-shadow: var(--shadow-paper);"></div>
+
+            <!-- Terminal Card: routes/api.php -->
+            <div class="pin-item code-terminal-card" style="--r: -2deg; position: absolute; left: 4%; top: 10%; width: 88%;">
+              <div class="terminal-header">
+                <div class="terminal-dot" style="background: #F6B7A8;"></div>
+                <div class="terminal-dot" style="background: #FFE45C;"></div>
+                <div class="terminal-dot" style="background: #BFE8C8;"></div>
+                <span class="terminal-title">routes/api.php</span>
+              </div>
+              <pre class="terminal-content"><span style="color: #FF9A86;">Route</span>::middleware([<span style="color: #FFE45C;">'cache.aside:60s'</span>])-&gt;group(<span style="color: #B3401A;">function</span> () {
+    <span style="color: #FF9A86;">Route</span>::get(<span style="color: #FFE45C;">'/telemetry/realtime'</span>,
+        [<span style="color: #9BE0AE;">TelemetryController</span>::class, <span style="color: #FFE45C;">'stream'</span>]);
+});</pre>
+            </div>
+
+            <!-- Tape on Terminal -->
+            <div class="washi-tape-strip tape-amber" style="top: 5%; left: 72%; --tape-rot: 18deg;"></div>
+
+            <!-- Controller Scrap Paper -->
+            <div class="pin-item paper-card-grid" style="--r: 2.5deg; position: absolute; left: 30%; top: 48%; width: 66%; padding: 18px 20px;">
+              <div style="background: var(--dymo-black); color: #FFFFFF; font-family: var(--font-typewriter); font-size: 0.8rem; letter-spacing: 0.04em; padding: 4px 10px; display: inline-block; margin-bottom: 8px;">
+                TelemetryController.php
+              </div>
+              <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.5; color: var(--text-dark); white-space: pre-wrap;"><span style="color: #B3401A;">public function</span> stream(<span style="color: #0369a1;">TelemetryService</span> $svc) {
+    <span style="color: #B3401A;">return</span> response()-&gt;json(
+        $svc-&gt;getOptimizedMetrics()
+    );
+}</pre>
+            </div>
+
+            <!-- Sticky Note -->
+            <div class="pin-item sticky-note-card" style="--r: -6deg; position: absolute; left: 2%; top: 62%; width: 34%;">
+              route &rarr; controller &rarr; redis &lt;40ms
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Column -->
+        <div class="scrap-col-text">
+          <div class="pin-item paper-card-grid" style="--r: 0.6deg;">
+            <div class="washi-tape-strip tape-amber" style="--tape-rot: 2deg;"></div>
+            <div class="dymo-badge" style="--rot: -1.5deg; align-self: flex-start;">Laravel Engine</div>
+            <h2 class="section-title">
+              Sistem di <span class="marker-underline">balik layar</span>
+            </h2>
+            <div class="section-project-meta">
+              High-Throughput Relational API · [2026 Production Spec]
+            </div>
+            <p class="section-body-text">
+              Perancangan REST API terstruktur dengan optimasi database PostgreSQL/MySQL, compound index B-Tree, dan pola cache-aside Redis. Menghindari bottleneck N+1 query dan menjaga integritas relasional data agar siap menangani lonjakan beban produksi.
+            </p>
+            <div class="tag-cloud">
+              <span class="craft-tag" style="--rot: -1.5deg;">Laravel 11</span>
+              <span class="craft-tag" style="--rot: 1deg;">Redis Cache</span>
+              <span class="craft-tag dashed" style="--rot: -0.5deg;">PostgreSQL</span>
+              <span class="craft-tag" style="--rot: 1.5deg;">B-Tree Indexing</span>
+            </div>
+            <div style="margin-top: 8px;">
+              <a href="https://github.com/Ardhie1212/backendportfolio" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
+                <span>Periksa Kode Repo</span>
                 <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
               </a>
-              <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                <span>GitHub Archive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PLATE 02: REACT REACTIVE TELEMETRY
+         ====================================================================== -->
+    <section id="react" class="project-scrap-section">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
+        <!-- Text Column -->
+        <div class="scrap-col-text">
+          <div class="pin-item paper-card-grid" style="--r: -0.6deg;">
+            <div class="washi-tape-strip tape-cyan" style="--tape-rot: -2deg;"></div>
+            <div class="dymo-badge" style="--rot: 1.5deg; align-self: flex-start;">React JS</div>
+            <h2 class="section-title">
+              Web yang <span class="marker-underline">bergerak presisi</span>
+            </h2>
+            <div class="section-project-meta">
+              Reactive State Telemetry · [2026 Component Architecture]
+            </div>
+            <p class="section-body-text">
+              Antarmuka web yang dibangun dari komponen terisolasi dengan mutasi UI optimistik untuk dashboard telemetry bervolume tinggi. Membatasi re-render ke boundary spesifik sehingga rendering grafik data tetap responsif di 60 FPS tanpa jank.
+            </p>
+            <div class="tag-cloud">
+              <span class="craft-tag" style="--rot: 1.5deg;">React 18</span>
+              <span class="craft-tag" style="--rot: -1deg;">TypeScript</span>
+              <span class="craft-tag dashed" style="--rot: 0.5deg;">Optimistic UI</span>
+              <span class="craft-tag" style="--rot: -1.5deg;">State Boundary</span>
+            </div>
+            <div style="margin-top: 8px;">
+              <a href="https://github.com/Ardhie1212/belajar-reactjs-dasar-main" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
+                <span>Periksa Kode Repo</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
               </a>
             </div>
           </div>
+        </div>
 
-          <!-- Right: Tilted Collage Artifact Stack -->
-          <div class="hero-collage-stack">
-            <div class="polaroid-frame hero-polaroid">
-              <div class="washi-tape washi-tape-top"></div>
-              <img src="assets/hero-profile.svg" alt="Blueprint Candidate Dossier for Muhammad Ardhie" class="polaroid-photo" width="400" height="250">
-              <div class="polaroid-caption">
-                <span>FIG 0.1 &bull; CANDIDATE PROFILE</span>
-                <span>STATUS: READY</span>
+        <!-- Visual Column (Browser Window & React Component) -->
+        <div class="scrap-col-visual">
+          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
+            <!-- Blueprint Paper Base -->
+            <div aria-hidden="true" style="transform: rotate(-2deg); position: absolute; inset: 5%; background-color: #DDEAF3; background-image: linear-gradient(rgba(40,100,150,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(40,100,150,0.2) 1px, transparent 1px); background-size: 20px 20px; box-shadow: var(--shadow-paper);"></div>
+
+            <!-- Browser Window Card -->
+            <div style="transform: rotate(1.5deg); position: absolute; left: 8%; top: 12%; width: 84%; background: #FFFFFF; border: 2px solid var(--dymo-black); box-shadow: var(--shadow-paper);">
+              <div style="height: 34px; background: var(--dymo-black); display: flex; align-items: center; gap: 8px; padding-inline: 12px;">
+                <div style="width: 9px; height: 9px; border-radius: 50%; background: #F6B7A8;"></div>
+                <div style="width: 9px; height: 9px; border-radius: 50%; background: #FFE45C;"></div>
+                <div style="width: 9px; height: 9px; border-radius: 50%; background: #BFE8C8;"></div>
+                <div style="margin-left: 12px; height: 16px; flex: 1; background: #2C3B35; border-radius: 8px;"></div>
+              </div>
+              <div style="padding: 18px; display: flex; gap: 14px;">
+                <div style="width: 22%; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="height: 12px; background: var(--dymo-black);"></div>
+                  <div style="height: 10px; background: #9AA8A1;"></div>
+                  <div style="height: 10px; background: #9AA8A1;"></div>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 12px;">
+                  <div style="height: 16px; width: 50%; background: var(--dymo-black);"></div>
+                  <div style="display: flex; gap: 10px; height: 48px;">
+                    <div style="flex: 1; background: var(--marker-yellow);"></div>
+                    <div style="flex: 1; background: #7FD0EA;"></div>
+                    <div style="flex: 1; background: #F6B7A8;"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Overlapping Pinned Memo -->
-            <div class="sticky-memo hero-sticky-note">
-              <div class="washi-tape washi-tape-left washi-tape-blue"></div>
-              <strong>Field Note:</strong><br>
-              Zero frameworks on this site. 100% static HTML, CSS &amp; vanilla JS. Fast, durable, and honest.
-            </div>
-          </div>
-        </div>
+            <!-- Tape -->
+            <div class="washi-tape-strip tape-cyan" style="top: 8%; left: 8%; --tape-rot: -24deg;"></div>
 
-        <!-- Metric Ledger Strip -->
-        <div class="metric-ledger">
-          <div class="metric-item">
-            <span class="metric-value tabular">4 Core</span>
-            <span class="metric-label">Engineering Pillars (Laravel, React, Android, Figma)</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-value tabular">&lt;40ms</span>
-            <span class="metric-label">Target REST API Query &amp; Cache Latency</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-value tabular">100%</span>
-            <span class="metric-label">Zero-Bloat Static Delivery on GitHub Pages</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-value tabular">AAA</span>
-            <span class="metric-label">Contrast &amp; Accessibility Craft Floor</span>
+            <!-- Code Scrap -->
+            <div class="pin-item paper-card-grid" style="--r: -2.5deg; position: absolute; left: 24%; top: 58%; width: 72%; padding: 14px 18px;">
+              <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.5; color: var(--text-dark); white-space: pre-wrap;"><span style="color: #B3401A;">function</span> TelemetryFeed({ streamId }) {
+  <span style="color: #B3401A;">const</span> { data } = useTelemetry(streamId);
+  <span style="color: #B3401A;">return</span> &lt;<span style="color: #0369a1;">DataGauge</span> latency={data.ms} /&gt;;
+}</pre>
+            </div>
+
+            <!-- Sticky Note -->
+            <div class="pin-item sticky-note-card" style="--r: 5deg; position: absolute; left: 68%; top: 2%; width: 28%; font-size: 1.35rem;">
+              komponen kecil, halaman besar
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Selected Works / Scrapbook Plates Exhibition -->
-    <section class="section" id="featured-works">
-      <div class="container">
-        <div class="section-header">
-          <span class="dossier-label">// ARCHIVAL EXHIBITION &bull; CASE STUDIES</span>
-          <h2>Selected Engineering Plates</h2>
-          <p class="section-desc">
-            Production systems documented as physical workbench plates. Each case study pairs architectural context with verifiable telemetry.
-          </p>
+    <!-- ======================================================================
+         PLATE 03: ANDROID KOTLIN CLIENT
+         ====================================================================== -->
+    <section id="android" class="project-scrap-section">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
+        <!-- Visual Column (Mobile Phone Wireframe & SQLite Dao) -->
+        <div class="scrap-col-visual">
+          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
+            <!-- Kraft Base -->
+            <div aria-hidden="true" style="transform: rotate(3deg); position: absolute; inset: 4%; width: 92%; height: 92%; background-color: var(--paper-kraft); background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px); box-shadow: var(--shadow-paper);"></div>
+            <div class="washi-tape-strip tape-amber" style="top: 2%; left: 16%; --tape-rot: -30deg;"></div>
+
+            <!-- Wireframe Sketch Card -->
+            <div class="pin-item paper-card-grid" style="--r: -6deg; position: absolute; left: 6%; top: 14%; width: 34%; height: 44%; padding: 14px;">
+              <div style="width: 100%; height: 75%; border: 1.5px dashed var(--dymo-black); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+                <div style="height: 8px; width: 60%; border: 1px dashed var(--dymo-black);"></div>
+                <div style="height: 18px; border: 1px dashed var(--dymo-black);"></div>
+                <div style="height: 18px; border: 1px dashed var(--dymo-black);"></div>
+              </div>
+              <div style="font-family: var(--font-handwriting); font-size: 1.4rem; color: var(--text-dark); text-align: center; margin-top: 4px;">sketsa</div>
+            </div>
+
+            <!-- Phone Mockup Card -->
+            <div style="transform: rotate(2deg); position: absolute; left: 38%; top: 6%; width: 44%; height: 86%; background: var(--dymo-black); border-radius: 28px; padding: 12px; box-shadow: var(--shadow-lift);">
+              <div style="width: 100%; height: 100%; background: #F2F4EE; border-radius: 20px; padding: 16px 12px; display: flex; flex-direction: column; gap: 10px; overflow: hidden;">
+                <div style="align-self: center; width: 44px; height: 6px; border-radius: 4px; background: var(--dymo-black);"></div>
+                <div style="font-size: 1rem; font-weight: 800; color: var(--dymo-black);">Beranda Log</div>
+                <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #D8F0DD; border-radius: 6px;">
+                  <div style="width: 22px; height: 22px; background: var(--accent-soft-green); border-radius: 4px;"></div>
+                  <div style="flex: 1; height: 8px; background: var(--dymo-black);"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #FFF1A8; border-radius: 6px;">
+                  <div style="width: 22px; height: 22px; background: #E0B400; border-radius: 4px;"></div>
+                  <div style="flex: 1; height: 8px; background: var(--dymo-black);"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; padding: 8px; background: #FAD3C8; border-radius: 6px;">
+                  <div style="width: 22px; height: 22px; background: #E4452F; border-radius: 4px;"></div>
+                  <div style="flex: 1; height: 8px; background: var(--dymo-black);"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sticky Note -->
+            <div class="pin-item sticky-note-card" style="--r: 6deg; position: absolute; left: 66%; top: 64%; width: 30%; font-size: 1.35rem;">
+              sketsa dulu, kode kemudian
+            </div>
+          </div>
         </div>
 
-        <div class="work-list">
-          <!-- Plate 01: Laravel Backend (Z-pattern normal: text left, image right) -->
-          <article class="work-scrap-item">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 01 // DISTRIBUTED ARCHITECTURE]</span>
-              <h3 class="work-title">Enterprise Resource &amp; Telemetry API Engine</h3>
-              <p class="work-overview">
-                High-concurrency backend service orchestrating multi-tenant operational contracts, relational consistency in PostgreSQL, and sub-40ms cached database queries.
-              </p>
-              <ul class="work-spec-list">
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Relational B-Tree Indexing:</strong> PostgreSQL schema optimized with compound indexes, reducing latency from 340ms to 38.4ms.</span>
-                </li>
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Redis Cache-Aside Pattern:</strong> High-throughput telemetry cached with deterministic invalidation hooks.</span>
-                </li>
-              </ul>
-              <div class="work-tags">
-                <span class="work-tag">Laravel 11 LTS</span>
-                <span class="work-tag">PHP 8.3 JIT</span>
-                <span class="work-tag">PostgreSQL 16</span>
-                <span class="work-tag">Redis 7</span>
-                <span class="work-tag">REST API</span>
-              </div>
-              <div style="margin-top: 0.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <a href="works.html#laravel-system" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>Inspect Dossier</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-                <a href="https://github.com/Ardhie1212/backendportfolio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>View Code on GitHub</span>
-                </a>
-              </div>
+        <!-- Text Column -->
+        <div class="scrap-col-text">
+          <div class="pin-item paper-card-grid" style="--r: 0.6deg;">
+            <div class="washi-tape-strip tape-pink" style="--tape-rot: 2deg;"></div>
+            <div class="dymo-badge" style="--rot: -1.5deg; align-self: flex-start;">Android Kotlin</div>
+            <h2 class="section-title">
+              Aplikasi di <span class="marker-underline">genggaman</span>
+            </h2>
+            <div class="section-project-meta">
+              Native Mobile Architecture · [2026 Android Spec]
             </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top"></div>
-                <img src="assets/mockup-laravel.svg" alt="Laravel Architecture and REST Telemetry Schema Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 1.1 &bull; REST API TELEMETRY ROUTE</span>
-                  <span>PHP 8.3 &bull; 200 OK</span>
-                </div>
-              </div>
-
-              <!-- Pinned Field Note -->
-              <div class="sticky-memo field-memo-badge">
-                <div class="washi-tape washi-tape-right washi-tape-blue"></div>
-                <strong>Lab Note:</strong><br>
-                Compound B-Tree index solved the slow query bottleneck on project contracts table.
-              </div>
+            <p class="section-body-text">
+              Aplikasi Android native menggunakan Clean Architecture (MVVM/MVI) dengan persistensi disk terenkripsi Room SQLite dan WorkManager background sync. Bekerja tanpa kendala saat jaringan offline dan melakukan auto-reconnect saat sinyal kembali pulih.
+            </p>
+            <div class="tag-cloud">
+              <span class="craft-tag" style="--rot: -1.5deg;">Kotlin</span>
+              <span class="craft-tag" style="--rot: 1deg;">Jetpack Compose</span>
+              <span class="craft-tag dashed" style="--rot: -0.5deg;">Room SQLite</span>
+              <span class="craft-tag" style="--rot: 1.5deg;">WorkManager</span>
             </div>
-          </article>
-
-          <!-- Plate 02: React Frontend (Z-pattern REVERSED: visual left, text right) -->
-          <article class="work-scrap-item reverse">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 02 // REACTIVE CLIENT]</span>
-              <h3 class="work-title">Operational Intelligence &amp; Analytics Workspace</h3>
-              <p class="work-overview">
-                Real-time operational dashboard featuring reactive WebSocket synchronization, client-side state predictability, and smooth telemetry charts rendered at steady 60 FPS.
-              </p>
-              <ul class="work-spec-list">
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>State Boundary Isolation:</strong> Segmented stores preventing re-renders of heavy data visualization panels.</span>
-                </li>
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Optimistic UI Mutations:</strong> Instant tactile feedback with background server synchronization and rollback.</span>
-                </li>
-              </ul>
-              <div class="work-tags">
-                <span class="work-tag">React 19</span>
-                <span class="work-tag">TypeScript</span>
-                <span class="work-tag">Tailwind Tokens</span>
-                <span class="work-tag">WebSockets</span>
-                <span class="work-tag">60 FPS</span>
-              </div>
-              <div style="margin-top: 0.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <a href="works.html#react-dashboard" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>Inspect Dossier</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-                <a href="https://github.com/Ardhie1212/belajar-reactjs-dasar-main" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>View Code on GitHub</span>
-                </a>
-              </div>
+            <div style="margin-top: 8px;">
+              <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
+                <span>Arsip Profil GitHub</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
             </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top washi-tape-blue"></div>
-                <img src="assets/mockup-react.svg" alt="React Operational Analytics Workspace Interface Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 2.1 &bull; TELEMETRY FLUX OSCILLOGRAM</span>
-                  <span>RENDER: 11.8ms</span>
-                </div>
-              </div>
-
-              <!-- Pinned Field Note -->
-              <div class="sticky-memo field-memo-badge" style="left: -16px; right: auto; transform: rotate(-3deg);">
-                <div class="washi-tape washi-tape-left"></div>
-                <strong>Lab Note:</strong><br>
-                Render budget locked at 11.8ms. Zero layout thrashing observed during live stress test.
-              </div>
-            </div>
-          </article>
-
-          <!-- Plate 03: Android Kotlin (Normal Z-pattern) -->
-          <article class="work-scrap-item">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 03 // NATIVE MOBILE CLIENT]</span>
-              <h3 class="work-title">Field Logistics &amp; Offline-First Client</h3>
-              <p class="work-overview">
-                Native Android enterprise client engineered for resilient zero-loss field synchronization, background WorkManager queues, and reactive UI state with Kotlin Coroutines.
-              </p>
-              <ul class="work-spec-list">
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Room SQLite Encrypted Disk:</strong> 100% data preservation during prolonged cellular dead-zone inspection runs.</span>
-                </li>
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>WorkManager Daemon:</strong> Exponential back-off sync automatically flushing pending batches upon reconnect.</span>
-                </li>
-              </ul>
-              <div class="work-tags">
-                <span class="work-tag">Android Kotlin</span>
-                <span class="work-tag">Jetpack Compose</span>
-                <span class="work-tag">Coroutines / Flow</span>
-                <span class="work-tag">Room DB</span>
-                <span class="work-tag">WorkManager</span>
-              </div>
-              <div style="margin-top: 0.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <a href="works.html#android-client" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>Inspect Dossier</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>View Code on GitHub</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top"></div>
-                <img src="assets/mockup-android.svg" alt="Android Kotlin Field Logistics Client Bezel Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 3.1 &bull; NATIVE BEZEL CLIENT RECORD</span>
-                  <span>SYNC: DURABLE</span>
-                </div>
-              </div>
-
-              <!-- Pinned Field Note -->
-              <div class="sticky-memo field-memo-badge">
-                <div class="washi-tape washi-tape-right washi-tape-blue"></div>
-                <strong>Lab Note:</strong><br>
-                Tested with airplane mode toggles during dispatch commits. Zero collisions recorded.
-              </div>
-            </div>
-          </article>
-
-          <!-- Plate 04: Figma Design System (Reversed Z-pattern) -->
-          <article class="work-scrap-item reverse">
-            <div class="work-info-col">
-              <span class="work-plate-number">[PLATE 04 // PRODUCT DESIGN]</span>
-              <h3 class="work-title">Atomic Design System &amp; Component Matrix</h3>
-              <p class="work-overview">
-                Comprehensive multi-theme design system engineered in Figma, standardizing design tokens, auto-layout responsive primitives, and complete state coverage before code execution.
-              </p>
-              <ul class="work-spec-list">
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>3-Tier Token Taxonomy:</strong> Primitive tokens mapping cleanly to semantic roles and component variables in CSS and Jetpack Compose.</span>
-                </li>
-                <li class="work-spec-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span><strong>Exhaustive State Matrix:</strong> 140+ components specifying Default, Hover, Focused, Pressed, Disabled, and Loading states.</span>
-                </li>
-              </ul>
-              <div class="work-tags">
-                <span class="work-tag">Figma</span>
-                <span class="work-tag">Design Tokens</span>
-                <span class="work-tag">Auto-Layout 5.0</span>
-                <span class="work-tag">WCAG AAA</span>
-                <span class="work-tag">Design Ops</span>
-              </div>
-              <div style="margin-top: 0.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <a href="works.html#figma-system" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>Inspect Dossier</span>
-                  <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.92rem; padding: 0.55rem 1.15rem;">
-                  <span>View Code on GitHub</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="work-visual-col">
-              <div class="polaroid-frame">
-                <div class="washi-tape washi-tape-top washi-tape-blue"></div>
-                <img src="assets/mockup-figma.svg" alt="Figma Design Tokens and Component Matrix Specimen Plate" width="800" height="500" loading="lazy">
-                <div class="polaroid-caption">
-                  <span>FIG 4.1 &bull; ATOMIC TOKEN ARCHITECTURE</span>
-                  <span>140+ PRIMITIVES</span>
-                </div>
-              </div>
-
-              <!-- Pinned Field Note -->
-              <div class="sticky-memo field-memo-badge" style="left: -16px; right: auto; transform: rotate(-2.5deg);">
-                <div class="washi-tape washi-tape-left"></div>
-                <strong>Lab Note:</strong><br>
-                Naming parity achieved: Figma component props directly match TypeScript interfaces.
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Arsenal Matrix as Specimen Archive -->
-    <section class="section" id="capabilities">
-      <div class="container">
-        <div class="section-header">
-          <span class="dossier-label">// ARCHIVAL CLASSIFICATION &bull; ARSENAL</span>
-          <h2>Technical Specimen Archive</h2>
-          <p class="section-desc">
-            Classified index of frameworks, runtimes, and engineering apparatus proven through battle-tested deployment.
-          </p>
-        </div>
-
-        <div class="matrix-grid">
-          <!-- Card 1: Backend -->
-          <div class="specimen-card">
-            <div class="washi-tape washi-tape-left"></div>
-            <div class="specimen-header">
-              <h3 class="specimen-title">Backend Architecture</h3>
-              <span class="specimen-code">SEC // 01</span>
-            </div>
-            <ul class="specimen-list">
-              <li class="specimen-item">
-                <span class="specimen-name">Laravel Framework</span>
-                <span class="specimen-role">APIs &bull; Queues</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">PHP 8.3 LTS</span>
-                <span class="specimen-role">Strict Types</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">PostgreSQL &bull; MySQL</span>
-                <span class="specimen-role">Relational Schemas</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Redis In-Memory</span>
-                <span class="specimen-role">Cache &bull; Mutex</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 2: Frontend -->
-          <div class="specimen-card">
-            <div class="washi-tape washi-tape-right washi-tape-blue"></div>
-            <div class="specimen-header">
-              <h3 class="specimen-title">Frontend Systems</h3>
-              <span class="specimen-code">SEC // 02</span>
-            </div>
-            <ul class="specimen-list">
-              <li class="specimen-item">
-                <span class="specimen-name">React 19 SPAs</span>
-                <span class="specimen-role">Reactive State</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Modern ES6+ JS</span>
-                <span class="specimen-role">Zero-Bloat DOM</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Modular Modern CSS</span>
-                <span class="specimen-role">Custom Tokens</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Tailwind CSS</span>
-                <span class="specimen-role">Utility Engine</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 3: Mobile -->
-          <div class="specimen-card">
-            <div class="washi-tape washi-tape-left washi-tape-blue"></div>
-            <div class="specimen-header">
-              <h3 class="specimen-title">Mobile Native</h3>
-              <span class="specimen-code">SEC // 03</span>
-            </div>
-            <ul class="specimen-list">
-              <li class="specimen-item">
-                <span class="specimen-name">Android Kotlin</span>
-                <span class="specimen-role">Clean MVVM</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Jetpack Compose</span>
-                <span class="specimen-role">Declarative UI</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Room SQLite</span>
-                <span class="specimen-role">Offline Durability</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">WorkManager</span>
-                <span class="specimen-role">Guaranteed Sync</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 4: Design -->
-          <div class="specimen-card">
-            <div class="washi-tape washi-tape-right"></div>
-            <div class="specimen-header">
-              <h3 class="specimen-title">Product Design</h3>
-              <span class="specimen-code">SEC // 04</span>
-            </div>
-            <ul class="specimen-list">
-              <li class="specimen-item">
-                <span class="specimen-name">Figma Prototyping</span>
-                <span class="specimen-role">Auto-Layout 5.0</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Token Taxonomy</span>
-                <span class="specimen-role">Code Parity</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">WCAG AAA Compliance</span>
-                <span class="specimen-role">Contrast &bull; A11y</span>
-              </li>
-              <li class="specimen-item">
-                <span class="specimen-name">Git Version Control</span>
-                <span class="specimen-role">Branching &bull; CI</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Engineering Principles: Lab Notebook Spread -->
-    <section class="section" id="philosophy">
+    <!-- ======================================================================
+         PLATE 04: FIGMA DESIGN SYSTEMS
+         ====================================================================== -->
+    <section id="figma" class="project-scrap-section">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
+        <!-- Text Column -->
+        <div class="scrap-col-text">
+          <div class="pin-item paper-card-grid" style="--r: -0.6deg;">
+            <div class="washi-tape-strip tape-amber" style="--tape-rot: -2deg;"></div>
+            <div class="dymo-badge" style="--rot: 1.5deg; align-self: flex-start;">Figma Systems</div>
+            <h2 class="section-title">
+              Fondasi visual yang <span class="marker-underline">terkalibrasi</span>
+            </h2>
+            <div class="section-project-meta">
+              Design Tokens &amp; Component Matrix · [2026 Design Ops]
+            </div>
+            <p class="section-body-text">
+              Design token terstruktur 3-tier (primitive &rarr; semantic &rarr; component) yang sinkron langsung dengan variabel CSS dan Jetpack Compose. Menghilangkan friksi handoff dan menjaga konsistensi state komponen (Default, Hover, Focus, Active, Disabled).
+            </p>
+            <div class="tag-cloud">
+              <span class="craft-tag" style="--rot: 1deg;">Figma Auto-Layout</span>
+              <span class="craft-tag" style="--rot: -1.5deg;">3-Tier Tokens</span>
+              <span class="craft-tag dashed" style="--rot: 1deg;">State Matrix</span>
+              <span class="craft-tag" style="--rot: -0.5deg;">WCAG AAA</span>
+            </div>
+            <div style="margin-top: 8px;">
+              <a href="works.html#figma-system" class="btn-scrapbook" style="padding: 10px 22px; font-size: 0.95rem;">
+                <span>Periksa Dossier Figma</span>
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Column (Token Swatches & Component Blueprint) -->
+        <div class="scrap-col-visual">
+          <div style="position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / 1;">
+            <!-- Kraft Sheet -->
+            <div aria-hidden="true" style="transform: rotate(-2deg); position: absolute; inset: 4%; width: 92%; height: 92%; background-color: var(--paper-kraft); background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px); box-shadow: var(--shadow-paper);"></div>
+
+            <!-- Color Palette Swatch Strip Card -->
+            <div class="pin-item paper-card-grid" style="--r: 2deg; position: absolute; left: 8%; top: 12%; width: 84%; padding: 20px;">
+              <div style="font-family: var(--font-typewriter); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px; font-weight: 700;">
+                Design Tokens // Palette Sample
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div style="height: 44px; background: #1E5B4D; border: 1.5px solid var(--dymo-black);"></div>
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#1E5B4D</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div style="height: 44px; background: #FFE45C; border: 1.5px solid var(--dymo-black);"></div>
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#FFE45C</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div style="height: 44px; background: #C9A06B; border: 1.5px solid var(--dymo-black);"></div>
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#C9A06B</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div style="height: 44px; background: #14211C; border: 1.5px solid var(--dymo-black);"></div>
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem;">#14211C</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tape -->
+            <div class="washi-tape-strip tape-pink" style="top: 8%; left: 50%; --tape-rot: 3deg;"></div>
+
+            <!-- Component Spec Card -->
+            <div class="pin-item paper-card-grid" style="--r: -3deg; position: absolute; left: 16%; top: 56%; width: 74%; padding: 16px 20px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px dashed var(--dymo-black); padding-bottom: 6px; margin-bottom: 8px;">
+                <span style="font-family: var(--font-typewriter); font-size: 0.8rem; font-weight: 700;">SPEC_TOKENS</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-code-red);">STATUS: 100% SYNC</span>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.45;">
+                <div>--btn-primary-bg: var(--color-brand);</div>
+                <div>--btn-primary-radius: 4px;</div>
+                <div>--elevation-card: 0 10px 24px rgba(0,0,0,0.3);</div>
+              </div>
+            </div>
+
+            <!-- Sticky Note -->
+            <div class="pin-item sticky-note-card" style="--r: 6deg; position: absolute; left: 66%; top: 66%; width: 28%; font-size: 1.35rem;">
+              token satu, dipakai semua platform
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PHILOSOPHY & PRINCIPLES SPREAD
+         ====================================================================== -->
+    <section class="philosophy-spread">
       <div class="container">
-        <div class="notebook-spread">
-          <div class="section-header" style="margin-bottom: 2.5rem;">
-            <span class="dossier-label">// LAB NOTEBOOK &bull; OPERATING PRINCIPLES</span>
-            <h2>Foundational Engineering Tenets</h2>
-            <p class="section-desc">
-              Non-negotiable laws recorded across years of production incidents, architectural post-mortems, and deployment cutovers.
+        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <div class="dymo-badge" style="--rot: -1.5deg; margin-bottom: 16px;">Prinsip Rekayasa</div>
+          <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.1; color: var(--text-light);">
+            Tiga keyakinan yang memandu setiap baris kode
+          </h2>
+          <div class="handwritten-note" style="margin-top: 12px;">
+            kejujuran arsitektur di atas tren sesaat
+          </div>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="pin-item philosophy-card" style="--r: -1.2deg;">
+            <span class="philosophy-num">01.</span>
+            <h3 class="philosophy-heading">Kejujuran Teknis</h3>
+            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-dark);">
+              Menolak kompleksitas palsu. Jika sistem cukup diselesaikan dengan static HTML dan modern vanilla CSS, jangan paksa menggunakan puluhan dependensi berat.
             </p>
           </div>
 
-          <div class="tenets-grid">
-            <div class="tenet-item">
-              <span class="tenet-number">TENET 01 //</span>
-              <h3 class="tenet-title">Architecture Precedes Syntax</h3>
-              <p class="tenet-desc">
-                Data modeling, mutation boundaries, and failure scenarios must be solved before writing boilerplate. A sound relational schema prevents 90% of downstream application defects.
-              </p>
-            </div>
-            <div class="tenet-item">
-              <span class="tenet-number">TENET 02 //</span>
-              <h3 class="tenet-title">Ergonomic Performance</h3>
-              <p class="tenet-desc">
-                Latency destroys human trust. Whether indexing database tables in PostgreSQL or eliminating re-renders in React, speed is treated as a fundamental feature, not an afterthought.
-              </p>
-            </div>
-            <div class="tenet-item">
-              <span class="tenet-number">TENET 03 //</span>
-              <h3 class="tenet-title">End-to-End Cohesion</h3>
-              <p class="tenet-desc">
-                A software engineer who masters design tokens in Figma and Android threading writes superior backend APIs. Holistic empathy across the stack builds timeless software.
-              </p>
+          <div class="pin-item philosophy-card" style="--r: 1deg;">
+            <span class="philosophy-num">02.</span>
+            <h3 class="philosophy-heading">Kecepatan &amp; Ketahanan</h3>
+            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-dark);">
+              Kecepatan adalah rasa hormat kepada waktu manusia. B-Tree indexing, caching deterministik, dan arsitektur offline-first memastikan aplikasi tidak mudah runtuh.
+            </p>
+          </div>
+
+          <div class="pin-item philosophy-card" style="--r: -0.8deg;">
+            <span class="philosophy-num">03.</span>
+            <h3 class="philosophy-heading">Presisi Manusiawi</h3>
+            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-dark);">
+              Sistem backend yang tangguh tidak berarti antarmuka boleh membosankan. Desain yang baik memiliki sentuhan, jiwa, komposisi, dan empati pengguna yang nyata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT SECTION (KRAFT ENVELOPE SPREAD)
+         ====================================================================== -->
+    <section id="kontak" class="contact-spread">
+      <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 56px;">
+        <div class="contact-text-col">
+          <h2 style="font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 1.05; font-weight: 800; color: var(--text-light);">
+            Mau lihat proyeknya lebih dekat?
+          </h2>
+          <p style="font-size: 1.15rem; line-height: 1.6; color: var(--text-muted-light);">
+            Kirim pesan, ajak diskusi teknis, atau minta tautan kode dan demonstrasi dari pilar rekayasa di atas.
+          </p>
+          <div class="handwritten-note">
+            terima kasih sudah mampir ke meja kerja ini
+          </div>
+        </div>
+
+        <div class="contact-envelope-col">
+          <div class="pin-item paper-card-kraft" style="--r: -1.5deg; padding: 20px;">
+            <div class="washi-tape-strip tape-pink" style="top: -14px; left: 32px; --tape-rot: -4deg;"></div>
+            <div style="border: 2px dashed var(--dymo-black); padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+              <div class="dymo-badge" style="--rot: 0deg; align-self: flex-start;">Kontak Langsung</div>
+              
+              <div class="contact-entry-row">
+                <span class="contact-entry-label">Email</span>
+                <span class="contact-entry-val" style="cursor: pointer;" data-copy-email="m.ardhie5325@gmail.com" title="Klik untuk salin email">
+                  m.ardhie5325@gmail.com
+                </span>
+              </div>
+
+              <div class="contact-entry-row">
+                <span class="contact-entry-label">GitHub</span>
+                <a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="contact-entry-val" style="color: var(--dymo-black);">
+                  github.com/Ardhie1212
+                </a>
+              </div>
+
+              <div class="contact-entry-row">
+                <span class="contact-entry-label">Lokasi</span>
+                <span class="contact-entry-val" style="font-size: 1.6rem;">
+                  Bandung, Indonesia (UTC+7)
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -514,56 +569,20 @@
     </section>
   </main>
 
-  <!-- Footer / Postcard Colophon -->
-  <footer class="site-footer" id="contact">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand-statement">
-          <a href="index.html" class="brand">
-            <div class="brand-monogram">MA</div>
-            <span>Muhammad Ardhie</span>
-          </a>
-          <p>
-            Full-Stack Software Engineer &amp; Systems Builder. Focused on creating resilient digital products with zero decorative waste and uncompromising technical rigor.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Navigation Index</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home Journal</a></li>
-            <li><a href="works.html" class="footer-link">Selected Plates</a></li>
-            <li><a href="about.html" class="footer-link">About &amp; Journey</a></li>
-            <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Direct Contact</h4>
-          <ul class="footer-links">
-            <li><a href="#" class="footer-link" data-copy-email="m.ardhie5325@gmail.com">m.ardhie5325@gmail.com (Copy)</a></li>
-            <li><a href="https://github.com/Ardhie1212" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/Ardhie1212</a></li>
-            <li><span class="footer-link" style="color: var(--text-tertiary);">Location: Indonesia (UTC+7)</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 Muhammad Ardhie. Handcrafted to Impeccable Standards.
-        </div>
-        <div>
-          <span>&bull; Zero-Dependency Static Build</span> &bull; 
-          <span>Hosted on GitHub Pages</span>
-        </div>
-      </div>
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <div>Muhammad Ardhie · Systems &amp; Product Engineer · Bandung</div>
+      <div>100% Static HTML/CSS/JS · GitHub Pages Ready</div>
     </div>
   </footer>
 
   <!-- Toast Notification element -->
   <div class="toast" id="toast" role="status" aria-live="polite">
     <svg class="btn-icon toast-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-    <span id="toast-message">Email address copied to clipboard</span>
+    <span id="toast-message">Email berhasil disalin ke clipboard</span>
   </div>
 
   <script src="js/main.js"></script>
