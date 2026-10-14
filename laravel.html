@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sistem Informasi Manajemen FTSP ITENAS — Detail Proyek Laravel · Ardhie</title>
+<title>Sistem Informasi Manajemen FTSP ITENAS - Detail Proyek Laravel · Ardhie</title>
 <meta name="description" content="Studi kasus pengembangan sistem informasi manajemen Fakultas Teknik Sipil dan Perencanaan (FTSP) ITENAS Bandung berbasis Laravel oleh Muhammad Ardhie.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,8 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+::selection{background:#FFE45C;color:#14211C}
+::-moz-selection{background:#FFE45C;color:#14211C}
 body{
   margin:0; color:var(--text-on-mat); font-family:var(--f-head); line-height:1.6;
   background-color:var(--mat);
@@ -33,7 +35,7 @@ body{
 }
 a{color:inherit}
 a:focus-visible,summary:focus-visible,button:focus-visible,.shot img:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,56px) 64px}
+.wrap{max-width:calc(1200px + 2 * clamp(16px,4vw,56px));margin:0 auto;padding:0 clamp(16px,4vw,56px) 56px}
 h1,h2,h3,p{margin:0}
 .type{font-family:var(--f-type)}
 .hand{font-family:var(--f-hand)}
@@ -109,26 +111,45 @@ h1,h2,h3,p{margin:0}
 .photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding:14px}
 .photos .polaroid:nth-child(odd){--r:-3deg}
 .photos .polaroid:nth-child(even){--r:2.6deg}
+
+/* ---------- susunan artistik vertikal offset (tidak sebaris datar) ---------- */
+.photos.vertical-stack{display:flex;flex-direction:column;gap:0;width:100%;max-width:520px;margin:0 auto;padding:10px 10px 28px;position:relative}
+.photos.vertical-stack .polaroid:first-child{width:90%;align-self:flex-start;--r:-2.4deg;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.3),0 12px 26px rgba(0,0,0,.35);transition:transform .25s ease,z-index .25s ease}
+.photos.vertical-stack .polaroid:nth-child(2){width:90%;align-self:flex-end;margin-top:-38px;--r:2.2deg;z-index:3;box-shadow:0 5px 16px rgba(0,0,0,.31),0 14px 28px rgba(0,0,0,.38);transition:transform .25s ease,z-index .25s ease}
+.photos.vertical-stack .polaroid:nth-child(3){width:92%;align-self:center;margin-top:-38px;--r:-1.8deg;z-index:4;box-shadow:0 6px 18px rgba(0,0,0,.32),0 16px 32px rgba(0,0,0,.4);transition:transform .25s ease,z-index .25s ease}
+.photos.vertical-stack.flip .polaroid:first-child{align-self:flex-end;--r:2.4deg}
+.photos.vertical-stack.flip .polaroid:last-child{align-self:flex-start;--r:-2.6deg}
+.photos.vertical-stack .polaroid:hover{transform:rotate(0deg) scale(1.03);z-index:12}
+@media (max-width:600px){
+  .photos.vertical-stack .polaroid{width:96%!important;align-self:center!important;margin-top:14px!important}
+}
 .chapter:nth-child(odd) .note{--r:.6deg}
 .chapter:nth-child(even) .note{--r:-.6deg}
 .stage{display:inline-block;margin-bottom:14px}
 .note h3{font-size:clamp(26px,3.4vw,38px);line-height:1.05;letter-spacing:-.015em;font-weight:800;margin-bottom:12px;text-wrap:balance}
 .note p{font-size:17px;max-width:54ch}
-details{margin-top:18px}
-summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--f-type);font-size:15px;color:var(--red);border:2px dashed var(--red);padding:0 14px;list-style:none}
+details{margin-top:14px;display:flex;flex-direction:column-reverse;align-items:flex-start}
+summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--f-type);font-size:15px;color:var(--red);border:2px dashed var(--red);padding:0 14px;list-style:none;margin-top:14px;transition:background .15s ease,transform .15s ease}
 summary::-webkit-details-marker{display:none}
 summary::before{content:"+";margin-right:8px;font-weight:700}
 details[open] summary::before{content:"–"}
-details .more{margin-top:16px;padding-top:16px;border-top:1.5px dashed rgba(20,33,28,.35);display:flex;flex-direction:column;gap:12px}
+details .more{width:100%;padding-top:16px;border-top:1.5px dashed rgba(20,33,28,.35);display:flex;flex-direction:column;gap:12px;overflow:hidden;max-height:0;opacity:0;transform:translateY(-12px);transition:max-height .42s cubic-bezier(0.2,0.95,0.3,1),opacity .32s cubic-bezier(0.2,0.95,0.3,1),transform .42s cubic-bezier(0.2,0.95,0.3,1)}
+details.is-open .more,details[open] .more{max-height:520px;opacity:1;transform:translateY(0)}
 
-/* ---------- galeri hasil ---------- */
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:36px 28px;padding:10px 6px 72px}
-.gallery .polaroid:nth-child(4n+1){--r:-3deg}
-.gallery .polaroid:nth-child(4n+2){--r:2deg}
-.gallery .polaroid:nth-child(4n+3){--r:-1.5deg}
-.gallery .polaroid:nth-child(4n){--r:3deg}
-.gallery .shot{aspect-ratio:3 / 4}
-.gallery .shot.wide{aspect-ratio:16 / 10}
+/* ---------- galeri hasil sejajar 1 baris miring bergaya scrapbook (diperbesar) ---------- */
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 18px;padding:20px 8px 80px;margin-inline:clamp(-8px,-1.6vw,-28px)}
+.gallery .polaroid{padding:14px 14px 6px}
+.gallery .polaroid:nth-child(1){--r:-2deg}
+.gallery .polaroid:nth-child(2){--r:1.8deg;margin-top:14px}
+.gallery .polaroid:nth-child(3){--r:-1.6deg}
+.gallery .polaroid:hover{transform:rotate(0deg) scale(1.03);position:relative;z-index:10}
+.gallery .shot{aspect-ratio:4 / 3}
+.gallery .shot.wide{aspect-ratio:4 / 3}
+.gallery .shot img{object-position:top center}
+@media (max-width:860px){
+  .gallery{grid-template-columns:1fr;gap:36px;max-width:540px;margin-inline:auto}
+  .gallery .polaroid:nth-child(2){margin-top:0}
+}
 
 /* ---------- catatan pelajaran ---------- */
 .stickies{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding:10px 6px 72px}
@@ -142,10 +163,10 @@ details .more{margin-top:16px;padding-top:16px;border-top:1.5px dashed rgba(20,3
 .end .type{font-size:15px;color:var(--muted)}
 .end-links{display:flex;flex-wrap:wrap;gap:12px}
 
-/* ---------- lightbox ---------- */
-dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);max-height:92vh;overflow:visible}
-dialog::backdrop{background:rgba(10,20,16,.82)}
-dialog img{display:block;max-width:100%;max-height:84vh;margin:0 auto;border:10px solid var(--photo);box-shadow:var(--shadow)}
+/* ---------- lightbox (size medium selaras) ---------- */
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,800px);max-height:90vh;margin:auto;overflow:visible}
+dialog::backdrop{background:rgba(10,20,16,.85);backdrop-filter:blur(3px)}
+dialog img{display:block;margin:0 auto;border:10px solid var(--photo);box-shadow:var(--shadow);object-fit:contain}
 dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;font-family:var(--f-type);font-size:15px;background:var(--hl);color:var(--ink);border:2px solid var(--ink);cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){
@@ -159,7 +180,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
 <div class="wrap">
   <!-- ====== ATAS ====== -->
   <nav class="top" aria-label="Navigasi">
-    <span class="dymo">Ardhie · Detail Proyek</span>
+    <span class="dymo">Detail Proyek · Laravel Dev</span>
     <a class="back" href="index.html">← Kembali ke portofolio</a>
   </nav>
 
@@ -228,8 +249,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
           <details>
             <summary>Baca selengkapnya</summary>
             <div class="more">
-              <p>Wawancara langsung bersama Dekan FTSP ITENAS dilakukan guna menyelaraskan sasaran strategis fakultas dengan arsitektur aplikasi yang akan dibangun.</p>
-              <p>Diskusi intensif ini memetakan kendala desentralisasi berkas, standarisasi validasi pengajuan antar program studi di lingkungan FTSP, serta format rekapitulasi data tridharma yang dibutuhkan pimpinan.</p>
+              <p>Wawancara langsung bersama Dekan FTSP ITENAS dilakukan guna menyelaraskan sasaran strategis fakultas dengan hasil akhir aplikasi yang akan dibangun.</p>
             </div>
           </details>
         </div>
@@ -251,44 +271,52 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
           <span class="dymo stage">Tahap 2</span>
           <h3>Penyusunan FR &amp; NFR FTSP</h3>
           <p>Memetakan kebutuhan fungsional multi-peran (Dekanat, Program Studi, Staf Administrasi) serta kebutuhan non-fungsional keandalan server dan keamanan data.</p>
-          <details>
-            <summary>Baca selengkapnya</summary>
-            <div class="more">
-              <p>Kebutuhan Fungsional (FR) mencakup modul persetujuan bertingkat, repositori dokumen fakultas, visualisasi statistik tridharma, serta export laporan berkala.</p>
-              <p>Kebutuhan Non-Fungsional (NFR) menjamin keamanan otentikasi role-based (RBAC), proteksi terhadap CSRF dan SQL Injection melalui mekanisme bawaan Laravel, serta respon query di bawah 1 detik.</p>
-            </div>
-          </details>
         </div>
       </article>
 
       <!-- TAHAP 3 -->
       <article class="chapter">
-        <div class="photos">
+        <div class="photos vertical-stack">
+          <!-- Figure 1: Use Case Diagram -->
           <figure class="polaroid pin">
             <span class="tape yellow"></span>
-            <div class="shot">
+            <div class="shot wide">
               <img alt="Diagram Use Case Alur Pengguna SIM FTSP ITENAS" src="assets/Laravel%20Dev/Use%20Case.png">
             </div>
             <figcaption>Diagram Use Case FTSP</figcaption>
           </figure>
+
+          <!-- Figure 2: Component Diagram -->
           <figure class="polaroid pin">
             <span class="tape blue"></span>
-            <div class="shot">
+            <div class="shot wide">
               <img alt="Diagram Komponen Arsitektur Sistem FTSP" src="assets/Laravel%20Dev/component.png">
             </div>
-            <figcaption>Arsitektur Komponen</figcaption>
+            <figcaption>Diagram Komponen Sistem</figcaption>
+          </figure>
+
+          <!-- Figure 3: Entity Relationship Diagram (ERD) -->
+          <figure class="polaroid pin">
+            <span class="tape"></span>
+            <div class="shot wide">
+              <img alt="Entity Relationship Diagram (ERD) Basis Data FTSP ITENAS" src="assets/Laravel%20Dev/ERD.png" style="object-position: top center;">
+            </div>
+            <figcaption>Entity Relationship Diagram (ERD)</figcaption>
           </figure>
         </div>
+
         <div class="paper note pin">
           <span class="tape blue"></span>
           <span class="dymo stage">Tahap 3</span>
-          <h3>Diagram Use Case &amp; Arsitektur Komponen</h3>
-          <p>Merancang interaksi aktor fakultas dan arsitektur komponen terintegrasi pada backend Laravel dan basis data relasional.</p>
+          <h3>Perancangan Arsitektur Sistem</h3>
+          <p>Sebelum mulai menulis kode, arsitektur sistem dirancang terlebih dahulu agar kebutuhan fitur, alur komponen, dan struktur datanya jelas terpetakan.</p>
+          
           <details>
             <summary>Baca selengkapnya</summary>
             <div class="more">
-              <p>Diagram use case dan diagram komponen memetakan modularitas sistem: modul autentikasi bertingkat, modul layanan administrasi fakultas, manajemen dokumen, dan modul pelaporan pimpinan.</p>
-              <p>Skema basis data ternormalisasi dirancang dengan indeks optimal pada foreign keys untuk memastikan skalabilitas saat volume transaksi data tahunan bertambah.</p>
+              <p>Use case diagram dipakai untuk memetakan alur dan peran pengguna. Di sini ada dua aktor utama: <strong>Admin</strong> yang mengelola seluruh konten seminar (jadwal, pembicara, publikasi, sponsor, hingga kepanitiaan), serta <strong>Calon peserta</strong> (mahasiswa Itenas maupun publik) yang mengakses informasi agenda, mendaftar acara, dan mengumpulkan berkas paper.</p>
+              <p>Component diagram menggambarkan pemisahan modul sistem, mulai dari halaman dashboard admin, layer controller sebagai pengendali logika dan alur data, sampai antarmuka halaman publik serta mekanisme autentikasi login.</p>
+              <p>Sementara itu, Entity Relationship Diagram (ERD) dirancang dengan tabel <code>events</code> sebagai pusat relasi data, yang terhubung langsung ke tabel jadwal penting, profil pembicara, kepanitiaan, biaya registrasi, hingga tautan pendaftaran dan pengumpulan paper.</p>
             </div>
           </details>
         </div>
@@ -296,7 +324,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
 
       <!-- TAHAP 4 -->
       <article class="chapter">
-        <div class="photos">
+        <div class="photos vertical-stack flip">
           <figure class="polaroid pin">
             <span class="tape"></span>
             <div class="shot">
@@ -336,12 +364,34 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
       <h2 id="galeri-judul">Hasil <span class="mark" style="color:var(--ink)">akhir</span></h2>
       <span class="hand">klik foto untuk memperbesar</span>
     </div>
-    <div class="gallery" style="grid-template-columns:minmax(320px,800px)">
-      <figure class="polaroid pin">
+    <div class="gallery">
+      <!-- 1. Landing Page Utama -->
+      <figure class="polaroid pin" style="--r:-2.2deg">
         <span class="tape"></span>
-        <div class="shot wide"><img alt="Panel Kendali Utama Dashboard Manajemen FTSP ITENAS" src="assets/Laravel%20Dev/dashboard.png"></div>
-        <figcaption>Panel Kendali Utama (Dashboard FTSP ITENAS)</figcaption>
+        <div class="shot wide">
+          <img alt="Halaman Landing Page Publik Seminar Nasional Mansoer Wiratmadja FTSP ITENAS" src="assets/Laravel%20Dev/landing.png">
+        </div>
+        <figcaption>Halaman Utama (Landing Page Publik)</figcaption>
       </figure>
+
+      <!-- 2. Flyer Informasi & Registrasi -->
+      <figure class="polaroid pin" style="--r:2deg">
+        <span class="tape blue"></span>
+        <div class="shot wide">
+          <img alt="Flyer Informasi Acara dan Formulir Registrasi Seminar Mansoer Wiratmadja" src="assets/Laravel%20Dev/flyer_registration.png">
+        </div>
+        <figcaption>Informasi Seminar &amp; Registrasi Peserta</figcaption>
+      </figure>
+
+      <!-- 3. Timeline Agenda Kegiatan -->
+      <figure class="polaroid pin" style="--r:-1.8deg">
+        <span class="tape yellow"></span>
+        <div class="shot wide">
+          <img alt="Alur Timeline Pelaksanaan dan Jadwal Acara Seminar Nasional" src="assets/Laravel%20Dev/timeline.png">
+        </div>
+        <figcaption>Alur Timeline &amp; Agenda Acara</figcaption>
+      </figure>
+
     </div>
   </section>
 
@@ -349,7 +399,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
   <section aria-labelledby="belajar-judul">
     <div class="sec-head">
       <h2 id="belajar-judul">Yang kupelajari</h2>
-      <span class="hand">catatan tempel, singkat saja</span>
+      <span class="hand">singkat saja</span>
     </div>
     <div class="stickies">
       <div class="sticky pin">Diskusi langsung dengan pimpinan Dekanat membuktikan pentingnya memahami proses bisnis nyata sebelum menulis kode.</div>
@@ -377,10 +427,43 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
 (function () {
   var box = document.getElementById('lightbox');
   var big = box.querySelector('img');
+
+  function applyMediumSize(source) {
+    var nw = source.naturalWidth;
+    var nh = source.naturalHeight;
+    if (!nw || !nh) return;
+    var ratio = nw / nh;
+
+    if (ratio >= 1.25) {
+      // Landscape: selaraskan ke lebar medium ~760px
+      big.style.width = 'min(90vw, 760px)';
+      big.style.height = 'auto';
+      big.style.maxWidth = 'min(90vw, 760px)';
+      big.style.maxHeight = '75vh';
+    } else if (ratio <= 0.8) {
+      // Portrait / Vertikal: selaraskan ke tinggi medium ~640px
+      big.style.height = 'min(75vh, 640px)';
+      big.style.width = 'auto';
+      big.style.maxWidth = 'min(90vw, 540px)';
+      big.style.maxHeight = '75vh';
+    } else {
+      // Square / Mendekati bujur sangkar: selaraskan ke medium ~600px
+      big.style.width = 'min(86vw, 600px)';
+      big.style.height = 'auto';
+      big.style.maxWidth = 'min(86vw, 600px)';
+      big.style.maxHeight = '75vh';
+    }
+  }
+
   function open(img) {
     if (!img.getAttribute('src')) return;
     big.src = img.src;
     big.alt = img.alt;
+    if (img.naturalWidth && img.naturalHeight) {
+      applyMediumSize(img);
+    } else {
+      big.onload = function () { applyMediumSize(big); };
+    }
     box.showModal();
   }
   document.querySelectorAll('.shot img').forEach(function (img) {
@@ -394,5 +477,6 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
   box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
 })();
 </script>
+<script src="js/main.js"></script>
 </body>
 </html>

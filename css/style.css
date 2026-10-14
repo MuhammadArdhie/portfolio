@@ -100,12 +100,93 @@ a:focus-visible, button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Container */
+/* Container & Page Wrapper (Setara 100% dengan index.html) */
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 clamp(16px, 4vw, 56px) 56px;
+  box-sizing: border-box;
+}
+
+.wrap-inner,
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Fallback jika .wrap digunakan tanpa .wrap-inner */
+.wrap:not(:has(.wrap-inner)) {
+  max-width: calc(1200px + 2 * clamp(16px, 4vw, 56px));
+  margin: 0 auto;
+}
+
+/* Navigasi Atas Seragam (Satu Tombol Back ke Beranda) */
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 28px;
+}
+
+.dymo {
+  display: inline-block;
+  background: var(--dymo-black);
+  color: #ffffff;
+  font-family: var(--font-typewriter);
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  font-family: var(--font-typewriter);
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--text-light);
+  border: 1.5px dashed #8FB8A6;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.back:hover {
+  background: var(--marker-yellow);
+  color: var(--dymo-black);
+}
+
+/* Penutup Seragam di Bawah */
+.end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 36px;
+  margin-top: 80px;
+  border-top: 2px dashed rgba(191, 216, 204, 0.4);
+}
+
+.end .type {
+  font-size: 15px;
+  color: var(--text-muted-light);
+  font-family: var(--font-typewriter);
+}
+
+.end-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* ==========================================================================
@@ -239,7 +320,10 @@ a:focus-visible, button:focus-visible {
   background-image: repeating-linear-gradient(0deg, rgba(120, 80, 30, 0.09) 0 1px, transparent 1px 3px);
   color: var(--text-dark);
   box-shadow: var(--shadow-paper);
-  padding: clamp(20px, 3.5vw, 36px);
+  padding: clamp(24px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
 }
 
 .sticky-note-card {
@@ -503,6 +587,500 @@ a:focus-visible, button:focus-visible {
   font-size: 1.65rem;
   font-weight: 700;
   color: var(--dymo-black);
+}
+
+/* Standalone & Grid Polaroid Figures (Scrapbook Gallery) */
+.scrap-polaroid {
+  position: relative;
+  margin: 0;
+  background: var(--paper-polaroid);
+  padding: 12px 12px 14px;
+  box-shadow: var(--shadow-paper);
+}
+
+.scrap-polaroid figcaption {
+  padding: 10px 4px 4px;
+  font-family: var(--font-handwriting);
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: var(--dymo-black);
+  text-align: center;
+  font-weight: 700;
+}
+
+.scrap-polaroid figcaption small {
+  display: block;
+  font-family: var(--font-typewriter);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted-dark);
+  margin-top: 4px;
+}
+
+.scrap-shot {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: repeating-linear-gradient(45deg, #DCE6E0 0 12px, #E8EFEA 12px 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrap-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #ffffff;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.scrap-shot img:hover {
+  transform: scale(1.02);
+}
+
+/* Modal Lightbox for Fullscreen Asset Inspection (Medium Size Selaras) */
+.scrap-lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(94vw, 800px);
+  max-height: 90vh;
+  margin: auto;
+  overflow: visible;
+}
+
+.scrap-lightbox::backdrop {
+  background: rgba(10, 20, 16, 0.86);
+  backdrop-filter: blur(4px);
+}
+
+.scrap-lightbox img {
+  display: block;
+  margin: 0 auto;
+  border: 10px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+.scrap-lightbox-btn {
+  display: block;
+  margin: 14px auto 0;
+  min-height: 44px;
+  padding: 0 24px;
+  font-family: var(--font-typewriter);
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: var(--marker-yellow);
+  color: var(--dymo-black);
+  border: 2px solid var(--dymo-black);
+  box-shadow: 3px 3px 0 var(--dymo-black);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   ABOUT SPLIT CHAPTERS (EFFICIENT TWO-COLUMN WORKBENCH)
+   ========================================================================== */
+.about-chapter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 56px;
+  padding-block: 48px;
+}
+
+.about-chapter-visual {
+  flex: 1 1 480px;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-chapter-text {
+  flex: 1 1 440px;
+  min-width: 0;
+}
+
+@media (min-width: 960px) {
+  .about-chapter.reverse > .about-chapter-visual {
+    order: 2;
+  }
+}
+
+.about-media-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.about-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.about-cert-grid .scrap-polaroid {
+  padding: 8px 8px 10px;
+}
+
+.about-cert-grid .scrap-polaroid figcaption {
+  font-size: 1.05rem;
+  padding: 6px 2px 2px;
+}
+
+.about-cert-grid .scrap-polaroid figcaption small {
+  font-size: 0.78rem;
+  line-height: 1.25;
+  margin-top: 3px;
+}
+
+@media (max-width: 640px) {
+  .about-cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Organic Dynamic Zigzag Duo Collage (Wisuda, Kompetisi) */
+.about-zigzag-stack {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .about-zigzag-stack {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.about-zigzag-stack .polaroid-lead {
+  transform: rotate(var(--r, -2.5deg));
+  z-index: 2;
+}
+
+.about-zigzag-stack .polaroid-sub {
+  transform: rotate(var(--r, 3deg)) translateY(18px);
+  z-index: 1;
+}
+
+.about-zigzag-stack .polaroid-lead:hover,
+.about-zigzag-stack .polaroid-sub:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 5;
+}
+
+/* Artistic Vertical Offset Collage (Foto di Atas, Sertifikat di Bawah Geser Artistik) */
+.about-vertical-offset-stack {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 8px 24px;
+}
+
+.about-vertical-offset-stack .polaroid-top {
+  width: 95%;
+  align-self: flex-start;
+  transform: rotate(var(--r, -2.2deg));
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28), 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.about-vertical-offset-stack .polaroid-bottom {
+  width: 93%;
+  align-self: flex-end;
+  margin-top: -38px; /* overlapping bertingkat organik ala scrapbook */
+  transform: rotate(var(--r, 2.8deg));
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32), 0 18px 36px rgba(0, 0, 0, 0.42);
+}
+
+/* Varian bergantian: foto atas di kanan, bawah di kiri */
+.about-vertical-offset-stack.flip .polaroid-top {
+  align-self: flex-end;
+  transform: rotate(var(--r, 2.4deg));
+}
+
+.about-vertical-offset-stack.flip .polaroid-bottom {
+  align-self: flex-start;
+  transform: rotate(var(--r, -2.6deg));
+}
+
+.about-vertical-offset-stack .polaroid-top:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 6;
+}
+
+.about-vertical-offset-stack .polaroid-bottom:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 7;
+}
+
+@media (max-width: 600px) {
+  .about-vertical-offset-stack .polaroid-top,
+  .about-vertical-offset-stack .polaroid-bottom {
+    width: 96%;
+    align-self: center;
+    margin-top: 12px;
+  }
+}
+
+/* Project Chapters & Galleries Vertical Offset Stacks */
+.photos.vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 10px 10px 28px;
+  position: relative;
+}
+
+.photos.vertical-stack .polaroid:first-child {
+  width: 90%;
+  align-self: flex-start;
+  --r: -2.4deg;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 12px 26px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, z-index 0.25s ease;
+}
+
+.photos.vertical-stack .polaroid:last-child {
+  width: 88%;
+  align-self: flex-end;
+  margin-top: -46px;
+  --r: 2.6deg;
+  z-index: 3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32), 0 16px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, z-index 0.25s ease;
+}
+
+.photos.vertical-stack.flip .polaroid:first-child {
+  align-self: flex-end;
+  --r: 2.4deg;
+}
+
+.photos.vertical-stack.flip .polaroid:last-child {
+  align-self: flex-start;
+  --r: -2.6deg;
+}
+
+.photos.vertical-stack .polaroid:first-child:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 7;
+}
+
+.photos.vertical-stack .polaroid:last-child:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 8;
+}
+
+.gallery-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 10px 10px 48px;
+  position: relative;
+}
+
+.gallery-vertical-stack .polaroid:first-child {
+  width: 88%;
+  align-self: flex-start;
+  --r: -2deg;
+  z-index: 2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3), 0 16px 36px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, z-index 0.25s ease;
+}
+
+.gallery-vertical-stack .polaroid:last-child {
+  width: 84%;
+  align-self: flex-end;
+  margin-top: -64px;
+  --r: 2.4deg;
+  z-index: 3;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32), 0 20px 42px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, z-index 0.25s ease;
+}
+
+.gallery-vertical-stack .polaroid:first-child:hover {
+  transform: rotate(0deg) scale(1.02);
+  z-index: 7;
+}
+
+.gallery-vertical-stack .polaroid:last-child:hover {
+  transform: rotate(0deg) scale(1.02);
+  z-index: 8;
+}
+
+@media (max-width: 600px) {
+  .photos.vertical-stack .polaroid:first-child,
+  .photos.vertical-stack .polaroid:last-child {
+    width: 96%;
+    align-self: center;
+    margin-top: 14px;
+  }
+  .gallery-vertical-stack .polaroid:first-child,
+  .gallery-vertical-stack .polaroid:last-child {
+    width: 98%;
+    align-self: center;
+    margin-top: 16px;
+  }
+}
+
+/* Gallery Scrapbook Grid (Sejajar dengan kemiringan dinamis dan stagger) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 44px 32px;
+  padding: 16px 6px 72px;
+}
+
+.gallery .polaroid:nth-child(even) {
+  --r: 2.2deg;
+  margin-top: 16px;
+}
+
+.gallery .polaroid:nth-child(odd) {
+  --r: -2deg;
+}
+
+.gallery .polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+  position: relative;
+  z-index: 10;
+}
+
+.gallery .shot {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery .shot.tall {
+  aspect-ratio: 9 / 16;
+}
+
+.gallery .shot.wide {
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .gallery .polaroid:nth-child(even) {
+    margin-top: 0;
+  }
+}
+
+/* Scrapbook Details & Summary (Collapse / Expand with Button at Bottom) */
+.about-details {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column-reverse; /* Tombol summary selalu di paling bawah */
+  align-items: flex-start;
+}
+
+.about-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  cursor: pointer;
+  font-family: var(--font-typewriter);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #b91c1c;
+  border: 1.5px dashed #b91c1c;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.6);
+  list-style: none;
+  user-select: none;
+  margin-top: 14px;
+  transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.about-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-details summary::before {
+  content: "+";
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.about-details[open] summary::before {
+  content: "–";
+}
+
+.about-details summary:hover {
+  background: #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.about-details .about-more-content {
+  width: 100%;
+  padding-top: 14px;
+  border-top: 1.5px dashed rgba(20, 33, 28, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: max-height 0.42s cubic-bezier(0.2, 0.95, 0.3, 1),
+              opacity 0.32s cubic-bezier(0.2, 0.95, 0.3, 1),
+              transform 0.42s cubic-bezier(0.2, 0.95, 0.3, 1);
+}
+
+.about-details.is-open .about-more-content,
+.about-details[open] .about-more-content {
+  max-height: 520px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.itenas-stamp {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--dymo-black);
+  box-shadow: 3px 3px 0 var(--dymo-black);
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  transform: rotate(-1deg);
+  width: fit-content;
+}
+
+.itenas-stamp img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.itenas-stamp-text {
+  font-family: var(--font-typewriter);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dymo-black);
+  line-height: 1.25;
 }
 
 /* ==========================================================================

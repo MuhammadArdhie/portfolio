@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initProjectFilters();
   initKeyboardShortcuts();
+  initDetailsAnimation();
 });
 
 /**
@@ -138,5 +139,91 @@ function initKeyboardShortcuts() {
         toast.classList.remove('show');
       }
     }
+  });
+}
+
+/**
+ * Smooth Interactive Details Expand & Collapse Animation (All Pages)
+ * Enables infinite re-triggering of expand & collapse transitions
+ */
+function initDetailsAnimation() {
+  const detailsElements = document.querySelectorAll('details');
+
+  detailsElements.forEach((el) => {
+    const summary = el.querySelector('summary');
+    const content = el.querySelector('.about-more-content, .more');
+    if (!summary || !content) return;
+
+    let isAnimating = false;
+
+    summary.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (isAnimating) return;
+
+      if (!el.open) {
+        // OPENING FLOW
+        isAnimating = true;
+        el.open = true;
+        el.classList.add('is-open');
+
+        // Allow layout to register open state, then animate
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+        content.style.transform = 'translateY(-12px)';
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const scrollH = content.scrollHeight;
+            content.style.maxHeight = `${scrollH + 40}px`;
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+
+            let safetyTimer;
+            const onEnd = (event) => {
+              if (event && event.target === content && event.propertyName !== 'max-height') return;
+              content.removeEventListener('transitionend', onEnd);
+              clearTimeout(safetyTimer);
+              isAnimating = false;
+              content.style.maxHeight = '';
+              content.style.opacity = '';
+              content.style.transform = '';
+            };
+            safetyTimer = setTimeout(onEnd, 480);
+            content.addEventListener('transitionend', onEnd);
+          });
+        });
+      } else {
+        // CLOSING FLOW
+        isAnimating = true;
+        const currentH = content.scrollHeight;
+        content.style.maxHeight = `${currentH}px`;
+        content.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.classList.remove('is-open');
+            content.style.maxHeight = '0px';
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(-12px)';
+
+            let safetyTimer;
+            const onEnd = (event) => {
+              if (event && event.target === content && event.propertyName !== 'max-height') return;
+              content.removeEventListener('transitionend', onEnd);
+              clearTimeout(safetyTimer);
+              isAnimating = false;
+              el.open = false;
+              content.style.maxHeight = '';
+              content.style.opacity = '';
+              content.style.transform = '';
+            };
+            safetyTimer = setTimeout(onEnd, 480);
+            content.addEventListener('transitionend', onEnd);
+          });
+        });
+      }
+    });
   });
 }

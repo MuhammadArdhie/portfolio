@@ -20,6 +20,8 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+::selection{background:#FFE45C;color:#14211C}
+::-moz-selection{background:#FFE45C;color:#14211C}
 body{
   margin:0; color:var(--text-on-mat); font-family:var(--f-head); line-height:1.6;
   background-color:var(--mat);
@@ -33,7 +35,7 @@ body{
 }
 a{color:inherit}
 a:focus-visible,summary:focus-visible,button:focus-visible,.shot img:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,56px) 64px}
+.wrap{max-width:calc(1200px + 2 * clamp(16px,4vw,56px));margin:0 auto;padding:0 clamp(16px,4vw,56px) 56px}
 h1,h2,h3,p{margin:0}
 .type{font-family:var(--f-type)}
 .hand{font-family:var(--f-hand)}
@@ -109,26 +111,54 @@ h1,h2,h3,p{margin:0}
 .photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding:14px}
 .photos .polaroid:nth-child(odd){--r:-3deg}
 .photos .polaroid:nth-child(even){--r:2.6deg}
+
+/* ---------- susunan artistik vertikal offset (tidak sebaris datar) ---------- */
+.photos.vertical-stack{display:flex;flex-direction:column;gap:0;width:100%;max-width:520px;margin:0 auto;padding:10px 10px 28px;position:relative}
+.photos.vertical-stack .polaroid:first-child{width:90%;align-self:flex-start;--r:-2.4deg;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.3),0 12px 26px rgba(0,0,0,.35);transition:transform .25s ease,z-index .25s ease}
+.photos.vertical-stack .polaroid:last-child{width:88%;align-self:flex-end;margin-top:-46px;--r:2.6deg;z-index:3;box-shadow:0 6px 18px rgba(0,0,0,.32),0 16px 32px rgba(0,0,0,.4);transition:transform .25s ease,z-index .25s ease}
+.photos.vertical-stack.flip .polaroid:first-child{align-self:flex-end;--r:2.4deg}
+.photos.vertical-stack.flip .polaroid:last-child{align-self:flex-start;--r:-2.6deg}
+.photos.vertical-stack .polaroid:first-child:hover{transform:rotate(0deg) scale(1.03);z-index:7}
+.photos.vertical-stack .polaroid:last-child:hover{transform:rotate(0deg) scale(1.03);z-index:8}
+@media (max-width:600px){
+  .photos.vertical-stack .polaroid:first-child,
+  .photos.vertical-stack .polaroid:last-child{width:96%;align-self:center;margin-top:14px}
+}
+
+/* ---------- galeri hasil artistik vertikal bertingkat ---------- */
+.gallery-vertical-stack{display:flex;flex-direction:column;gap:0;max-width:820px;margin:0 auto;padding:10px 10px 48px;position:relative}
+.gallery-vertical-stack .polaroid:first-child{width:88%;align-self:flex-start;--r:-2deg;z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.3),0 16px 36px rgba(0,0,0,.35);transition:transform .25s ease,z-index .25s ease}
+.gallery-vertical-stack .polaroid:last-child{width:86%;align-self:flex-end;margin-top:-64px;--r:2.4deg;z-index:3;box-shadow:0 8px 22px rgba(0,0,0,.32),0 20px 42px rgba(0,0,0,.4);transition:transform .25s ease,z-index .25s ease}
+.gallery-vertical-stack .polaroid:first-child:hover{transform:rotate(0deg) scale(1.02);z-index:7}
+.gallery-vertical-stack .polaroid:last-child:hover{transform:rotate(0deg) scale(1.02);z-index:8}
+@media (max-width:700px){
+  .gallery-vertical-stack .polaroid:first-child,
+  .gallery-vertical-stack .polaroid:last-child{width:98%;align-self:center;margin-top:16px}
+}
 .chapter:nth-child(odd) .note{--r:.6deg}
 .chapter:nth-child(even) .note{--r:-.6deg}
 .stage{display:inline-block;margin-bottom:14px}
 .note h3{font-size:clamp(26px,3.4vw,38px);line-height:1.05;letter-spacing:-.015em;font-weight:800;margin-bottom:12px;text-wrap:balance}
 .note p{font-size:17px;max-width:54ch}
-details{margin-top:18px}
-summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--f-type);font-size:15px;color:var(--red);border:2px dashed var(--red);padding:0 14px;list-style:none}
+details{margin-top:14px;display:flex;flex-direction:column-reverse;align-items:flex-start}
+summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--f-type);font-size:15px;color:var(--red);border:2px dashed var(--red);padding:0 14px;list-style:none;margin-top:14px;transition:background .15s ease,transform .15s ease}
 summary::-webkit-details-marker{display:none}
 summary::before{content:"+";margin-right:8px;font-weight:700}
 details[open] summary::before{content:"–"}
-details .more{margin-top:16px;padding-top:16px;border-top:1.5px dashed rgba(20,33,28,.35);display:flex;flex-direction:column;gap:12px}
+details .more{width:100%;padding-top:16px;border-top:1.5px dashed rgba(20,33,28,.35);display:flex;flex-direction:column;gap:12px;overflow:hidden;max-height:0;opacity:0;transform:translateY(-12px);transition:max-height .42s cubic-bezier(0.2,0.95,0.3,1),opacity .32s cubic-bezier(0.2,0.95,0.3,1),transform .42s cubic-bezier(0.2,0.95,0.3,1)}
+details.is-open .more,details[open] .more{max-height:520px;opacity:1;transform:translateY(0)}
 
-/* ---------- galeri hasil ---------- */
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:36px 28px;padding:10px 6px 72px}
-.gallery .polaroid:nth-child(4n+1){--r:-3deg}
-.gallery .polaroid:nth-child(4n+2){--r:2deg}
-.gallery .polaroid:nth-child(4n+3){--r:-1.5deg}
-.gallery .polaroid:nth-child(4n){--r:3deg}
+/* ---------- galeri hasil sejajar miring bergaya scrapbook ---------- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:44px 32px;padding:16px 6px 72px}
+.gallery .polaroid:nth-child(even){--r:2.4deg;margin-top:16px}
+.gallery .polaroid:nth-child(odd){--r:-2.2deg}
+.gallery .polaroid:hover{transform:rotate(0deg) scale(1.02);position:relative;z-index:10}
 .gallery .shot{aspect-ratio:3 / 4}
 .gallery .shot.wide{aspect-ratio:16 / 10}
+@media (max-width:768px){
+  .gallery{grid-template-columns:1fr;gap:32px}
+  .gallery .polaroid:nth-child(even){margin-top:0}
+}
 
 /* ---------- catatan pelajaran ---------- */
 .stickies{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding:10px 6px 72px}
@@ -142,10 +172,10 @@ details .more{margin-top:16px;padding-top:16px;border-top:1.5px dashed rgba(20,3
 .end .type{font-size:15px;color:var(--muted)}
 .end-links{display:flex;flex-wrap:wrap;gap:12px}
 
-/* ---------- lightbox ---------- */
-dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);max-height:92vh;overflow:visible}
-dialog::backdrop{background:rgba(10,20,16,.82)}
-dialog img{display:block;max-width:100%;max-height:84vh;margin:0 auto;border:10px solid var(--photo);box-shadow:var(--shadow)}
+/* ---------- lightbox (size medium selaras) ---------- */
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,800px);max-height:90vh;margin:auto;overflow:visible}
+dialog::backdrop{background:rgba(10,20,16,.85);backdrop-filter:blur(3px)}
+dialog img{display:block;margin:0 auto;border:10px solid var(--photo);box-shadow:var(--shadow);object-fit:contain}
 dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;font-family:var(--f-type);font-size:15px;background:var(--hl);color:var(--ink);border:2px solid var(--ink);cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){
@@ -159,7 +189,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
 <div class="wrap">
   <!-- ====== ATAS ====== -->
   <nav class="top" aria-label="Navigasi">
-    <span class="dymo">Ardhie · Detail Proyek</span>
+    <span class="dymo">Detail Proyek · React &amp; Node JS</span>
     <a class="back" href="index.html">← Kembali ke portofolio</a>
   </nav>
 
@@ -173,7 +203,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
       <dl class="meta">
         <dt>Peran</dt><dd>Full-Stack Web Engineer (React &amp; Node.js)</dd>
         <dt>Tahun</dt><dd>2024</dd>
-        <dt>Durasi</dt><dd>2 Bulan</dd>
+        <dt>Durasi</dt><dd>4 Bulan</dd>
         <dt>Tim</dt><dd>Mandiri</dd>
       </dl>
       <div class="tags">
@@ -321,13 +351,13 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
       <h2 id="galeri-judul">Hasil <span class="mark" style="color:var(--ink)">akhir</span></h2>
       <span class="hand">klik foto untuk memperbesar</span>
     </div>
-    <div class="gallery" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
-      <figure class="polaroid pin">
+    <div class="gallery">
+      <figure class="polaroid pin" style="--r:-2.2deg">
         <span class="tape"></span>
         <div class="shot wide"><img alt="Halaman Utama Publik Brand Archive Portal" src="assets/React%20Dev/Landing%20Page.png"></div>
         <figcaption>Halaman Utama (Brand Digital Archive)</figcaption>
       </figure>
-      <figure class="polaroid pin">
+      <figure class="polaroid pin" style="--r:2.4deg">
         <span class="tape blue"></span>
         <div class="shot wide"><img alt="Panel Kendali Administrasi" src="assets/React%20Dev/Dashboard_Admin.png"></div>
         <figcaption>Panel Kendali (Admin Dashboard)</figcaption>
@@ -339,7 +369,7 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
   <section aria-labelledby="belajar-judul">
     <div class="sec-head">
       <h2 id="belajar-judul">Yang kupelajari</h2>
-      <span class="hand">catatan tempel, singkat saja</span>
+      <span class="hand">singkat saja</span>
     </div>
     <div class="stickies">
       <div class="sticky pin">Dekomposisi komponen kecil menghasilkan hierarki kode yang jauh lebih mudah dirawat dan diskalakan.</div>
@@ -367,10 +397,43 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
 (function () {
   var box = document.getElementById('lightbox');
   var big = box.querySelector('img');
+
+  function applyMediumSize(source) {
+    var nw = source.naturalWidth;
+    var nh = source.naturalHeight;
+    if (!nw || !nh) return;
+    var ratio = nw / nh;
+
+    if (ratio >= 1.25) {
+      // Landscape: selaraskan ke lebar medium ~760px
+      big.style.width = 'min(90vw, 760px)';
+      big.style.height = 'auto';
+      big.style.maxWidth = 'min(90vw, 760px)';
+      big.style.maxHeight = '75vh';
+    } else if (ratio <= 0.8) {
+      // Portrait / Vertikal: selaraskan ke tinggi medium ~640px
+      big.style.height = 'min(75vh, 640px)';
+      big.style.width = 'auto';
+      big.style.maxWidth = 'min(90vw, 540px)';
+      big.style.maxHeight = '75vh';
+    } else {
+      // Square / Mendekati bujur sangkar: selaraskan ke medium ~600px
+      big.style.width = 'min(86vw, 600px)';
+      big.style.height = 'auto';
+      big.style.maxWidth = 'min(86vw, 600px)';
+      big.style.maxHeight = '75vh';
+    }
+  }
+
   function open(img) {
     if (!img.getAttribute('src')) return;
     big.src = img.src;
     big.alt = img.alt;
+    if (img.naturalWidth && img.naturalHeight) {
+      applyMediumSize(img);
+    } else {
+      big.onload = function () { applyMediumSize(big); };
+    }
     box.showModal();
   }
   document.querySelectorAll('.shot img').forEach(function (img) {
@@ -384,5 +447,6 @@ dialog button{display:block;margin:14px auto 0;min-height:44px;padding:0 22px;fo
   box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
 })();
 </script>
+<script src="js/main.js"></script>
 </body>
 </html>
